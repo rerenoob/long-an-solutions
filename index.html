@@ -12,6 +12,7 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
       color: #1a1a2e; background: #f8f9fa; line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     h1, h2, h3 { line-height: 1.3; }
@@ -21,106 +22,136 @@
     /* Nav */
     nav {
       background: #fff; border-bottom: 1px solid #e8e8e8;
-      padding: 12px 0; position: sticky; top: 0; z-index: 100;
+      padding: 14px 0; position: sticky; top: 0; z-index: 100;
     }
     nav .container {
       display: flex; justify-content: space-between; align-items: center;
     }
-    nav .logo { font-size: 1.25rem; font-weight: 700; color: #1a1a2e; }
-    nav .logo span { color: #0d6e6e; }
-    nav ul { display: flex; gap: 28px; list-style: none; }
-    nav a { font-size: 0.95rem; color: #444; }
-    .nav-cta {
-      background: #0d6e6e; color: #fff !important; padding: 8px 20px;
-      border-radius: 6px; font-weight: 600;
+    nav .logo {
+      font-size: 1.3rem; font-weight: 800; color: #1a1a2e;
+      letter-spacing: -0.3px;
     }
+    nav .logo span { color: #0d6e6e; }
+    nav ul { display: flex; gap: 28px; list-style: none; align-items: center; }
+    nav a { font-size: 0.95rem; color: #444; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: #0d6e6e; text-decoration: none; }
+    .nav-cta {
+      background: #0d6e6e; color: #fff !important; padding: 10px 22px;
+      border-radius: 8px; font-weight: 600; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #095a5a; color: #fff !important; }
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 4px; color: #1a1a2e; }
 
     /* Hero */
     .hero {
       background: linear-gradient(135deg, #f0f7f7 0%, #e4efef 100%);
-      padding: 80px 0 60px; text-align: center;
+      padding: 80px 0 64px; text-align: center;
     }
     .hero h1 {
-      font-size: 2.5rem; max-width: 800px; margin: 0 auto 16px;
+      font-size: 2.6rem; max-width: 800px; margin: 0 auto 20px;
+      font-weight: 800; letter-spacing: -0.5px;
     }
     .hero p {
       font-size: 1.15rem; color: #555; max-width: 650px; margin: 0 auto 32px;
     }
-    .hero-badges { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 32px; }
+    .hero-badges { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 36px; }
     .hero-badges span {
-      background: #fff; padding: 6px 16px; border-radius: 20px;
-      font-size: 0.9rem; color: #0d6e6e; border: 1px solid #0d6e6e;
+      background: #fff; padding: 8px 18px; border-radius: 24px;
+      font-size: 0.88rem; color: #0d6e6e; border: 1px solid #0d6e6e;
+      font-weight: 500;
     }
+    .hero-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
     .hero-cta {
       display: inline-block; background: #0d6e6e; color: #fff;
-      padding: 14px 36px; border-radius: 8px; font-size: 1.05rem;
-      font-weight: 600; margin-right: 12px;
+      padding: 16px 40px; border-radius: 10px; font-size: 1.05rem;
+      font-weight: 700; transition: background 0.2s, transform 0.1s;
     }
+    .hero-cta:hover { background: #095a5a; color: #fff; text-decoration: none; }
+    .hero-cta:active { transform: scale(0.97); }
     .hero-secondary {
-      display: inline-block; background: #fff; color: #1a1a2e;
-      padding: 14px 36px; border-radius: 8px; font-size: 1.05rem;
-      font-weight: 500; border: 1px solid #ddd;
+      display: inline-flex; align-items: center; background: #fff; color: #1a1a2e;
+      padding: 16px 36px; border-radius: 10px; font-size: 1.05rem;
+      font-weight: 600; border: 1px solid #ddd; transition: border-color 0.2s;
     }
+    .hero-secondary:hover { border-color: #0d6e6e; color: #0d6e6e; text-decoration: none; }
 
     /* Sections */
-    section { padding: 72px 0; }
+    section { padding: 80px 0; }
     section h2 {
-      font-size: 1.75rem; text-align: center; margin-bottom: 12px;
+      font-size: 1.9rem; text-align: center; margin-bottom: 12px;
+      font-weight: 700;
     }
     section .subtitle {
-      text-align: center; color: #666; margin-bottom: 48px; font-size: 1.05rem;
+      text-align: center; color: #666; margin-bottom: 48px; font-size: 1.08rem;
+      max-width: 600px; margin-left: auto; margin-right: auto;
     }
 
     /* Services */
     .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
     }
     .service-card {
-      background: #fff; padding: 32px; border-radius: 12px;
+      background: #fff; padding: 32px; border-radius: 14px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.06); border: 1px solid #eee;
+      transition: box-shadow 0.2s, transform 0.15s;
     }
-    .service-card .icon { font-size: 2rem; margin-bottom: 12px; }
-    .service-card h3 { margin-bottom: 8px; }
-    .service-card p { color: #555; font-size: 0.95rem; }
+    .service-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .service-card .icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+    .service-card h3 { margin-bottom: 8px; font-size: 1.12rem; }
+    .service-card p { color: #555; font-size: 0.95rem; line-height: 1.6; }
 
     /* How it works */
     .steps {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px; counter-reset: step;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
     }
     .step {
-      background: #fff; padding: 28px; border-radius: 12px;
+      background: #fff; padding: 32px 28px; border-radius: 14px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      position: relative;
     }
     .step .num {
-      font-size: 2rem; font-weight: 800; color: #0d6e6e; opacity: 0.3;
-      margin-bottom: 8px;
+      font-size: 2.5rem; font-weight: 800; color: #0d6e6e; opacity: 0.15;
+      margin-bottom: 4px; line-height: 1;
     }
-    .step h4 { margin-bottom: 8px; }
-    .step p { color: #555; font-size: 0.9rem; }
+    .step h4 { margin-bottom: 10px; font-size: 1.08rem; }
+    .step p { color: #555; font-size: 0.92rem; line-height: 1.55; }
 
     /* Pricing */
     .pricing-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      gap: 24px; align-items: start;
     }
     .plan {
-      background: #fff; padding: 36px 28px; border-radius: 12px;
+      background: #fff; padding: 36px 28px; border-radius: 14px;
       text-align: center; border: 1px solid #eee;
+      display: flex; flex-direction: column;
     }
     .plan.featured {
       border: 2px solid #0d6e6e; position: relative;
+      transform: scale(1.03);
     }
-    .plan .price { font-size: 2.2rem; font-weight: 800; color: #1a1a2e; margin: 12px 0 4px; }
-    .plan .period { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
-    .plan ul { list-style: none; text-align: left; margin-bottom: 24px; }
-    .plan li { padding: 6px 0; font-size: 0.95rem; color: #444; }
+    .plan.featured .badge {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: #0d6e6e; color: #fff; padding: 4px 18px; border-radius: 20px;
+      font-size: 0.82rem; font-weight: 700;
+    }
+    .plan .price { font-size: 2.5rem; font-weight: 800; color: #1a1a2e; margin: 16px 0 2px; }
+    .plan .period { color: #888; font-size: 0.92rem; margin-bottom: 24px; }
+    .plan ul { list-style: none; text-align: left; margin-bottom: 28px; flex: 1; }
+    .plan li { padding: 7px 0; font-size: 0.95rem; color: #444; border-bottom: 1px solid #f0f0f0; }
+    .plan li:last-child { border-bottom: none; }
     .plan li::before { content: "✓ "; color: #0d6e6e; font-weight: 700; }
     .plan-cta {
-      display: inline-block; background: #0d6e6e; color: #fff;
-      padding: 10px 32px; border-radius: 6px; font-weight: 600;
+      display: block; background: #0d6e6e; color: #fff;
+      padding: 14px 32px; border-radius: 8px; font-weight: 700;
+      font-size: 1rem; transition: background 0.2s;
     }
+    .plan-cta:hover { background: #095a5a; color: #fff; text-decoration: none; }
 
     /* Why us */
     .why-grid {
@@ -128,48 +159,91 @@
       gap: 24px;
     }
     .why-item {
-      background: #fff; padding: 28px; border-radius: 12px; text-align: center;
+      background: #fff; padding: 32px 28px; border-radius: 14px; text-align: center;
       box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s;
     }
-    .why-item .icon { font-size: 2rem; margin-bottom: 8px; }
-    .why-item h4 { margin-bottom: 6px; }
-    .why-item p { color: #555; font-size: 0.9rem; }
+    .why-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .why-item .icon { font-size: 2.3rem; margin-bottom: 12px; display: block; }
+    .why-item h4 { margin-bottom: 8px; font-size: 1.08rem; }
+    .why-item p { color: #555; font-size: 0.9rem; line-height: 1.55; }
 
     /* Contact */
     .contact {
       background: linear-gradient(135deg, #0d6e6e 0%, #085a5a 100%);
-      color: #fff; padding: 72px 0;
+      color: #fff; padding: 80px 0;
     }
     .contact h2 { color: #fff; }
     .contact .subtitle { color: rgba(255,255,255,0.8); }
     .contact-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
+      gap: 36px; align-items: start;
     }
-    .contact-info p { margin-bottom: 4px; opacity: 0.9; }
+    .contact-info p { margin-bottom: 8px; opacity: 0.9; font-size: 1rem; }
     .contact-form input, .contact-form textarea {
-      width: 100%; padding: 12px; border: none; border-radius: 6px;
-      margin-bottom: 12px; font-size: 0.95rem;
+      width: 100%; padding: 14px; border: none; border-radius: 8px;
+      margin-bottom: 14px; font-size: 1rem;
+      background: rgba(255,255,255,0.95);
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: 2px solid #fff; background: #fff;
     }
     .contact-form button {
-      background: #fff; color: #0d6e6e; padding: 12px 28px;
-      border: none; border-radius: 6px; font-weight: 700; font-size: 1rem;
-      cursor: pointer;
+      background: #fff; color: #0d6e6e; padding: 14px 32px;
+      border: none; border-radius: 8px; font-weight: 700; font-size: 1.05rem;
+      cursor: pointer; width: 100%; transition: opacity 0.2s;
     }
+    .contact-form button:hover { opacity: 0.9; }
+    .contact-form button:active { transform: scale(0.98); }
 
     /* Footer */
     footer {
-      background: #1a1a2e; color: #aaa; padding: 32px 0; text-align: center;
-      font-size: 0.9rem;
+      background: #1a1a2e; color: #999; padding: 40px 0 32px;
+      text-align: center; font-size: 0.9rem;
+    }
+    footer a { color: #ccc; }
+    footer a:hover { color: #fff; }
+
+    /* Form success */
+    .form-success {
+      display: none; margin-top: 16px; padding: 14px;
+      background: rgba(255,255,255,0.15); border-radius: 8px;
+      text-align: center; font-weight: 600;
     }
 
     /* Mobile */
     @media (max-width: 720px) {
-      .hero h1 { font-size: 1.8rem; }
-      nav ul { gap: 16px; }
-      nav ul li { font-size: 0.85rem; }
-      .hero-cta, .hero-secondary { display: block; margin: 12px auto; text-align: center; }
-      .hero-secondary { margin-top: 0; }
+      .hero { padding: 56px 0 48px; }
+      .hero h1 { font-size: 1.6rem; letter-spacing: -0.3px; }
+      .hero p { font-size: 1rem; }
+      .hero-badges { gap: 8px; }
+      .hero-badges span { font-size: 0.82rem; padding: 6px 14px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-cta, .hero-secondary { text-align: center; }
+      section { padding: 56px 0; }
+      section h2 { font-size: 1.5rem; }
+      .plan.featured { transform: none; }
+      .services-grid { gap: 16px; }
+      .pricing-grid { gap: 20px; }
+      .contact-grid { gap: 28px; }
+      .contact { padding: 56px 0; }
+
+      /* Mobile nav */
+      .nav-toggle { display: block; }
+      nav ul {
+        display: none; flex-direction: column; gap: 0; position: absolute;
+        top: 100%; left: 0; right: 0; background: #fff;
+        border-bottom: 1px solid #eee; padding: 8px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      }
+      nav ul.open { display: flex; }
+      nav ul li { border-bottom: 1px solid #f5f5f5; }
+      nav ul li:last-child { border-bottom: none; }
+      nav ul a {
+        display: block; padding: 14px 24px; font-size: 1rem;
+        border-radius: 0;
+      }
+      .nav-cta { margin: 8px 24px; text-align: center; }
     }
   </style>
 </head>
@@ -178,6 +252,7 @@
   <nav>
     <div class="container">
       <a href="#" class="logo">Viet <span>Kế Thuế</span></a>
+      <button class="nav-toggle" aria-label="Mở menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
       <ul>
         <li><a href="#services">Dịch vụ</a></li>
         <li><a href="#pricing">Bảng giá</a></li>
@@ -192,12 +267,14 @@
       <h1>Kế toán & thuế cho doanh nghiệp SME — online, đúng luật, giá rẻ</h1>
       <p>Viet Kế Thuế giúp bạn quản lý sổ sách, kê khai thuế và xuất hóa đơn điện tử. Công nghệ AI tự động, báo cáo online mọi lúc. Bạn tập trung kinh doanh — chúng tôi lo phần kế toán.</p>
       <div class="hero-badges">
-        <span>✅ Hỗ trợ Thông tư 133 & 200</span>
-        <span>✅ Kết nối MISA & TCT</span>
+        <span>✅ Hỗ trợ Thông tư 133 &amp; 200</span>
+        <span>✅ Kết nối MISA &amp; TCT</span>
         <span>✅ Bảo mật dữ liệu theo chuẩn PDPL</span>
       </div>
-      <a href="#contact" class="hero-cta">Đăng ký tư vấn miễn phí</a>
-      <a href="#pricing" class="hero-secondary">Xem bảng giá</a>
+      <div class="hero-actions">
+        <a href="#contact" class="hero-cta">Đăng ký tư vấn miễn phí</a>
+        <a href="#pricing" class="hero-secondary">Xem bảng giá</a>
+      </div>
     </div>
   </section>
 
@@ -208,37 +285,37 @@
       <div class="services-grid">
 
         <div class="service-card">
-          <div class="icon">📒</div>
+          <span class="icon">📒</span>
           <h3>Ghi sổ kế toán</h3>
           <p>Hạch toán chứng từ mua vào — bán ra, tính giá vốn, khấu hao TSCĐ. Đầy đủ sổ sách theo quy định.</p>
         </div>
 
         <div class="service-card">
-          <div class="icon">📊</div>
-          <h3>Kê khai & nộp thuế</h3>
+          <span class="icon">📊</span>
+          <h3>Kê khai &amp; nộp thuế</h3>
           <p>Lập tờ khai GTGT, TNCN, TNDN, thuế môn bài. Nộp qua cổng thuế điện tử đúng hạn, không phạt chậm.</p>
         </div>
 
         <div class="service-card">
-          <div class="icon">🧾</div>
+          <span class="icon">🧾</span>
           <h3>Hóa đơn điện tử</h3>
           <p>Phát hành hóa đơn GTGT theo Nghị định 123. Kết nối trực tiếp với TCT, tự động truyền mã.</p>
         </div>
 
         <div class="service-card">
-          <div class="icon">📈</div>
+          <span class="icon">📈</span>
           <h3>Báo cáo quản trị</h3>
           <p>Dashboard online: doanh thu, chi phí, dòng tiền, công nợ — cập nhật theo thời gian thực.</p>
         </div>
 
         <div class="service-card">
-          <div class="icon">💼</div>
+          <span class="icon">💼</span>
           <h3>Tư vấn thuế</h3>
           <p>Giải đáp các vướng mắc về thuế, soạn thảo hợp đồng, hỗ trợ quyết toán thuế cuối năm.</p>
         </div>
 
         <div class="service-card">
-          <div class="icon">🏛️</div>
+          <span class="icon">🏛️</span>
           <h3>Đại diện thuế</h3>
           <p>Làm việc với cơ quan thuế thay mặt doanh nghiệp — giải trình, thanh tra, hoàn thuế.</p>
         </div>
@@ -247,7 +324,7 @@
     </div>
   </section>
 
-  <section style="background:#f0f7f7;" id="how">
+  <section id="how" style="background:#f0f7f7;">
     <div class="container">
       <h2>Cách chúng tôi làm việc</h2>
       <p class="subtitle">Online, đơn giản, minh bạch</p>
@@ -265,13 +342,13 @@
         </div>
         <div class="step">
           <div class="num">03</div>
-          <h4>Xử lý & báo cáo</h4>
+          <h4>Xử lý &amp; báo cáo</h4>
           <p>Đội ngũ kế toán kiểm tra, hạch toán. Bạn theo dõi số liệu qua dashboard online mọi lúc.</p>
         </div>
         <div class="step">
           <div class="num">04</div>
-          <h4>Kê khai & nộp</h4>
-          <p>Tự động lập tờ khai, nộp thuế đúng hạn. Bạn nhận thông báo qua Zalo/email mỗi kỳ.</p>
+          <h4>Kê khai &amp; nộp</h4>
+          <p>Tự động lập tờ khai, nộp thuế đúng hạn. Bạn nhận thông báo qua Zalo hoặc email mỗi kỳ.</p>
         </div>
 
       </div>
@@ -290,7 +367,7 @@
           <div class="period">đồng / tháng</div>
           <ul>
             <li>Sổ sách đơn giản (TT 88)</li>
-            <li>Kê khai thuế GTGN</li>
+            <li>Kê khai thuế GTGT</li>
             <li>Hóa đơn bán lẻ</li>
             <li>Báo cáo thuế cuối năm</li>
             <li>Hỗ trợ qua Zalo</li>
@@ -299,6 +376,7 @@
         </div>
 
         <div class="plan featured">
+          <span class="badge">Phổ biến nhất</span>
           <h3>Doanh Nghiệp Nhỏ</h3>
           <div class="price">500K</div>
           <div class="period">đồng / tháng</div>
@@ -310,7 +388,7 @@
             <li>Báo cáo quản trị hàng tháng</li>
             <li>Kết nối MISA</li>
           </ul>
-          <a href="#contact" class="plan-cta" style="background:#0d6e6e;">Phổ biến nhất</a>
+          <a href="#contact" class="plan-cta">Đăng ký</a>
         </div>
 
         <div class="plan">
@@ -318,10 +396,10 @@
           <div class="price">1.000K</div>
           <div class="period">đồng / tháng</div>
           <ul>
-            <li>Đầy đủ sổ sách & báo cáo (TT 200)</li>
-            <li>Kê khai & quyết toán thuế</li>
+            <li>Đầy đủ sổ sách &amp; báo cáo (TT 200)</li>
+            <li>Kê khai &amp; quyết toán thuế</li>
             <li>Hóa đơn điện tử (không giới hạn)</li>
-            <li>Dashboard & báo cáo tùy chỉnh</li>
+            <li>Dashboard &amp; báo cáo tùy chỉnh</li>
             <li>Tư vấn thuế định kỳ</li>
             <li>Kết nối ngân hàng tự động</li>
           </ul>
@@ -339,22 +417,22 @@
       <div class="why-grid">
 
         <div class="why-item">
-          <div class="icon">🤖</div>
+          <span class="icon">🤖</span>
           <h4>AI tự động</h4>
           <p>Công nghệ AI trích xuất chứng từ, phân loại, hạch toán nhanh gấp 10 lần thủ công.</p>
         </div>
         <div class="why-item">
-          <div class="icon">📱</div>
+          <span class="icon">📱</span>
           <h4>Online mọi lúc</h4>
           <p>Dashboard, báo cáo, chat hỗ trợ — tất cả trên điện thoại. Không cần gặp mặt.</p>
         </div>
         <div class="why-item">
-          <div class="icon">🔒</div>
+          <span class="icon">🔒</span>
           <h4>Bảo mật chuẩn PDPL</h4>
           <p>Dữ liệu được bảo vệ theo Luật Bảo vệ Dữ liệu Cá nhân. Cam kết bảo mật tuyệt đối.</p>
         </div>
         <div class="why-item">
-          <div class="icon">👵</div>
+          <span class="icon">👵</span>
           <h4>Đội ngũ dày dạn</h4>
           <p>30+ năm kinh nghiệm kế toán doanh nghiệp. Xử lý mọi tình huống với cơ quan thuế.</p>
         </div>
@@ -374,21 +452,21 @@
             <p><strong>📧 Email:</strong> info@vietkethue.com</p>
             <p><strong>💬 Zalo:</strong> [Zalo ID]</p>
             <p><strong>🏢 Địa chỉ:</strong> [Địa chỉ văn phòng]</p>
-            <p style="margin-top:20px;opacity:0.8;font-size:0.9rem;">
+            <p style="margin-top:24px;opacity:0.8;font-size:0.95rem;line-height:1.6;">
               Bạn có thể gửi chứng từ qua email hoặc Zalo bất kỳ lúc nào. 
               Chúng tôi xử lý trong vòng 24h làm việc.
             </p>
           </div>
         </div>
         <div>
-          <form class="contact-form" onsubmit="event.preventDefault(); document.getElementById('form-success').style.display='block'; this.reset();">
-            <input type="text" placeholder="Họ tên" required>
-            <input type="text" placeholder="Số điện thoại" required>
-            <input type="email" placeholder="Email">
-            <input type="text" placeholder="Tên công ty">
-            <textarea rows="3" placeholder="Nội dung (loại dịch vụ bạn cần)"></textarea>
+          <form class="contact-form" onsubmit="event.preventDefault(); var btn=this.querySelector('button'); btn.textContent='Đang gửi...'; btn.disabled=true; setTimeout(function(){ document.getElementById('form-success').style.display='block'; btn.textContent='Gửi yêu cầu'; btn.disabled=false; this.reset(); }.bind(this), 800);">
+            <input type="text" placeholder="Họ tên *" required aria-label="Họ tên">
+            <input type="tel" placeholder="Số điện thoại *" required aria-label="Số điện thoại">
+            <input type="email" placeholder="Email" aria-label="Email">
+            <input type="text" placeholder="Tên công ty" aria-label="Tên công ty">
+            <textarea rows="3" placeholder="Nội dung (loại dịch vụ bạn cần)" aria-label="Nội dung"></textarea>
             <button type="submit">Gửi yêu cầu</button>
-            <p id="form-success" style="display:none;margin-top:12px;opacity:0.9;">✅ Cảm ơn bạn! Chúng tôi sẽ liên hệ trong 24h.</p>
+            <div id="form-success" class="form-success" role="alert">✅ Cảm ơn bạn! Chúng tôi sẽ liên hệ trong 24h.</div>
           </form>
         </div>
       </div>
@@ -397,10 +475,19 @@
 
   <footer>
     <div class="container">
-      <p>Viet Kế Thuế &copy; 2026 — Dịch vụ kế toán & thuế cho doanh nghiệp SME</p>
-      <p style="margin-top:8px;opacity:0.6;">Số ĐKKD: [MST] | Chịu trách nhiệm: [Tên] — [SĐT]</p>
+      <p>Viet Kế Thuế &copy; 2026 — Dịch vụ kế toán &amp; thuế cho doanh nghiệp SME</p>
+      <p style="margin-top:10px;opacity:0.55;">Số ĐKKD: [MST] | Chịu trách nhiệm: [Tên] — [SĐT]</p>
     </div>
   </footer>
+
+  <script>
+    // Close mobile nav on link click
+    document.querySelectorAll('nav ul a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.querySelector('nav ul').classList.remove('open');
+      });
+    });
+  </script>
 
 </body>
 </html>
