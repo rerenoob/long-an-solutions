@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viet Kế Thuế — Compliance Engine · Advisory Layer · Tech Platform</title>
-  <meta name="description" content="Viet Kế Thuế: kế toán SME 3 tầng — Compliance Engine MISA tự động không trễ hạn, kế toán 30+ năm tư vấn thực tế, dashboard online real-time. Không bị phạt, không bỏ sót, không cần gọi hỏi.">
+  <title>Việt Kế Thuế — Dịch vụ kê khai thuế cho SME</title>
+  <meta name="description" content="Việt Kế Thuế: dịch vụ kê khai thuế GTGT, TNDN tạm tính cho doanh nghiệp nhỏ. Công nghệ AI + kế toán giàu kinh nghiệm. Forward hóa đơn qua Zalo, chúng tôi lo phần còn lại.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -12,1173 +12,365 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
       color: #1a1a2e; background: #f8f9fa; line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
     h1, h2, h3 { line-height: 1.3; }
     a { color: #0d6e6e; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* Skip link */
-    .skip-link {
-      position: absolute; top: -120%; left: 16px;
-      background: #0d6e6e; color: #fff; padding: 10px 20px;
-      border-radius: 0 0 8px 8px; font-weight: 600; z-index: 9999;
-      transition: top 0.15s;
-    }
-    .skip-link:focus { top: 0; text-decoration: none; outline: 3px solid #fff; outline-offset: 2px; }
-
-    /* Focus visible for keyboard navigation */
-    :focus-visible {
-      outline: 3px solid #0d6e6e; outline-offset: 3px; border-radius: 4px;
-    }
-    a:focus-visible, button:focus-visible { border-radius: 6px; }
-
-    /* Scroll offset for sticky nav */
-    [id] { scroll-margin-top: 80px; }
-    #main-content { scroll-margin-top: 0; }
-    #main-content:focus { outline: none; }
-
     /* Nav */
     nav {
-      background: #fff; border-bottom: 1px solid #e8e8e8;
-      padding: 14px 0; position: sticky; top: 0; z-index: 100;
-    }
-    nav .container {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(26,26,46,0.95); backdrop-filter: blur(8px);
+      padding: 12px 24px;
       display: flex; justify-content: space-between; align-items: center;
     }
-    nav .logo {
-      font-size: 1.3rem; font-weight: 800; color: #1a1a2e;
-      letter-spacing: -0.3px;
+    nav .logo { color: #fff; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.5px; }
+    nav .logo span { color: #5eead4; }
+    nav .lang-toggle {
+      background: none; border: 1px solid rgba(255,255,255,0.3);
+      color: #fff; padding: 4px 12px; border-radius: 6px;
+      cursor: pointer; font-size: 0.8rem;
     }
-    nav .logo span { color: #0d6e6e; }
-    nav ul { display: flex; gap: 28px; list-style: none; align-items: center; }
-    nav a { font-size: 0.95rem; color: #444; font-weight: 500; transition: color 0.2s; }
-    nav a:hover { color: #0d6e6e; text-decoration: none; }
-    .nav-cta {
-      background: #0d6e6e; color: #fff !important; padding: 10px 22px;
-      border-radius: 8px; font-weight: 600; transition: background 0.2s;
-    }
-    .nav-cta:hover { background: #095a5a; color: #fff !important; }
-    .nav-cta:active { background: #074848 !important; }
-    .nav-toggle {
-      display: none; background: none; border: none; font-size: 1.35rem;
-      cursor: pointer; color: #1a1a2e;
-      padding: 11px; margin: -11px;
-      line-height: 1; border-radius: 8px;
-      transition: background 0.15s;
-    }
-    .nav-toggle:hover { background: #f0f0f0; }
-    .nav-toggle:active { background: #e0e0e0; }
-
-    /* Nav end (lang toggle + hamburger) */
-    .nav-end { display: flex; align-items: center; gap: 12px; }
-
-    /* Language toggle pill */
-    .lang-toggle {
-      display: flex; align-items: center;
-      background: #f0f7f7; border: 1.5px solid #b0d4d4;
-      border-radius: 20px; padding: 3px;
-    }
-    .lang-btn {
-      background: none; border: none; cursor: pointer;
-      padding: 3px 10px; border-radius: 16px;
-      color: #888; font-size: 0.78rem; font-weight: 700;
-      font-family: inherit; line-height: 1.4;
-      transition: background 0.15s, color 0.15s;
-    }
-    .lang-btn.active { background: #0d6e6e; color: #fff; }
-    .lang-btn:focus-visible { outline: 2px solid #0d6e6e; outline-offset: 1px; border-radius: 14px; }
-
-    /* Desktop: ul before nav-end */
-    @media (min-width: 721px) {
-      nav .container { justify-content: flex-start; }
-      nav ul { margin-left: auto; }
-      .nav-end { margin-left: 16px; }
-    }
+    nav .lang-toggle:hover { border-color: #5eead4; }
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, #f0f7f7 0%, #e4efef 100%);
-      padding: 80px 0 64px; text-align: center;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #fff; padding: 120px 0 80px; text-align: center;
     }
-    .hero h1 {
-      font-size: 2.6rem; max-width: 800px; margin: 0 auto 20px;
-      font-weight: 800; letter-spacing: -0.5px;
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 16px; }
+    .hero h1 span { color: #5eead4; }
+    .hero p {
+      font-size: 1.1rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 32px;
     }
-    .hero > .container > p {
-      font-size: 1.15rem; color: #484848; max-width: 650px; margin: 0 auto 36px;
-    }
-    .hero-stats {
-      display: flex; justify-content: center; gap: 48px; margin-bottom: 32px;
-      flex-wrap: wrap;
-    }
-    .hero-stat { text-align: center; }
-    .hero-stat strong {
-      display: block; font-size: 1.9rem; font-weight: 800;
-      color: #0d6e6e; line-height: 1.15;
-    }
-    .hero-stat span { font-size: 0.87rem; color: #666; }
-    .hero-badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
-    .hero-badges span {
-      background: #fff; padding: 8px 18px; border-radius: 24px;
-      font-size: 0.87rem; color: #0d6e6e; border: 1px solid #b0d4d4;
-      font-weight: 500;
-    }
-    .hero-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-    .hero-cta {
+    .hero .cta {
       display: inline-block; background: #0d6e6e; color: #fff;
-      padding: 16px 40px; border-radius: 10px; font-size: 1.05rem;
-      font-weight: 700; transition: background 0.2s, transform 0.1s;
+      padding: 14px 36px; border-radius: 8px; font-weight: 600;
+      font-size: 1rem; transition: background 0.2s;
     }
-    .hero-cta:hover { background: #095a5a; color: #fff; text-decoration: none; }
-    .hero-cta:active { transform: scale(0.97); background: #074848; }
-    .hero-secondary {
-      display: inline-flex; align-items: center; justify-content: center;
-      background: #fff; color: #1a1a2e;
-      padding: 16px 36px; border-radius: 10px; font-size: 1.05rem;
-      font-weight: 600; border: 1.5px solid #d0d0d0;
-      transition: border-color 0.2s, color 0.2s, transform 0.1s;
+    .hero .cta:hover { background: #0a5c5c; text-decoration: none; }
+    .hero .cta-sub {
+      display: block; margin-top: 12px; color: #94a3b8; font-size: 0.9rem;
     }
-    .hero-secondary:hover { border-color: #0d6e6e; color: #0d6e6e; text-decoration: none; }
-    .hero-secondary:active { transform: scale(0.97); }
 
     /* Sections */
-    section { padding: 80px 0; }
+    section { padding: 72px 0; }
+    section:nth-child(even) { background: #fff; }
     section h2 {
-      font-size: 1.9rem; text-align: center; margin-bottom: 12px;
-      font-weight: 700;
+      font-size: 1.6rem; text-align: center; margin-bottom: 40px; color: #0f172a;
     }
-    section .subtitle {
-      text-align: center; color: #666; font-size: 1.08rem;
-      max-width: 600px; margin: 0 auto 48px;
-    }
-
-    /* Services */
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-    .service-card {
-      background: #fff; padding: 32px; border-radius: 14px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06); border: 1px solid #eee;
-      transition: box-shadow 0.2s, transform 0.15s;
-    }
-    .service-card:hover {
-      box-shadow: 0 6px 20px rgba(0,0,0,0.09);
-      transform: translateY(-3px);
-    }
-    .service-card:active { transform: translateY(0); box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
-    .service-card .icon { font-size: 2rem; margin-bottom: 14px; display: block; }
-    .service-card h3 { margin-bottom: 8px; font-size: 1.12rem; }
-    .service-card p { color: #555; font-size: 0.95rem; line-height: 1.65; }
-    .service-layer-tag {
-      display: inline-block; font-size: 0.71rem; font-weight: 700;
-      padding: 2px 10px; border-radius: 12px; margin-bottom: 12px;
-      letter-spacing: 0.05em; text-transform: uppercase;
-    }
-    .tag-engine  { background: #eef0f8; color: #4a4a8a; border: 1px solid #d0d2ea; }
-    .tag-advisory{ background: #fef9e8; color: #92680a; border: 1px solid #e5c97a; }
-    .tag-platform{ background: #e8f4f4; color: #0d6e6e; border: 1px solid #b0d4d4; }
-
-    /* Three Layers */
-    .layers-stack { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; }
-    .layer-card { padding: 36px 40px; position: relative; }
-    .layer-card:first-child { border-radius: 16px 16px 4px 4px; }
-    .layer-card:last-child  { border-radius: 4px 4px 16px 16px; }
-    .layer-label {
-      display: inline-block; font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;
-    }
-    .layer-card-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 20px; }
-    .layer-icon { font-size: 2.2rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
-    .layer-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; }
-    .layer-tagline { font-size: 0.93rem; }
-    .layer-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px 24px; list-style: none; }
-    .layer-feat { font-size: 0.91rem; padding-left: 20px; position: relative; line-height: 1.55; }
-    .layer-feat::before { content: "✓"; position: absolute; left: 0; font-weight: 700; }
-
-    .layer-platform { background: #0d6e6e; color: #fff; border: 2px solid #0d6e6e; }
-    .layer-platform .layer-label { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.92); }
-    .layer-platform .layer-tagline { color: rgba(255,255,255,0.72); }
-    .layer-platform .layer-feat { color: rgba(255,255,255,0.88); }
-    .layer-platform .layer-feat::before { color: #7dd3c8; }
-
-    .layer-advisory { background: #fffdf8; border: 2px solid #e5c97a; border-top: none; }
-    .layer-advisory .layer-label { background: #fef9e8; color: #92680a; border: 1px solid #e5c97a; }
-    .layer-advisory .layer-tagline { color: #666; }
-    .layer-advisory .layer-feat::before { color: #b45309; }
-
-    .layer-engine { background: #1a1a2e; color: #e8e8f0; border: 2px solid #1a1a2e; border-top: none; }
-    .layer-engine .layer-label { background: rgba(13,110,110,0.22); color: #5fbfbf; }
-    .layer-engine .layer-tagline { color: rgba(232,232,240,0.6); }
-    .layer-engine .layer-feat { color: rgba(232,232,240,0.82); }
-    .layer-engine .layer-feat::before { color: #0d9e9e; }
-
-    .layer-connector {
-      display: flex; align-items: center; justify-content: center;
-      height: 38px; position: relative; max-width: 820px; margin: 0 auto; width: 100%;
-    }
-    .layer-connector::before {
-      content: ""; position: absolute; left: 50%; top: 0; bottom: 0;
-      width: 2px; background: #ccc; transform: translateX(-50%);
-    }
-    .layer-connector-label {
-      background: #f0f7f7; border: 1.5px solid #ccdede; border-radius: 20px;
-      padding: 3px 13px; font-size: 0.76rem; color: #888;
-      position: relative; z-index: 1; font-weight: 500;
-    }
+    section h2 span { color: #0d6e6e; }
 
     /* How it works */
-    .steps {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 24px;
-    }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
     .step {
-      background: #fff; padding: 32px 28px; border-radius: 14px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      text-align: center; padding: 24px 16px;
+      background: #f8f9fa; border-radius: 12px;
     }
     .step .num {
-      font-size: 2.8rem; font-weight: 800; color: #0d6e6e; opacity: 0.15;
-      margin-bottom: 4px; line-height: 1; user-select: none;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: #0d6e6e; color: #fff; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px; font-size: 1rem;
     }
-    .step h4 { margin-bottom: 10px; font-size: 1.08rem; }
-    .step p { color: #555; font-size: 0.92rem; line-height: 1.6; }
+    .step h3 { font-size: 1rem; margin-bottom: 8px; }
+    .step p { font-size: 0.9rem; color: #475569; }
+
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .service-card {
+      padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;
+    }
+    .service-card h3 { margin-bottom: 8px; font-size: 1.05rem; }
+    .service-card p { font-size: 0.9rem; color: #475569; }
+    .service-card .badge {
+      display: inline-block; background: #fef3c7; color: #92400e;
+      padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;
+      margin-top: 8px;
+    }
+    .service-card.muted { opacity: 0.6; }
 
     /* Pricing */
-    .pricing-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px; align-items: start;
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: start; }
+    .pricing-card {
+      padding: 28px 24px; border-radius: 12px; border: 1px solid #e2e8f0;
+      text-align: center; background: #fff;
     }
-    .plan {
-      background: #fff; padding: 36px 28px; border-radius: 14px;
-      text-align: center; border: 1.5px solid #eee;
-      display: flex; flex-direction: column;
-      transition: box-shadow 0.2s;
-    }
-    .plan:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-    .plan.featured {
-      border: 2px solid #0d6e6e; position: relative;
-      transform: scale(1.03);
-      box-shadow: 0 4px 20px rgba(13,110,110,0.12);
-    }
-    .plan.featured .badge {
-      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-      background: #0d6e6e; color: #fff; padding: 4px 20px; border-radius: 20px;
-      font-size: 0.82rem; font-weight: 700; white-space: nowrap;
-    }
-    .plan .price { font-size: 2.5rem; font-weight: 800; color: #1a1a2e; margin: 16px 0 2px; }
-    .plan .period { color: #888; font-size: 0.92rem; margin-bottom: 24px; }
-    .plan ul { list-style: none; text-align: left; margin-bottom: 28px; flex: 1; }
-    .plan li { padding: 8px 0; font-size: 0.95rem; color: #444; border-bottom: 1px solid #f2f2f2; }
-    .plan li:last-child { border-bottom: none; }
-    .plan li::before { content: "✓ "; color: #0d6e6e; font-weight: 700; }
-    .plan-cta {
-      display: block; background: #0d6e6e; color: #fff;
-      padding: 14px 32px; border-radius: 8px; font-weight: 700;
-      font-size: 1rem; transition: background 0.2s, transform 0.1s;
-      min-height: 48px; line-height: 1.4;
-    }
-    .plan-cta:hover { background: #095a5a; color: #fff; text-decoration: none; }
-    .plan-cta:active { transform: scale(0.97); background: #074848; }
+    .pricing-card.featured { border-color: #0d6e6e; box-shadow: 0 4px 20px rgba(13,110,110,0.1); }
+    .pricing-card .price { font-size: 1.8rem; font-weight: 700; color: #0d6e6e; margin: 12px 0; }
+    .pricing-card .price span { font-size: 0.9rem; font-weight: 400; color: #64748b; }
+    .pricing-card ul { list-style: none; text-align: left; font-size: 0.9rem; }
+    .pricing-card ul li { padding: 4px 0; color: #475569; }
+    .pricing-card ul li::before { content: "✓ "; color: #0d6e6e; font-weight: 700; }
+    .pricing-card .label { font-size: 0.75rem; color: #fff; background: #0d6e6e; display: inline-block; padding: 2px 10px; border-radius: 10px; margin-bottom: 8px; }
 
-    /* Why us */
-    .why-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-    .why-item {
-      background: #fff; padding: 32px 28px; border-radius: 14px; text-align: center;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-      transition: box-shadow 0.2s, transform 0.15s;
-    }
-    .why-item:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.09); transform: translateY(-3px); }
-    .why-item:active { transform: translateY(0); }
-    .why-item .icon { font-size: 2.3rem; margin-bottom: 12px; display: block; }
-    .why-item h4 { margin-bottom: 8px; font-size: 1.08rem; }
-    .why-item p { color: #555; font-size: 0.9rem; line-height: 1.6; }
+    /* Team */
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+    .team-card { text-align: center; padding: 20px; border-radius: 12px; background: #f8f9fa; }
+    .team-card .avatar { font-size: 2.5rem; margin-bottom: 8px; }
+    .team-card h3 { font-size: 1rem; }
+    .team-card .role { font-size: 0.85rem; color: #0d6e6e; font-weight: 600; }
+    .team-card p { font-size: 0.85rem; color: #64748b; margin-top: 4px; }
 
-    /* Testimonials */
-    .testimonials-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-    .testimonial {
-      background: #fff; padding: 28px 28px 24px; border-radius: 14px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06); border: 1px solid #eee;
-      display: flex; flex-direction: column;
-    }
-    .testimonial .stars {
-      color: #f59e0b; font-size: 1rem; margin-bottom: 14px;
-      letter-spacing: 3px;
-    }
-    .testimonial blockquote {
-      color: #444; font-size: 0.95rem; line-height: 1.7;
-      font-style: italic; flex: 1; margin-bottom: 20px;
-    }
-    .testimonial blockquote::before { content: "\201C"; }
-    .testimonial blockquote::after { content: "\201D"; }
-    .testimonial .author strong { display: block; color: #1a1a2e; font-size: 0.92rem; font-weight: 700; }
-    .testimonial .author span { color: #888; font-size: 0.84rem; }
-
-    /* Contact */
-    .contact {
-      background: linear-gradient(135deg, #0d6e6e 0%, #085a5a 100%);
-      color: #fff; padding: 80px 0;
-    }
-    .contact h2 { color: #fff; }
-    .contact .subtitle { color: rgba(255,255,255,0.82); }
-    .contact-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px; align-items: start;
-    }
-    .contact-info p { margin-bottom: 12px; opacity: 0.92; font-size: 1rem; }
-    .contact-info .note {
-      margin-top: 24px; opacity: 0.75; font-size: 0.93rem; line-height: 1.65;
-      border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px;
-    }
-
-    /* Form fields with labels */
-    .form-field { margin-bottom: 16px; }
-    .form-field label {
-      display: block; font-size: 0.85rem; font-weight: 600;
-      color: rgba(255,255,255,0.9); margin-bottom: 6px;
-    }
-    .form-field label .req { color: rgba(255,255,255,0.55); font-weight: 400; margin-left: 2px; }
-    .contact-form input, .contact-form textarea {
-      width: 100%; padding: 13px 14px; border: 1.5px solid transparent;
-      border-radius: 8px; font-size: 0.97rem;
-      background: rgba(255,255,255,0.95); color: #1a1a2e;
-      font-family: inherit; transition: background 0.15s, border-color 0.15s;
-    }
-    .contact-form input::placeholder, .contact-form textarea::placeholder { color: #999; }
-    .contact-form textarea { resize: vertical; min-height: 90px; }
-    .contact-form input:focus, .contact-form textarea:focus {
-      outline: none; border-color: rgba(255,255,255,0.8); background: #fff;
-    }
-    .contact-form button {
-      background: #fff; color: #0d6e6e; padding: 15px 32px;
-      border: none; border-radius: 8px; font-weight: 700; font-size: 1.05rem;
-      cursor: pointer; width: 100%; transition: opacity 0.2s, transform 0.1s;
-      font-family: inherit; margin-top: 4px; min-height: 52px;
-    }
-    .contact-form button:hover { opacity: 0.88; }
-    .contact-form button:active { transform: scale(0.98); }
-    .contact-form button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-
-    /* Footer */
+    /* Footer / Contact */
     footer {
-      background: #1a1a2e; color: #aaa; padding: 40px 0 32px;
-      text-align: center; font-size: 0.9rem;
+      background: #0f172a; color: #94a3b8; padding: 48px 0; text-align: center;
     }
-    footer a { color: #ccc; }
-    footer a:hover { color: #fff; }
-    footer .muted { margin-top: 10px; color: #6a6a7a; font-size: 0.85rem; }
-
-    /* Form success */
-    .form-success {
-      display: none; margin-top: 14px; padding: 14px;
-      background: rgba(255,255,255,0.15); border-radius: 8px;
-      text-align: center; font-weight: 600; font-size: 0.97rem;
+    footer h3 { color: #fff; margin-bottom: 12px; }
+    footer .contact-link {
+      display: inline-block; color: #5eead4; font-weight: 600; margin: 4px 8px;
     }
+    footer .meta { margin-top: 24px; font-size: 0.8rem; }
 
-    /* Mobile */
-    @media (max-width: 720px) {
-      .hero { padding: 52px 0 44px; }
-      .hero h1 { font-size: 1.65rem; letter-spacing: -0.2px; }
-      .hero > .container > p { font-size: 1rem; margin-bottom: 28px; }
-      .hero-stats { gap: 24px; margin-bottom: 24px; }
-      .hero-stat strong { font-size: 1.5rem; }
-      .hero-badges { gap: 8px; margin-bottom: 28px; }
-      .hero-badges span { font-size: 0.82rem; padding: 6px 13px; }
-      .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; }
-      .hero-cta, .hero-secondary { text-align: center; }
-      section { padding: 56px 0; }
-      section h2 { font-size: 1.5rem; }
-      .plan.featured { transform: none; box-shadow: 0 2px 12px rgba(13,110,110,0.15); }
-      .services-grid, .steps { gap: 16px; }
-      .pricing-grid, .testimonials-grid { gap: 16px; }
-      .contact-grid { gap: 32px; }
-      .contact { padding: 56px 0; }
-      .layer-card { padding: 28px 24px; }
-      .layer-features { grid-template-columns: 1fr; gap: 8px; }
-      .layer-card-header { gap: 14px; }
+    /* Lang visibility */
+    .lang-vi, .lang-en { display: none; }
+    .lang-vi.active, .lang-en.active { display: block; }
 
-      /* Mobile nav */
-      .nav-toggle { display: flex; align-items: center; justify-content: center; }
-      nav ul {
-        display: none; flex-direction: column; gap: 0; position: absolute;
-        top: 100%; left: 0; right: 0; background: #fff;
-        border-bottom: 1px solid #eee; padding: 8px 0;
-        box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-      }
-      nav ul.open { display: flex; }
-      nav ul li { border-bottom: 1px solid #f5f5f5; }
-      nav ul li:last-child { border-bottom: none; }
-      nav ul a {
-        display: block; padding: 15px 24px; font-size: 1rem;
-        border-radius: 0; min-height: 52px; display: flex; align-items: center;
-      }
-      .nav-cta {
-        margin: 10px 24px 6px; text-align: center; border-radius: 8px;
-        min-height: 48px; justify-content: center;
-      }
-      .lang-btn { font-size: 0.74rem; padding: 3px 8px; }
-    }
-
-    @media (max-width: 400px) {
-      .container { padding: 0 16px; }
-      .hero h1 { font-size: 1.45rem; }
-      .hero-stats { gap: 16px; }
+    @media (max-width: 600px) {
+      .hero { padding: 100px 0 60px; }
+      section { padding: 48px 0; }
     }
   </style>
 </head>
 <body>
 
-  <a class="skip-link" href="#main-content" data-i18n="skip-link">Bỏ qua điều hướng</a>
+<nav>
+  <div class="logo">việt<span>kế</span>thuế</div>
+  <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
+</nav>
 
-  <nav role="navigation" aria-label="Điều hướng chính" data-i18n-aria="nav-aria">
-    <div class="container">
-      <a href="#" class="logo" aria-label="Viet Kế Thuế — Trang chủ" data-i18n-aria="logo-aria">Viet <span>Kế Thuế</span></a>
-      <div class="nav-end">
-        <div class="lang-toggle" role="group" aria-label="Language / Ngôn ngữ">
-          <button class="lang-btn active" data-lang="vi" aria-pressed="true">VN</button>
-          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-        </div>
-        <button class="nav-toggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="nav-menu">☰</button>
-      </div>
-      <ul id="nav-menu">
-        <li><a href="#services" data-i18n="nav-services">Dịch vụ</a></li>
-        <li><a href="#layers" data-i18n="nav-layers">Ba Tầng</a></li>
-        <li><a href="#pricing" data-i18n="nav-pricing">Bảng giá</a></li>
-        <li><a href="#why" data-i18n="nav-why">Tại sao</a></li>
-        <li><a href="#contact" class="nav-cta" data-i18n="nav-contact">Liên hệ</a></li>
-      </ul>
+<main id="main-content">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="lang-vi active">
+      <h1>Khai thuế không còn là <span>nỗi lo</span></h1>
+      <p>Công nghệ AI + kế toán giàu kinh nghiệm. Forward hóa đơn qua Zalo, chúng tôi lo phần còn lại — từ tính GTGT đến nộp tờ khai đúng hạn.</p>
+      <a href="#contact" class="cta">Đăng ký dùng thử miễn phí</a>
+      <span class="cta-sub">Miễn phí 3 tháng đầu cho khách hàng đầu tiên. Không cam kết.</span>
     </div>
-  </nav>
-
-  <section class="hero" id="main-content" tabindex="-1">
-    <div class="container">
-      <h1 data-i18n="hero-h1">Không chỉ là kế toán — Compliance Engine, Advisory Layer và Tech Platform trong một</h1>
-      <p data-i18n="hero-p">Viet Kế Thuế bảo vệ doanh nghiệp trên ba tầng: máy móc tự động không bỏ sót deadline, chuyên gia 30 năm xử lý phán đoán, và dashboard để bạn nhìn thấy số liệu real-time — không cần gọi hỏi.</p>
-      <div class="hero-stats" aria-label="Số liệu nổi bật" data-i18n-aria="stats-aria">
-        <div class="hero-stat">
-          <strong>200+</strong>
-          <span data-i18n="hero-stat-1">Doanh nghiệp tin dùng</span>
-        </div>
-        <div class="hero-stat">
-          <strong>30+</strong>
-          <span data-i18n="hero-stat-2">Năm kinh nghiệm kế toán</span>
-        </div>
-        <div class="hero-stat">
-          <strong>100%</strong>
-          <span data-i18n="hero-stat-3">Kê khai đúng hạn</span>
-        </div>
-      </div>
-      <div class="hero-badges" aria-label="Ba tầng nền tảng" data-i18n-aria="badges-aria">
-        <span data-i18n="hero-badge-1">⚙️ Compliance Engine · MISA + TT 133/200/88</span>
-        <span data-i18n="hero-badge-2">👨‍💼 Advisory Layer · Kế toán 30+ năm</span>
-        <span data-i18n="hero-badge-3">📱 Tech Platform · Dashboard real-time</span>
-      </div>
-      <div class="hero-actions">
-        <a href="#contact" class="hero-cta" data-i18n="hero-cta">Đăng ký tư vấn miễn phí</a>
-        <a href="#layers" class="hero-secondary" data-i18n="hero-secondary">Xem ba tầng hoạt động thế nào</a>
-      </div>
+    <div class="lang-en">
+      <h1>Tax filing <span>without the headache</span></h1>
+      <p>AI-powered tax declaration for Vietnamese SMEs. Forward invoices via Zalo, we handle the rest — from GTGT calculation to on-time filing.</p>
+      <a href="#contact" class="cta">Start free trial</a>
+      <span class="cta-sub">First 3 months free for early clients. No commitment.</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="services">
-    <div class="container">
-      <h2 data-i18n="services-h2">Dịch vụ trên ba tầng nền tảng</h2>
-      <p class="subtitle" data-i18n="services-sub">Mỗi nghiệp vụ được phân công đúng tầng — máy làm phần máy, người làm phần người</p>
-      <div class="services-grid">
-
-        <div class="service-card">
-          <span class="service-layer-tag tag-engine">Compliance Engine</span>
-          <span class="icon" aria-hidden="true">📒</span>
-          <h3 data-i18n="svc1-h3">Ghi sổ tự động</h3>
-          <p data-i18n="svc1-p">MISA xử lý toàn bộ hạch toán: chứng từ mua vào — bán ra, tính giá vốn, khấu hao TSCĐ, bút toán kết chuyển cuối kỳ. Tự động phát hiện sai lệch trước khi ký sổ.</p>
-        </div>
-
-        <div class="service-card">
-          <span class="service-layer-tag tag-engine">Compliance Engine</span>
-          <span class="icon" aria-hidden="true">📊</span>
-          <h3 data-i18n="svc2-h3">Kê khai &amp; nộp thuế</h3>
-          <p data-i18n="svc2-p">Tờ khai GTGT, TNCN, TNDN, thuế môn bài được lập và nộp tự động qua cổng điện tử. Tuân thủ đầy đủ TT 133, TT 200, TT 88 — không trễ một ngày, không bị phạt một đồng.</p>
-        </div>
-
-        <div class="service-card">
-          <span class="service-layer-tag tag-engine">Compliance Engine</span>
-          <span class="icon" aria-hidden="true">🧾</span>
-          <h3 data-i18n="svc3-h3">Hóa đơn điện tử</h3>
-          <p data-i18n="svc3-p">Phát hành hóa đơn GTGT theo Nghị định 123, kết nối trực tiếp với TCT, tự động truyền mã xác thực. PDPL-compliant — dữ liệu được bảo vệ theo đúng luật.</p>
-        </div>
-
-        <div class="service-card">
-          <span class="service-layer-tag tag-advisory">Advisory Layer</span>
-          <span class="icon" aria-hidden="true">💼</span>
-          <h3 data-i18n="svc4-h3">Tư vấn &amp; rà soát thuế</h3>
-          <p data-i18n="svc4-p">Kế toán 30+ năm kinh nghiệm review mọi hồ sơ trước khi nộp. Phát hiện rủi ro thuế, giải đáp vướng mắc, soạn thảo hợp đồng và hỗ trợ quyết toán cuối năm.</p>
-        </div>
-
-        <div class="service-card">
-          <span class="service-layer-tag tag-advisory">Advisory Layer</span>
-          <span class="icon" aria-hidden="true">🏛️</span>
-          <h3 data-i18n="svc5-h3">Đại diện &amp; tranh biện thuế</h3>
-          <p data-i18n="svc5-p">Làm việc trực tiếp với cơ quan thuế thay mặt doanh nghiệp — giải trình, thanh tra, hoàn thuế, xử lý tranh chấp. AI lo phần thủ tục, chuyên gia lo phần phán đoán.</p>
-        </div>
-
-        <div class="service-card">
-          <span class="service-layer-tag tag-platform">Tech Platform</span>
-          <span class="icon" aria-hidden="true">📈</span>
-          <h3 data-i18n="svc6-h3">Dashboard &amp; báo cáo real-time</h3>
-          <p data-i18n="svc6-p">Doanh thu, chi phí, dòng tiền, công nợ — cập nhật tức thời, truy cập trên điện thoại bất kỳ lúc nào. Gửi chứng từ qua Zalo hoặc email, AI nhập liệu tự động.</p>
-        </div>
-
+<!-- How it works -->
+<section id="how">
+  <div class="container">
+    <div class="lang-vi active"><h2>Cách <span>hoạt động</span></h2></div>
+    <div class="lang-en"><h2>How it <span>works</span></h2></div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div class="lang-vi active"><h3>Forward hóa đơn</h3><p>Gửi hóa đơn XML/PDF qua Zalo cho Vi. Mỗi ngày hoặc mỗi tuần.</p></div>
+        <div class="lang-en"><h3>Forward invoices</h3><p>Send invoice XMLs/PDFs via Zalo to Vi. Daily or weekly batch.</p></div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div class="lang-vi active"><h3>AI xử lý</h3><p>Hệ thống tự động trích xuất, phân loại và tính thuế GTGT.</p></div>
+        <div class="lang-en"><h3>AI processes</h3><p>System auto-extracts, categorizes, and calculates GTGT.</p></div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div class="lang-vi active"><h3>Kiểm tra & duyệt</h3><p>Vi rà soát, Bác Loan (30+ năm kinh nghiệm) ký duyệt.</p></div>
+        <div class="lang-en"><h3>Review & approve</h3><p>Vi reviews, Bác Loan (30+ yrs experience) signs off.</p></div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div class="lang-vi active"><h3>Nộp đúng hạn</h3><p>Tờ khai được nộp qua thuế điện tử. Bạn nhận xác nhận.</p></div>
+        <div class="lang-en"><h3>Filed on time</h3><p>Declaration submitted via thuế điện tử. You get confirmation.</p></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="layers">
-    <div class="container">
-      <h2 data-i18n="layers-h2">Ba tầng — một giải pháp hoàn chỉnh</h2>
-      <p class="subtitle" data-i18n="layers-sub">Engine là nền móng, Advisory là lớp phán đoán, Platform là giao diện bạn nhìn thấy mỗi ngày</p>
-      <div class="layers-stack">
-
-        <div class="layer-card layer-platform">
-          <span class="layer-label" data-i18n="layer3-label">Tầng 3 · Client-Facing</span>
-          <div class="layer-card-header">
-            <span class="layer-icon" aria-hidden="true">📱</span>
-            <div>
-              <h3>Tech Platform</h3>
-              <p class="layer-tagline" data-i18n="layer3-tagline">Những gì bạn nhìn thấy và tương tác mỗi ngày</p>
-            </div>
-          </div>
-          <ul class="layer-features">
-            <li class="layer-feat" data-i18n="layer3-feat1">Dashboard doanh thu, chi phí, dòng tiền real-time</li>
-            <li class="layer-feat" data-i18n="layer3-feat2">Truy cập mobile — xem số liệu mọi lúc mọi nơi</li>
-            <li class="layer-feat" data-i18n="layer3-feat3">Nhận chứng từ qua Zalo &amp; email, AI nhập liệu tự động</li>
-            <li class="layer-feat" data-i18n="layer3-feat4">Báo cáo tùy chỉnh xuất PDF / Excel</li>
-          </ul>
-        </div>
-
-        <div class="layer-connector" aria-hidden="true">
-          <span class="layer-connector-label" data-i18n="connector">được hỗ trợ bởi</span>
-        </div>
-
-        <div class="layer-card layer-advisory">
-          <span class="layer-label" data-i18n="layer2-label">Tầng 2 · Human Judgment</span>
-          <div class="layer-card-header">
-            <span class="layer-icon" aria-hidden="true">👨‍💼</span>
-            <div>
-              <h3>Advisory Layer</h3>
-              <p class="layer-tagline" data-i18n="layer2-tagline">AI lo phần thô — chuyên gia lo phần phán đoán</p>
-            </div>
-          </div>
-          <ul class="layer-features">
-            <li class="layer-feat" data-i18n="layer2-feat1">Kế toán 30+ năm kinh nghiệm review mọi hồ sơ</li>
-            <li class="layer-feat" data-i18n="layer2-feat2">Phát hiện rủi ro thuế trước khi cơ quan thuế phát hiện</li>
-            <li class="layer-feat" data-i18n="layer2-feat3">Tranh biện, giải trình trực tiếp với cơ quan thuế</li>
-            <li class="layer-feat" data-i18n="layer2-feat4">Check-in định kỳ và review quyết toán hàng quý</li>
-          </ul>
-        </div>
-
-        <div class="layer-connector" aria-hidden="true">
-          <span class="layer-connector-label" data-i18n="connector">được hỗ trợ bởi</span>
-        </div>
-
-        <div class="layer-card layer-engine">
-          <span class="layer-label" data-i18n="layer1-label">Tầng 1 · Foundation</span>
-          <div class="layer-card-header">
-            <span class="layer-icon" aria-hidden="true">⚙️</span>
-            <div>
-              <h3>Compliance Engine</h3>
-              <p class="layer-tagline" data-i18n="layer1-tagline">Nền móng không bao giờ trễ hạn, không bao giờ bỏ sót</p>
-            </div>
-          </div>
-          <ul class="layer-features">
-            <li class="layer-feat" data-i18n="layer1-feat1">MISA-powered — tự động hạch toán và kê khai</li>
-            <li class="layer-feat" data-i18n="layer1-feat2">PDPL-compliant — hóa đơn điện tử theo Nghị định 123</li>
-            <li class="layer-feat" data-i18n="layer1-feat3">Tuân thủ đầy đủ TT 133 / TT 200 / TT 88</li>
-            <li class="layer-feat" data-i18n="layer1-feat4">Phát hiện lỗi tự động, bút toán kết chuyển cuối kỳ</li>
-          </ul>
-        </div>
-
+<!-- Services -->
+<section id="services">
+  <div class="container">
+    <div class="lang-vi active"><h2>Dịch vụ <span>của chúng tôi</span></h2></div>
+    <div class="lang-en"><h2>Our <span>services</span></h2></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="lang-vi active"><h3>Kê khai GTGT</h3><p>Xử lý hóa đơn đầu ra & đầu vào, tính số thuế phải nộp hoặc được khấu trừ. Nộp tờ khai đúng hạn (20 hàng tháng hoặc cuối quý).</p></div>
+        <div class="lang-en"><h3>GTGT (VAT) filing</h3><p>Process output & input invoices, calculate VAT payable or deductible. Filed by the 20th monthly or end of quarter.</p></div>
+      </div>
+      <div class="service-card">
+        <div class="lang-vi active"><h3>TNDN tạm tính</h3><p>Tính và nộp tờ khai thuế thu nhập doanh nghiệp tạm tính hàng quý. Áp dụng mức thuế suất mới nhất (15-20% tùy doanh thu).</p></div>
+        <div class="lang-en"><h3>CIT estimate</h3><p>Quarterly corporate income tax estimate filing. Apply the latest tiered rates (15-20% based on revenue).</p></div>
+      </div>
+      <div class="service-card muted">
+        <div class="lang-vi active"><h3>Báo cáo P&L <span class="badge">Sắp ra mắt</span></h3><p>Báo cáo kết quả kinh doanh hàng tháng. Giúp bạn quyết toán TNDN cuối năm mà không cần thuê thêm đơn vị khác.</p></div>
+        <div class="lang-en"><h3>P&L reports <span class="badge">Coming soon</span></h3><p>Monthly profit & loss reports. Enables annual CIT finalization without a separate accountant.</p></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="how" style="background:#f0f7f7;">
-    <div class="container">
-      <h2 data-i18n="how-h2">Cách chúng tôi làm việc</h2>
-      <p class="subtitle" data-i18n="how-sub">Online, đơn giản, minh bạch</p>
-      <div class="steps">
-
-        <div class="step">
-          <div class="num" aria-hidden="true">01</div>
-          <h4 data-i18n="step1-h4">Đăng ký</h4>
-          <p data-i18n="step1-p">Bạn điền thông tin cơ bản — chúng tôi soạn hợp đồng và hướng dẫn các bước tiếp theo trong vòng 24h.</p>
+<!-- Pricing -->
+<section id="pricing">
+  <div class="container">
+    <div class="lang-vi active"><h2>Bảng <span>giá</span></h2></div>
+    <div class="lang-en"><h2>Simple <span>pricing</span></h2></div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="lang-vi active">
+          <h3>Cơ bản</h3>
+          <div class="price">500K<span>/tháng</span></div>
+          <p>Dưới 50 hóa đơn/tháng</p>
+          <ul><li>Kê khai GTGT</li><li>Nhắc hạn nộp thuế</li></ul>
         </div>
-        <div class="step">
-          <div class="num" aria-hidden="true">02</div>
-          <h4 data-i18n="step2-h4">Nhận chứng từ</h4>
-          <p data-i18n="step2-p">Bạn gửi hóa đơn, hợp đồng, sao kê ngân hàng qua email hoặc Zalo. AI tự động trích xuất và phân loại.</p>
+        <div class="lang-en">
+          <h3>Starter</h3>
+          <div class="price">500K<span>/month</span></div>
+          <p>Under 50 invoices/month</p>
+          <ul><li>GTGT filing</li><li>Deadline reminders</li></ul>
         </div>
-        <div class="step">
-          <div class="num" aria-hidden="true">03</div>
-          <h4 data-i18n="step3-h4">Xử lý &amp; báo cáo</h4>
-          <p data-i18n="step3-p">Đội ngũ kế toán kiểm tra, hạch toán. Bạn theo dõi số liệu qua dashboard online mọi lúc.</p>
-        </div>
-        <div class="step">
-          <div class="num" aria-hidden="true">04</div>
-          <h4 data-i18n="step4-h4">Kê khai &amp; nộp</h4>
-          <p data-i18n="step4-p">Tự động lập tờ khai, nộp thuế đúng hạn. Bạn nhận thông báo qua Zalo hoặc email mỗi kỳ.</p>
-        </div>
-
       </div>
-    </div>
-  </section>
-
-  <section id="pricing">
-    <div class="container">
-      <h2 data-i18n="pricing-h2">Bảng giá</h2>
-      <p class="subtitle" data-i18n="pricing-sub">Phù hợp với mọi quy mô doanh nghiệp</p>
-      <div class="pricing-grid">
-
-        <div class="plan">
-          <h3 data-i18n="plan1-h3">Hộ Kinh Doanh</h3>
-          <div class="price">200K</div>
-          <div class="period" data-i18n="plan-period">đồng / tháng</div>
-          <ul>
-            <li data-i18n="plan1-li1">Sổ sách đơn giản (TT 88)</li>
-            <li data-i18n="plan1-li2">Kê khai thuế GTGT</li>
-            <li data-i18n="plan1-li3">Hóa đơn bán lẻ</li>
-            <li data-i18n="plan1-li4">Báo cáo thuế cuối năm</li>
-            <li data-i18n="plan1-li5">Hỗ trợ qua Zalo</li>
-          </ul>
-          <a href="#contact" class="plan-cta" data-i18n="plan-cta">Đăng ký</a>
+      <div class="pricing-card featured">
+        <div class="label">Phổ biến</div>
+        <div class="lang-vi active">
+          <h3>Tiêu chuẩn</h3>
+          <div class="price">1,2M<span>/tháng</span></div>
+          <p>50-200 hóa đơn/tháng</p>
+          <ul><li>Kê khai GTGT + TNDN tạm tính</li></ul>
         </div>
-
-        <div class="plan featured">
-          <span class="badge" data-i18n="plan2-badge">Phổ biến nhất</span>
-          <h3 data-i18n="plan2-h3">Doanh Nghiệp Nhỏ</h3>
-          <div class="price">500K</div>
-          <div class="period" data-i18n="plan-period">đồng / tháng</div>
-          <ul>
-            <li data-i18n="plan2-li1">Đầy đủ sổ sách (TT 133)</li>
-            <li data-i18n="plan2-li2">Kê khai GTGT, TNCN, TNDN</li>
-            <li data-i18n="plan2-li3">Hóa đơn điện tử</li>
-            <li data-i18n="plan2-li4">Dashboard online</li>
-            <li data-i18n="plan2-li5">Báo cáo quản trị hàng tháng</li>
-            <li data-i18n="plan2-li6">Kết nối MISA</li>
-          </ul>
-          <a href="#contact" class="plan-cta" data-i18n="plan-cta">Đăng ký</a>
+        <div class="lang-en">
+          <h3>Standard</h3>
+          <div class="price">1.2M<span>/month</span></div>
+          <p>50-200 invoices/month</p>
+          <ul><li>GTGT + CIT estimate filing</li></ul>
         </div>
-
-        <div class="plan">
-          <h3 data-i18n="plan3-h3">Doanh Nghiệp Vừa</h3>
-          <div class="price">1.000K</div>
-          <div class="period" data-i18n="plan-period">đồng / tháng</div>
-          <ul>
-            <li data-i18n="plan3-li1">Đầy đủ sổ sách &amp; báo cáo (TT 200)</li>
-            <li data-i18n="plan3-li2">Kê khai &amp; quyết toán thuế</li>
-            <li data-i18n="plan3-li3">Hóa đơn điện tử (không giới hạn)</li>
-            <li data-i18n="plan3-li4">Dashboard &amp; báo cáo tùy chỉnh</li>
-            <li data-i18n="plan3-li5">Tư vấn thuế định kỳ</li>
-            <li data-i18n="plan3-li6">Kết nối ngân hàng tự động</li>
-          </ul>
-          <a href="#contact" class="plan-cta" data-i18n="plan-cta">Đăng ký</a>
-        </div>
-
       </div>
-    </div>
-  </section>
-
-  <section id="why" style="background:#f0f7f7;">
-    <div class="container">
-      <h2 data-i18n="why-h2">Tại sao ba tầng thay vì một?</h2>
-      <p class="subtitle" data-i18n="why-sub">Mỗi tầng giải quyết vấn đề mà tầng kia không thể làm một mình</p>
-      <div class="why-grid">
-
-        <div class="why-item">
-          <span class="icon" aria-hidden="true">⚙️</span>
-          <h4 data-i18n="why1-h4">Engine không bỏ sót deadline</h4>
-          <p data-i18n="why1-p">Tự động kê khai và nộp thuế đúng hạn 100%. Không phụ thuộc vào trí nhớ của người — máy móc không nghỉ lễ, không quên.</p>
+      <div class="pricing-card">
+        <div class="lang-vi active">
+          <h3>Cao cấp</h3>
+          <div class="price">2M<span>/tháng</span></div>
+          <p>200+ hóa đơn hoặc có P&L</p>
+          <ul><li>GTGT + TNDN + Báo cáo P&L</li></ul>
         </div>
-        <div class="why-item">
-          <span class="icon" aria-hidden="true">👨‍💼</span>
-          <h4 data-i18n="why2-h4">Advisory giải quyết tình huống thực</h4>
-          <p data-i18n="why2-p">Thanh tra thuế, tranh chấp, quyết toán cuối năm — phần mềm không thể thay thế chuyên gia 30 năm đã xử lý hàng trăm tình huống tương tự.</p>
-        </div>
-        <div class="why-item">
-          <span class="icon" aria-hidden="true">📱</span>
-          <h4 data-i18n="why3-h4">Platform cho bạn thấy số thật</h4>
-          <p data-i18n="why3-p">Không cần gọi điện hỏi kế toán. Doanh thu, chi phí, dòng tiền luôn hiển thị real-time — bạn ra quyết định dựa trên số liệu, không phải cảm tính.</p>
-        </div>
-        <div class="why-item">
-          <span class="icon" aria-hidden="true">🔒</span>
-          <h4 data-i18n="why4-h4">Bảo mật chuẩn PDPL</h4>
-          <p data-i18n="why4-p">Dữ liệu tài chính được bảo vệ theo Luật Bảo vệ Dữ liệu Cá nhân. Ba tầng, một cam kết bảo mật tuyệt đối.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="testimonials">
-    <div class="container">
-      <h2 data-i18n="test-h2">Khách hàng nói gì</h2>
-      <p class="subtitle" data-i18n="test-sub">Hơn 200 doanh nghiệp đang tin dùng dịch vụ của chúng tôi</p>
-      <div class="testimonials-grid">
-
-        <div class="testimonial">
-          <div class="stars" aria-label="5 sao" data-i18n-aria="stars-aria">★★★★★</div>
-          <blockquote data-i18n="test1-quote">Trước đây thuê kế toán nội bộ tốn 8 triệu/tháng. Chuyển sang Viet Kế Thuế chỉ 500K mà báo cáo còn chi tiết hơn, lại không lo nhân viên nghỉ đột xuất.</blockquote>
-          <div class="author">
-            <strong data-i18n="test1-author">Nguyễn Minh T.</strong>
-            <span data-i18n="test1-role">CEO, Công ty TNHH Đông Phương</span>
-          </div>
-        </div>
-
-        <div class="testimonial">
-          <div class="stars" aria-label="5 sao" data-i18n-aria="stars-aria">★★★★★</div>
-          <blockquote data-i18n="test2-quote">Kê khai thuế đúng hạn 100%, không một lần bị phạt chậm. Nhân viên tư vấn nhiệt tình, giải thích rõ ràng từng khoản thuế.</blockquote>
-          <div class="author">
-            <strong data-i18n="test2-author">Trần Thị H.</strong>
-            <span data-i18n="test2-role">Giám đốc, Công ty CP Minh Phúc</span>
-          </div>
-        </div>
-
-        <div class="testimonial">
-          <div class="stars" aria-label="5 sao" data-i18n-aria="stars-aria">★★★★★</div>
-          <blockquote data-i18n="test3-quote">Gửi hóa đơn qua Zalo là có kết quả sau 24h. Dashboard online tiện lợi, xem được số liệu bất cứ lúc nào ngay trên điện thoại.</blockquote>
-          <div class="author">
-            <strong data-i18n="test3-author">Lê Văn K.</strong>
-            <span data-i18n="test3-role">Chủ hộ kinh doanh, TP.HCM</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2 data-i18n="contact-h2">Liên hệ ngay</h2>
-      <p class="subtitle" data-i18n="contact-sub">Để lại thông tin — chúng tôi sẽ gọi lại trong 24h</p>
-      <div class="contact-grid">
-        <div>
-          <div class="contact-info">
-            <p><strong data-i18n="contact-phone">📞 Điện thoại:</strong> [Số điện thoại]</p>
-            <p><strong data-i18n="contact-email">📧 Email:</strong> info@vietkethue.com</p>
-            <p><strong data-i18n="contact-zalo">💬 Zalo:</strong> [Zalo ID]</p>
-            <p><strong data-i18n="contact-addr">🏢 Địa chỉ:</strong> [Địa chỉ văn phòng]</p>
-            <p class="note" data-i18n="contact-note">Bạn có thể gửi chứng từ qua email hoặc Zalo bất kỳ lúc nào. Chúng tôi xử lý trong vòng 24h làm việc.</p>
-          </div>
-        </div>
-        <div>
-          <form class="contact-form" id="contact-form" novalidate>
-            <div class="form-field">
-              <label for="f-name"><span data-i18n="label-name">Họ tên</span> <span class="req" aria-hidden="true">*</span></label>
-              <input type="text" id="f-name" name="name" required autocomplete="name"
-                data-i18n-ph="ph-name" placeholder="Nguyễn Văn A">
-            </div>
-            <div class="form-field">
-              <label for="f-phone"><span data-i18n="label-phone">Số điện thoại</span> <span class="req" aria-hidden="true">*</span></label>
-              <input type="tel" id="f-phone" name="phone" required autocomplete="tel" pattern="[0-9\s\+\-]{9,15}"
-                data-i18n-ph="ph-phone" placeholder="0901 234 567">
-            </div>
-            <div class="form-field">
-              <label for="f-email" data-i18n="label-email">Email</label>
-              <input type="email" id="f-email" name="email" autocomplete="email"
-                data-i18n-ph="ph-email" placeholder="ten@congty.com">
-            </div>
-            <div class="form-field">
-              <label for="f-company" data-i18n="label-company">Tên công ty</label>
-              <input type="text" id="f-company" name="company" autocomplete="organization"
-                data-i18n-ph="ph-company" placeholder="Công ty TNHH ABC">
-            </div>
-            <div class="form-field">
-              <label for="f-message" data-i18n="label-message">Nội dung</label>
-              <textarea id="f-message" name="message" rows="3"
-                data-i18n-ph="ph-message" placeholder="Dịch vụ bạn cần, quy mô doanh nghiệp..."></textarea>
-            </div>
-            <button type="submit" data-i18n="btn-submit">Gửi yêu cầu</button>
-            <div id="form-success" class="form-success" role="alert" aria-live="polite" data-i18n="form-success">✅ Cảm ơn bạn! Chúng tôi sẽ liên hệ trong 24h.</div>
-          </form>
+        <div class="lang-en">
+          <h3>Premium</h3>
+          <div class="price">2M<span>/month</span></div>
+          <p>200+ invoices or incl. P&L</p>
+          <ul><li>GTGT + CIT + Monthly P&L</li></ul>
         </div>
       </div>
     </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p data-i18n="footer-copy">Viet Kế Thuế &copy; 2026 — Dịch vụ kế toán &amp; thuế cho doanh nghiệp SME</p>
-      <p class="muted" data-i18n="footer-muted">Số ĐKKD: [MST] | Chịu trách nhiệm: [Tên] — [SĐT]</p>
+    <div style="text-align:center;margin-top:20px;font-size:0.9rem;color:#64748b;">
+      <span class="lang-vi active">💰 Miễn phí 3 tháng đầu cho khách hàng pilot. Hãy liên hệ để biết chi tiết.</span>
+      <span class="lang-en">💰 First 3 months free for pilot clients. Contact us for details.</span>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    var STRINGS = {
-      vi: {
-        'skip-link': 'Bỏ qua điều hướng',
-        'nav-aria': 'Điều hướng chính',
-        'logo-aria': 'Viet Kế Thuế — Trang chủ',
-        'nav-toggle-open': 'Mở menu điều hướng',
-        'nav-toggle-close': 'Đóng menu điều hướng',
-        'nav-services': 'Dịch vụ',
-        'nav-layers': 'Ba Tầng',
-        'nav-pricing': 'Bảng giá',
-        'nav-why': 'Tại sao',
-        'nav-contact': 'Liên hệ',
-        'hero-h1': 'Không chỉ là kế toán — Compliance Engine, Advisory Layer và Tech Platform trong một',
-        'hero-p': 'Viet Kế Thuế bảo vệ doanh nghiệp trên ba tầng: máy móc tự động không bỏ sót deadline, chuyên gia 30 năm xử lý phán đoán, và dashboard để bạn nhìn thấy số liệu real-time — không cần gọi hỏi.',
-        'hero-stat-1': 'Doanh nghiệp tin dùng',
-        'hero-stat-2': 'Năm kinh nghiệm kế toán',
-        'hero-stat-3': 'Kê khai đúng hạn',
-        'hero-badge-1': '⚙️ Compliance Engine · MISA + TT 133/200/88',
-        'hero-badge-2': '👨‍💼 Advisory Layer · Kế toán 30+ năm',
-        'hero-badge-3': '📱 Tech Platform · Dashboard real-time',
-        'hero-cta': 'Đăng ký tư vấn miễn phí',
-        'hero-secondary': 'Xem ba tầng hoạt động thế nào',
-        'stats-aria': 'Số liệu nổi bật',
-        'badges-aria': 'Ba tầng nền tảng',
-        'services-h2': 'Dịch vụ trên ba tầng nền tảng',
-        'services-sub': 'Mỗi nghiệp vụ được phân công đúng tầng — máy làm phần máy, người làm phần người',
-        'svc1-h3': 'Ghi sổ tự động',
-        'svc1-p': 'MISA xử lý toàn bộ hạch toán: chứng từ mua vào — bán ra, tính giá vốn, khấu hao TSCĐ, bút toán kết chuyển cuối kỳ. Tự động phát hiện sai lệch trước khi ký sổ.',
-        'svc2-h3': 'Kê khai & nộp thuế',
-        'svc2-p': 'Tờ khai GTGT, TNCN, TNDN, thuế môn bài được lập và nộp tự động qua cổng điện tử. Tuân thủ đầy đủ TT 133, TT 200, TT 88 — không trễ một ngày, không bị phạt một đồng.',
-        'svc3-h3': 'Hóa đơn điện tử',
-        'svc3-p': 'Phát hành hóa đơn GTGT theo Nghị định 123, kết nối trực tiếp với TCT, tự động truyền mã xác thực. PDPL-compliant — dữ liệu được bảo vệ theo đúng luật.',
-        'svc4-h3': 'Tư vấn & rà soát thuế',
-        'svc4-p': 'Kế toán 30+ năm kinh nghiệm review mọi hồ sơ trước khi nộp. Phát hiện rủi ro thuế, giải đáp vướng mắc, soạn thảo hợp đồng và hỗ trợ quyết toán cuối năm.',
-        'svc5-h3': 'Đại diện & tranh biện thuế',
-        'svc5-p': 'Làm việc trực tiếp với cơ quan thuế thay mặt doanh nghiệp — giải trình, thanh tra, hoàn thuế, xử lý tranh chấp. AI lo phần thủ tục, chuyên gia lo phần phán đoán.',
-        'svc6-h3': 'Dashboard & báo cáo real-time',
-        'svc6-p': 'Doanh thu, chi phí, dòng tiền, công nợ — cập nhật tức thời, truy cập trên điện thoại bất kỳ lúc nào. Gửi chứng từ qua Zalo hoặc email, AI nhập liệu tự động.',
-        'layers-h2': 'Ba tầng — một giải pháp hoàn chỉnh',
-        'layers-sub': 'Engine là nền móng, Advisory là lớp phán đoán, Platform là giao diện bạn nhìn thấy mỗi ngày',
-        'layer3-label': 'Tầng 3 · Client-Facing',
-        'layer3-tagline': 'Những gì bạn nhìn thấy và tương tác mỗi ngày',
-        'layer3-feat1': 'Dashboard doanh thu, chi phí, dòng tiền real-time',
-        'layer3-feat2': 'Truy cập mobile — xem số liệu mọi lúc mọi nơi',
-        'layer3-feat3': 'Nhận chứng từ qua Zalo & email, AI nhập liệu tự động',
-        'layer3-feat4': 'Báo cáo tùy chỉnh xuất PDF / Excel',
-        'connector': 'được hỗ trợ bởi',
-        'layer2-label': 'Tầng 2 · Human Judgment',
-        'layer2-tagline': 'AI lo phần thô — chuyên gia lo phần phán đoán',
-        'layer2-feat1': 'Kế toán 30+ năm kinh nghiệm review mọi hồ sơ',
-        'layer2-feat2': 'Phát hiện rủi ro thuế trước khi cơ quan thuế phát hiện',
-        'layer2-feat3': 'Tranh biện, giải trình trực tiếp với cơ quan thuế',
-        'layer2-feat4': 'Check-in định kỳ và review quyết toán hàng quý',
-        'layer1-label': 'Tầng 1 · Foundation',
-        'layer1-tagline': 'Nền móng không bao giờ trễ hạn, không bao giờ bỏ sót',
-        'layer1-feat1': 'MISA-powered — tự động hạch toán và kê khai',
-        'layer1-feat2': 'PDPL-compliant — hóa đơn điện tử theo Nghị định 123',
-        'layer1-feat3': 'Tuân thủ đầy đủ TT 133 / TT 200 / TT 88',
-        'layer1-feat4': 'Phát hiện lỗi tự động, bút toán kết chuyển cuối kỳ',
-        'how-h2': 'Cách chúng tôi làm việc',
-        'how-sub': 'Online, đơn giản, minh bạch',
-        'step1-h4': 'Đăng ký',
-        'step1-p': 'Bạn điền thông tin cơ bản — chúng tôi soạn hợp đồng và hướng dẫn các bước tiếp theo trong vòng 24h.',
-        'step2-h4': 'Nhận chứng từ',
-        'step2-p': 'Bạn gửi hóa đơn, hợp đồng, sao kê ngân hàng qua email hoặc Zalo. AI tự động trích xuất và phân loại.',
-        'step3-h4': 'Xử lý & báo cáo',
-        'step3-p': 'Đội ngũ kế toán kiểm tra, hạch toán. Bạn theo dõi số liệu qua dashboard online mọi lúc.',
-        'step4-h4': 'Kê khai & nộp',
-        'step4-p': 'Tự động lập tờ khai, nộp thuế đúng hạn. Bạn nhận thông báo qua Zalo hoặc email mỗi kỳ.',
-        'pricing-h2': 'Bảng giá',
-        'pricing-sub': 'Phù hợp với mọi quy mô doanh nghiệp',
-        'plan1-h3': 'Hộ Kinh Doanh',
-        'plan-period': 'đồng / tháng',
-        'plan1-li1': 'Sổ sách đơn giản (TT 88)',
-        'plan1-li2': 'Kê khai thuế GTGT',
-        'plan1-li3': 'Hóa đơn bán lẻ',
-        'plan1-li4': 'Báo cáo thuế cuối năm',
-        'plan1-li5': 'Hỗ trợ qua Zalo',
-        'plan-cta': 'Đăng ký',
-        'plan2-badge': 'Phổ biến nhất',
-        'plan2-h3': 'Doanh Nghiệp Nhỏ',
-        'plan2-li1': 'Đầy đủ sổ sách (TT 133)',
-        'plan2-li2': 'Kê khai GTGT, TNCN, TNDN',
-        'plan2-li3': 'Hóa đơn điện tử',
-        'plan2-li4': 'Dashboard online',
-        'plan2-li5': 'Báo cáo quản trị hàng tháng',
-        'plan2-li6': 'Kết nối MISA',
-        'plan3-h3': 'Doanh Nghiệp Vừa',
-        'plan3-li1': 'Đầy đủ sổ sách & báo cáo (TT 200)',
-        'plan3-li2': 'Kê khai & quyết toán thuế',
-        'plan3-li3': 'Hóa đơn điện tử (không giới hạn)',
-        'plan3-li4': 'Dashboard & báo cáo tùy chỉnh',
-        'plan3-li5': 'Tư vấn thuế định kỳ',
-        'plan3-li6': 'Kết nối ngân hàng tự động',
-        'why-h2': 'Tại sao ba tầng thay vì một?',
-        'why-sub': 'Mỗi tầng giải quyết vấn đề mà tầng kia không thể làm một mình',
-        'why1-h4': 'Engine không bỏ sót deadline',
-        'why1-p': 'Tự động kê khai và nộp thuế đúng hạn 100%. Không phụ thuộc vào trí nhớ của người — máy móc không nghỉ lễ, không quên.',
-        'why2-h4': 'Advisory giải quyết tình huống thực',
-        'why2-p': 'Thanh tra thuế, tranh chấp, quyết toán cuối năm — phần mềm không thể thay thế chuyên gia 30 năm đã xử lý hàng trăm tình huống tương tự.',
-        'why3-h4': 'Platform cho bạn thấy số thật',
-        'why3-p': 'Không cần gọi điện hỏi kế toán. Doanh thu, chi phí, dòng tiền luôn hiển thị real-time — bạn ra quyết định dựa trên số liệu, không phải cảm tính.',
-        'why4-h4': 'Bảo mật chuẩn PDPL',
-        'why4-p': 'Dữ liệu tài chính được bảo vệ theo Luật Bảo vệ Dữ liệu Cá nhân. Ba tầng, một cam kết bảo mật tuyệt đối.',
-        'test-h2': 'Khách hàng nói gì',
-        'test-sub': 'Hơn 200 doanh nghiệp đang tin dùng dịch vụ của chúng tôi',
-        'stars-aria': '5 sao',
-        'test1-quote': 'Trước đây thuê kế toán nội bộ tốn 8 triệu/tháng. Chuyển sang Viet Kế Thuế chỉ 500K mà báo cáo còn chi tiết hơn, lại không lo nhân viên nghỉ đột xuất.',
-        'test1-author': 'Nguyễn Minh T.',
-        'test1-role': 'CEO, Công ty TNHH Đông Phương',
-        'test2-quote': 'Kê khai thuế đúng hạn 100%, không một lần bị phạt chậm. Nhân viên tư vấn nhiệt tình, giải thích rõ ràng từng khoản thuế.',
-        'test2-author': 'Trần Thị H.',
-        'test2-role': 'Giám đốc, Công ty CP Minh Phúc',
-        'test3-quote': 'Gửi hóa đơn qua Zalo là có kết quả sau 24h. Dashboard online tiện lợi, xem được số liệu bất cứ lúc nào ngay trên điện thoại.',
-        'test3-author': 'Lê Văn K.',
-        'test3-role': 'Chủ hộ kinh doanh, TP.HCM',
-        'contact-h2': 'Liên hệ ngay',
-        'contact-sub': 'Để lại thông tin — chúng tôi sẽ gọi lại trong 24h',
-        'contact-phone': '📞 Điện thoại:',
-        'contact-email': '📧 Email:',
-        'contact-zalo': '💬 Zalo:',
-        'contact-addr': '🏢 Địa chỉ:',
-        'contact-note': 'Bạn có thể gửi chứng từ qua email hoặc Zalo bất kỳ lúc nào. Chúng tôi xử lý trong vòng 24h làm việc.',
-        'label-name': 'Họ tên',
-        'label-phone': 'Số điện thoại',
-        'label-email': 'Email',
-        'label-company': 'Tên công ty',
-        'label-message': 'Nội dung',
-        'ph-name': 'Nguyễn Văn A',
-        'ph-phone': '0901 234 567',
-        'ph-email': 'ten@congty.com',
-        'ph-company': 'Công ty TNHH ABC',
-        'ph-message': 'Dịch vụ bạn cần, quy mô doanh nghiệp...',
-        'btn-submit': 'Gửi yêu cầu',
-        'btn-sending': 'Đang gửi...',
-        'form-success': '✅ Cảm ơn bạn! Chúng tôi sẽ liên hệ trong 24h.',
-        'footer-copy': 'Viet Kế Thuế © 2026 — Dịch vụ kế toán & thuế cho doanh nghiệp SME',
-        'footer-muted': 'Số ĐKKD: [MST] | Chịu trách nhiệm: [Tên] — [SĐT]'
-      },
-      en: {
-        'skip-link': 'Skip to main content',
-        'nav-aria': 'Main navigation',
-        'logo-aria': 'Viet Kế Thuế — Home',
-        'nav-toggle-open': 'Open navigation menu',
-        'nav-toggle-close': 'Close navigation menu',
-        'nav-services': 'Services',
-        'nav-layers': 'Three Layers',
-        'nav-pricing': 'Pricing',
-        'nav-why': 'Why Us',
-        'nav-contact': 'Contact',
-        'hero-h1': 'More than accounting — Compliance Engine, Advisory Layer, and Tech Platform in one',
-        'hero-p': 'Viet Kế Thuế protects your business across three layers: automated systems that never miss a deadline, 30-year veteran advisors for judgment calls, and a real-time dashboard so you always see the numbers — no need to call and ask.',
-        'hero-stat-1': 'Businesses served',
-        'hero-stat-2': 'Years of accounting experience',
-        'hero-stat-3': 'On-time filings',
-        'hero-badge-1': '⚙️ Compliance Engine · MISA + Decree 133/200/88',
-        'hero-badge-2': '👨‍💼 Advisory Layer · 30+ year accountants',
-        'hero-badge-3': '📱 Tech Platform · Real-time dashboard',
-        'hero-cta': 'Book a free consultation',
-        'hero-secondary': 'See how the three layers work',
-        'stats-aria': 'Key statistics',
-        'badges-aria': 'Three foundational layers',
-        'services-h2': 'Services across three foundational layers',
-        'services-sub': 'Each task assigned to the right layer — machines handle the mechanical, people handle the judgment',
-        'svc1-h3': 'Automated bookkeeping',
-        'svc1-p': 'MISA handles all accounting entries: purchase and sales documents, cost of goods, fixed asset depreciation, and period-end closing entries. Automatically detects discrepancies before sign-off.',
-        'svc2-h3': 'Tax filing & payment',
-        'svc2-p': 'VAT, PIT, CIT, and business license tax declarations are prepared and submitted automatically through the e-portal. Fully compliant with Decree 133, 200, 88 — never a day late, never a penny in penalties.',
-        'svc3-h3': 'E-invoicing',
-        'svc3-p': 'VAT invoice issuance under Decree 123, direct connection with the General Department of Taxation, automatic authentication code transmission. PDPL-compliant — data protected under law.',
-        'svc4-h3': 'Tax advisory & review',
-        'svc4-p': 'Accountants with 30+ years review every dossier before submission. Identify tax risks, resolve queries, draft contracts, and support year-end settlement.',
-        'svc5-h3': 'Tax representation & dispute',
-        'svc5-p': 'Work directly with tax authorities on behalf of your business — explanations, audits, refunds, dispute resolution. AI handles the paperwork, experts handle the judgment.',
-        'svc6-h3': 'Real-time dashboard & reports',
-        'svc6-p': 'Revenue, expenses, cash flow, receivables — updated instantly, accessible on your phone anytime. Send documents via Zalo or email, AI auto-enters the data.',
-        'layers-h2': 'Three layers — one complete solution',
-        'layers-sub': 'Engine is the foundation, Advisory is the judgment layer, Platform is the interface you see every day',
-        'layer3-label': 'Layer 3 · Client-Facing',
-        'layer3-tagline': 'What you see and interact with every day',
-        'layer3-feat1': 'Real-time revenue, expense, and cash flow dashboard',
-        'layer3-feat2': 'Mobile access — view data anywhere, anytime',
-        'layer3-feat3': 'Receive documents via Zalo & email, AI auto-entry',
-        'layer3-feat4': 'Custom reports exportable as PDF / Excel',
-        'connector': 'powered by',
-        'layer2-label': 'Layer 2 · Human Judgment',
-        'layer2-tagline': 'AI handles the rough work — experts handle the judgment',
-        'layer2-feat1': '30+ year accountants review every dossier',
-        'layer2-feat2': 'Identify tax risks before the tax authority does',
-        'layer2-feat3': 'Dispute resolution and direct dealings with tax authorities',
-        'layer2-feat4': 'Regular check-ins and quarterly settlement reviews',
-        'layer1-label': 'Layer 1 · Foundation',
-        'layer1-tagline': 'A foundation that never misses a deadline, never misses a beat',
-        'layer1-feat1': 'MISA-powered — automated accounting and filing',
-        'layer1-feat2': 'PDPL-compliant — e-invoicing under Decree 123',
-        'layer1-feat3': 'Fully compliant with Decree 133 / 200 / 88',
-        'layer1-feat4': 'Automatic error detection, period-end closing entries',
-        'how-h2': 'How we work',
-        'how-sub': 'Online, simple, transparent',
-        'step1-h4': 'Sign up',
-        'step1-p': 'You fill in basic information — we prepare the contract and guide you through the next steps within 24 hours.',
-        'step2-h4': 'Send documents',
-        'step2-p': 'Send invoices, contracts, bank statements via email or Zalo. AI automatically extracts and categorizes them.',
-        'step3-h4': 'Process & report',
-        'step3-p': 'Our accounting team verifies and posts entries. You track the numbers through the online dashboard anytime.',
-        'step4-h4': 'File & pay',
-        'step4-p': 'Automatically prepare declarations and pay taxes on time. You receive notifications via Zalo or email each period.',
-        'pricing-h2': 'Pricing',
-        'pricing-sub': 'Suitable for businesses of every size',
-        'plan1-h3': 'Sole Trader',
-        'plan-period': 'VND / month',
-        'plan1-li1': 'Simple bookkeeping (Decree 88)',
-        'plan1-li2': 'VAT tax filing',
-        'plan1-li3': 'Retail invoices',
-        'plan1-li4': 'Year-end tax report',
-        'plan1-li5': 'Zalo support',
-        'plan-cta': 'Sign up',
-        'plan2-badge': 'Most popular',
-        'plan2-h3': 'Small Business',
-        'plan2-li1': 'Full bookkeeping (Decree 133)',
-        'plan2-li2': 'VAT, PIT, CIT filing',
-        'plan2-li3': 'E-invoicing',
-        'plan2-li4': 'Online dashboard',
-        'plan2-li5': 'Monthly management reports',
-        'plan2-li6': 'MISA integration',
-        'plan3-h3': 'Medium Business',
-        'plan3-li1': 'Full bookkeeping & reports (Decree 200)',
-        'plan3-li2': 'Tax filing & settlement',
-        'plan3-li3': 'E-invoicing (unlimited)',
-        'plan3-li4': 'Dashboard & custom reports',
-        'plan3-li5': 'Regular tax advisory',
-        'plan3-li6': 'Automatic bank connection',
-        'why-h2': 'Why three layers instead of one?',
-        'why-sub': 'Each layer solves problems the others cannot handle alone',
-        'why1-h4': 'Engine never misses a deadline',
-        'why1-p': '100% on-time filing and tax payment. No reliance on human memory — machines don\'t take holidays, don\'t forget.',
-        'why2-h4': 'Advisory handles real-world situations',
-        'why2-p': 'Tax audits, disputes, year-end settlements — software cannot replace a 30-year veteran who has handled hundreds of similar situations.',
-        'why3-h4': 'Platform shows you real numbers',
-        'why3-p': 'No need to call the accountant. Revenue, expenses, and cash flow always displayed in real-time — make decisions based on data, not guesswork.',
-        'why4-h4': 'PDPL-grade security',
-        'why4-p': 'Financial data protected under the Personal Data Protection Law. Three layers, one absolute commitment to security.',
-        'test-h2': 'What our clients say',
-        'test-sub': 'Over 200 businesses trust our services',
-        'stars-aria': '5 stars',
-        'test1-quote': 'We used to spend 8 million/month on an in-house accountant. Switching to Viet Kế Thuế costs only 500K and the reports are even more detailed — and we don\'t worry about staff calling in sick.',
-        'test1-author': 'Nguyen Minh T.',
-        'test1-role': 'CEO, Dong Phuong Co. Ltd',
-        'test2-quote': '100% on-time tax filings, not a single late penalty. The advisory staff are enthusiastic and explain each tax item clearly.',
-        'test2-author': 'Tran Thi H.',
-        'test2-role': 'Director, Minh Phuc Joint Stock Co.',
-        'test3-quote': 'Send an invoice via Zalo and get results within 24 hours. The online dashboard is convenient — check the numbers anytime right on my phone.',
-        'test3-author': 'Le Van K.',
-        'test3-role': 'Sole trader, Ho Chi Minh City',
-        'contact-h2': 'Get in touch',
-        'contact-sub': 'Leave your details — we\'ll call back within 24 hours',
-        'contact-phone': '📞 Phone:',
-        'contact-email': '📧 Email:',
-        'contact-zalo': '💬 Zalo:',
-        'contact-addr': '🏢 Address:',
-        'contact-note': 'You can send documents via email or Zalo at any time. We process them within 24 business hours.',
-        'label-name': 'Full name',
-        'label-phone': 'Phone number',
-        'label-email': 'Email',
-        'label-company': 'Company name',
-        'label-message': 'Message',
-        'ph-name': 'Nguyen Van A',
-        'ph-phone': '0901 234 567',
-        'ph-email': 'name@company.com',
-        'ph-company': 'ABC Co. Ltd',
-        'ph-message': 'Services you need, business size...',
-        'btn-submit': 'Send request',
-        'btn-sending': 'Sending...',
-        'form-success': '✅ Thank you! We\'ll be in touch within 24 hours.',
-        'footer-copy': 'Viet Kế Thuế © 2026 — Accounting & tax services for SME businesses',
-        'footer-muted': 'Business Reg. No: [Tax ID] | Responsible: [Name] — [Phone]'
-      }
-    };
+<!-- Team -->
+<section id="team">
+  <div class="container">
+    <div class="lang-vi active"><h2>Đội ngũ <span>của chúng tôi</span></h2></div>
+    <div class="lang-en"><h2>Our <span>team</span></h2></div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="avatar">🖥️</div>
+        <h3>Duong</h3>
+        <div class="role">Tech Lead</div>
+        <p class="lang-vi active">Xây dựng hệ thống AI và nền tảng công nghệ</p>
+        <p class="lang-en">Building the AI pipeline and tech platform</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">📋</div>
+        <h3>Vi</h3>
+        <div class="role">Operations</div>
+        <p class="lang-vi active">Xử lý hóa đơn, chuẩn bị tờ khai, liên hệ khách hàng</p>
+        <p class="lang-en">Processes invoices, prepares declarations, client contact</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">👩‍🏫</div>
+        <h3>Bác Loan</h3>
+        <div class="role">Cố vấn chuyên môn</div>
+        <p class="lang-vi active">30+ năm kinh nghiệm kế toán trưởng. Rà soát, ký duyệt tờ khai.</p>
+        <p class="lang-en">30+ years as lead accountant. Reviews and signs off on declarations.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    var currentLang = 'vi';
-    var navToggle = document.querySelector('.nav-toggle');
-    var navMenu = document.getElementById('nav-menu');
+<!-- Why us -->
+<section id="why">
+  <div class="container">
+    <div class="lang-vi active"><h2>Tại sao <span>chọn chúng tôi</span></h2></div>
+    <div class="lang-en"><h2>Why <span>choose us</span></h2></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="lang-vi active"><h3>✅ Công nghệ AI</h3><p>Hệ thống tự động xử lý hóa đơn, tính toán, không sai sót nhập liệu thủ công.</p></div>
+        <div class="lang-en"><h3>✅ AI-powered</h3><p>Auto-processes invoices, no manual data entry errors.</p></div>
+      </div>
+      <div class="service-card">
+        <div class="lang-vi active"><h3>✅ Kế toán giàu kinh nghiệm</h3><p>Bác Loan rà soát và ký duyệt từng tờ khai — đảm bảo độ chính xác.</p></div>
+        <div class="lang-en"><h3>✅ Experienced accountant</h3><p>Bác Loan reviews and approves every declaration — accuracy guaranteed.</p></div>
+      </div>
+      <div class="service-card">
+        <div class="lang-vi active"><h3>✅ Đúng hạn, không phạt</h3><p>Nhắc hạn và nộp tờ khai đúng ngày. Không lo bị phạt chậm nộp.</p></div>
+        <div class="lang-en"><h3>✅ On time, no penalties</h3><p>Deadline reminders + on-time filing. No late penalties.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    function applyLang(lang) {
-      currentLang = lang;
-      document.documentElement.lang = lang === 'en' ? 'en' : 'vi';
-      localStorage.setItem('lang', lang);
+<!-- Contact -->
+<section id="contact">
+  <div class="container" style="text-align:center;">
+    <div class="lang-vi active">
+      <h2>Bắt đầu <span>ngay</span></h2>
+      <p style="margin-bottom:24px;color:#475569;">Chỉ cần một tin nhắn Zalo. Chúng tôi sẽ hướng dẫn bạn các bước tiếp theo.</p>
+      <a href="https://zalo.me/your-zalo-id" class="cta" target="_blank" rel="noopener">Chat Zalo ngay</a><br>
+      <span style="display:block;margin-top:12px;color:#64748b;font-size:0.9rem;">Hoặc email: <a href="mailto:vietkethue@gmail.com" style="color:#0d6e6e;">vietkethue@gmail.com</a></span>
+    </div>
+    <div class="lang-en">
+      <h2>Get <span>started</span></h2>
+      <p style="margin-bottom:24px;color:#475569;">Just send a Zalo message. We'll guide you through the next steps.</p>
+      <a href="https://zalo.me/your-zalo-id" class="cta" target="_blank" rel="noopener">Chat on Zalo</a><br>
+      <span style="display:block;margin-top:12px;color:#64748b;font-size:0.9rem;">Or email: <a href="mailto:vietkethue@gmail.com" style="color:#0d6e6e;">vietkethue@gmail.com</a></span>
+    </div>
+  </div>
+</section>
 
-      document.querySelectorAll('.lang-btn').forEach(function(btn) {
-        var active = btn.getAttribute('data-lang') === lang;
-        btn.classList.toggle('active', active);
-        btn.setAttribute('aria-pressed', String(active));
-      });
+</main>
 
-      document.querySelectorAll('[data-i18n]').forEach(function(el) {
-        var key = el.getAttribute('data-i18n');
-        if (STRINGS[lang][key] !== undefined) el.textContent = STRINGS[lang][key];
-      });
+<footer>
+  <div class="container">
+    <div class="lang-vi active">
+      <p>Việt Kế Thuế — Dịch vụ kê khai thuế ứng dụng công nghệ AI</p>
+      <p style="margin-top:8px;">Hợp tác với chuyên gia kế toán 30+ năm kinh nghiệm</p>
+    </div>
+    <div class="lang-en">
+      <p>Viet Kế Thuế — AI-powered tax declaration services</p>
+      <p style="margin-top:8px;">In partnership with 30+ year accounting veteran</p>
+    </div>
+    <div class="meta">
+      <p>&copy; 2026 Việt Kế Thuế</p>
+    </div>
+  </div>
+</footer>
 
-      document.querySelectorAll('[data-i18n-ph]').forEach(function(el) {
-        var key = el.getAttribute('data-i18n-ph');
-        if (STRINGS[lang][key] !== undefined) el.placeholder = STRINGS[lang][key];
-      });
+<script>
+function toggleLang() {
+  const isVI = document.querySelector('.lang-vi.active') !== null;
+  document.querySelectorAll('.lang-vi, .lang-en').forEach(el => el.classList.toggle('active'));
+  document.querySelector('.lang-toggle').textContent = isVI ? 'VI' : 'EN';
+}
 
-      document.querySelectorAll('[data-i18n-aria]').forEach(function(el) {
-        var key = el.getAttribute('data-i18n-aria');
-        if (STRINGS[lang][key] !== undefined) el.setAttribute('aria-label', STRINGS[lang][key]);
-      });
-
-      var isOpen = navMenu.classList.contains('open');
-      navToggle.setAttribute('aria-label', STRINGS[lang][isOpen ? 'nav-toggle-close' : 'nav-toggle-open']);
-    }
-
-    function detectLang() {
-      var stored = localStorage.getItem('lang');
-      if (stored === 'vi' || stored === 'en') return stored;
-      return 'vi';
-    }
-
-    applyLang(detectLang());
-
-    document.querySelectorAll('.lang-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        applyLang(btn.getAttribute('data-lang'));
-      });
-    });
-
-    navToggle.addEventListener('click', function() {
-      var isOpen = navMenu.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-      navToggle.setAttribute('aria-label', STRINGS[currentLang][isOpen ? 'nav-toggle-close' : 'nav-toggle-open']);
-      navToggle.textContent = isOpen ? '✕' : '☰';
-    });
-
-    navMenu.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        navMenu.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.setAttribute('aria-label', STRINGS[currentLang]['nav-toggle-open']);
-        navToggle.textContent = '☰';
-      });
-    });
-
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var form = this;
-      var btn = form.querySelector('button[type="submit"]');
-      var success = document.getElementById('form-success');
-      btn.textContent = STRINGS[currentLang]['btn-sending'];
-      btn.disabled = true;
-      setTimeout(function() {
-        form.reset();
-        applyLang(currentLang);
-        success.style.display = 'block';
-        btn.disabled = false;
-        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 800);
-    });
-  </script>
-
+// Set default based on browser
+if (navigator.language && navigator.language.startsWith('vi')) {
+  document.querySelector('.lang-en.active')?.classList.remove('active');
+  document.querySelector('.lang-vi')?.classList.add('active');
+  document.querySelector('.lang-toggle').textContent = 'EN';
+}
+</script>
 </body>
 </html>
