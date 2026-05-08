@@ -146,7 +146,7 @@ footer strong{color:#ddd}
       <li><a href="#how-it-works" data-key="nav_how">Cách hoạt động</a></li>
       <li><a href="#services" data-key="nav_svc">Dịch vụ</a></li>
       <li><a href="#pricing" data-key="nav_price">Bảng giá</a></li>
-      <li><a href="#team" data-key="nav_team">Đội ngũ</a></li>
+      
       <li><a href="#contact" class="nav-cta" data-key="nav_contact">Liên hệ</a></li>
     </ul>
     <div class="nav-end">
@@ -258,7 +258,7 @@ footer strong{color:#ddd}
         <div class="price-card">
           <div class="price-name" data-key="p1_name">Starter</div>
           <div class="price-sub" data-key="p1_sub">Dưới 50 hóa đơn/tháng</div>
-          <div class="price-amount">500K–800K<em data-key="p_per">/tháng</em></div>
+          <div class="price-amount">0,5–0,8 Tr<em data-key="p_per">/tháng</em></div>
           <hr class="price-divider">
           <ul class="price-features">
             <li data-key="p1_f1">Khai GTGT hàng tháng</li>
@@ -272,7 +272,7 @@ footer strong{color:#ddd}
           <div class="popular-badge" data-key="popular">Phổ biến nhất</div>
           <div class="price-name" data-key="p2_name">Standard</div>
           <div class="price-sub" data-key="p2_sub">50–200 hóa đơn/tháng</div>
-          <div class="price-amount">1M–1,5M<em data-key="p_per">/tháng</em></div>
+          <div class="price-amount">1–1,5 Tr<em data-key="p_per">/tháng</em></div>
           <hr class="price-divider">
           <ul class="price-features">
             <li data-key="p2_f1">Tất cả gói Starter</li>
@@ -285,7 +285,7 @@ footer strong{color:#ddd}
         <div class="price-card">
           <div class="price-name" data-key="p3_name">Pro</div>
           <div class="price-sub" data-key="p3_sub">Trên 200 hóa đơn/tháng</div>
-          <div class="price-amount">2M<em data-key="p_per">/tháng</em></div>
+          <div class="price-amount">2 Tr<em data-key="p_per">/tháng</em></div>
           <hr class="price-divider">
           <ul class="price-features">
             <li data-key="p3_f1">Tất cả gói Standard</li>
@@ -299,35 +299,6 @@ footer strong{color:#ddd}
       <div class="price-pilot">
         <strong data-key="pilot_s">Pilot miễn phí:</strong>
         <span data-key="pilot_t"> Khách hàng thử nghiệm đầu tiên được dùng miễn phí 3 tháng. Chúng tôi cần phản hồi thực tế để cải thiện hệ thống.</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="team" class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 data-key="tm_h">Đội ngũ</h2>
-        <p data-key="tm_sub">Con người thực — không phải chatbot</p>
-      </div>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-avatar">👨‍💻</div>
-          <h3>Kỹ thuật</h3>
-          <div class="team-role" data-key="t1_role">Kỹ sư AI</div>
-          <p data-key="t1_p">Xây dựng hệ thống tự động: từ trích xuất hóa đơn AI đến tạo tờ khai hoàn chỉnh.</p>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">👩‍💼</div>
-          <h3>Vận hành</h3>
-          <div class="team-role" data-key="t2_role">Chuyên viên</div>
-          <p data-key="t2_p">Tiếp nhận và kiểm tra hóa đơn hàng ngày, xác nhận kết quả AI, hỗ trợ khách hàng qua Zalo.</p>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">👩‍🏫</div>
-          <h3>Kiểm duyệt</h3>
-          <div class="team-role" data-key="t3_role">Kế toán trưởng</div>
-          <p data-key="t3_p">30+ năm kinh nghiệm. Kiểm tra và ký duyệt mọi tờ khai trước khi nộp.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -380,7 +351,7 @@ footer strong{color:#ddd}
 <footer>
   <div class="container">
     <p><strong>Long An Solutions</strong> — <span data-key="ft">Kê khai thuế tự động cho doanh nghiệp nhỏ Việt Nam</span></p>
-    <p style="margin-top:6px;font-size:.78rem" data-key="ft2">© 2026 · Được xây dựng bởi đội ngũ nhỏ với công nghệ lớn</p>
+    <p style="margin-top:6px;font-size:.78rem" data-key="ft2">© 2026 · Long An Solutions</p>
   </div>
 </footer>
 
@@ -390,7 +361,7 @@ footer strong{color:#ddd}
 // HTML defaults are Vietnamese. EN object only needed for translation.
 const EN = {
   skip:"Skip to content",
-  nav_how:"How it works", nav_svc:"Services", nav_price:"Pricing", nav_team:"Team", nav_contact:"Contact",
+  nav_how:"How it works", nav_svc:"Services", nav_price:"Pricing", nav_contact:"Contact",
   badge:"Free for first 3 months — pilot clients",
   h1:"Tax filing on time.<br>No more stress.",
   sub:"Vietnam's 2025–2026 tax tightening is real. We handle VAT and CIT estimates for small businesses — just send invoices over Zalo.",
@@ -419,10 +390,6 @@ const EN = {
   p3_f1:"Everything in Standard", p3_f2:"Unlimited processing", p3_f3:"High-priority support", p3_f4:"Custom reports",
   p_cta:"Get started",
   pilot_s:"Free pilot:", pilot_t:" First clients get 3 months free. We need real feedback to improve the system.",
-  tm_h:"Team", tm_sub:"Real people — not a chatbot",
-  t1_role:"Technology", t1_p:"Builds the AI system: from invoice extraction to tax declaration generation.",
-  t2_role:"Operations", t2_p:"Processes invoices daily, reviews AI output, supports clients via Zalo.",
-  t3_role:"Chief Accountant", t3_p:"30+ years experience. Reviews and signs off every return before filing.",
   ct_h:"Contact", ct_sub:"Short conversation — no commitment",
   ct_ih:"Message us now", ct_ip:"We respond within 24h. Tell us your business type and monthly invoice volume.",
   ct_zalo:"💬 Message on Zalo", ct_email:"✉️ Send email",
@@ -430,7 +397,7 @@ const EN = {
   cf_v0:"Select...", cf_v1:"Under 50", cf_v2:"50–200", cf_v3:"Over 200", cf_v4:"Not sure",
   cf_submit:"Submit", cf_note:"We'll follow up within 24h. No spam.",
   ft:"Automated tax declarations for Vietnamese small businesses",
-  ft2:"© 2026 · Built by a small team with big technology",
+  ft2:"© 2026 · Long An Solutions",
   toast_ok:"✓ Received — we'll be in touch soon!"
 };
 
