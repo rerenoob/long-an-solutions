@@ -48,6 +48,8 @@
     .back-top::before{content:"⬆ "}
     footer{background:#1a1a2e;color:#888;padding:28px 0;text-align:center;font-size:.83rem;margin-top:60px}
     footer a{color:#ddd;text-decoration:underline}
+    .card-link{display:block;background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:24px;text-decoration:none;transition:box-shadow .2s}
+    .card-link:hover{box-shadow:0 2px 12px rgba(0,0,0,.08)}
     @media(max-width:640px){article{padding:20px 16px}h1{font-size:1.4rem}.sticky-nav .anchor-links{gap:6px 10px}.sticky-nav .anchor-links a{font-size:.8rem;padding:3px 8px;white-space:normal}nav ul{gap:12px}}
   </style>
 </head>
@@ -61,7 +63,6 @@
   </div>
 </nav>
 
-<main class="container">
 <main class="container">
 
   <h1>Kiến thức thuế cho HKD</h1>
@@ -83,31 +84,31 @@
   
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:40px">
 
-    <a href="knowledge/huong-dan-hoa-don.html" style="display:block;background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:24px;text-decoration:none;transition:box-shadow .2s;hover:box-shadow:0 2px 12px rgba(0,0,0,.08)">
+    <a href="knowledge/huong-dan-hoa-don.html" class="card-link">
       <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">📄 Hướng dẫn thu thập hóa đơn cho kỳ thuế</h3>
       <p style="font-size:.85rem;color:#666;line-height:1.6;margin:0">Mỗi kỳ thuế, bạn cần gửi toàn bộ hóa đơn đầu vào và đầu ra để LAS tính GTGT và chuẩn bị tờ khai. Dưới đây là cách thu th...</p>
     </a>
-    <a href="knowledge/lich-nop-thue.html" style="display:block;background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:24px;text-decoration:none;transition:box-shadow .2s;hover:box-shadow:0 2px 12px rgba(0,0,0,.08)">
+    <a href="knowledge/lich-nop-thue.html" class="card-link">
       <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">📅 Lịch nộp thuế GTGT 2026</h3>
       <p style="font-size:.85rem;color:#666;line-height:1.6;margin:0">Hộ kinh doanh nộp thuế theo phương pháp kê khai có nghĩa vụ nộp tờ khai GTGT hàng tháng hoặc hàng quý. Thời hạn được quy...</p>
     </a>
-    <a href="knowledge/faq.html" style="display:block;background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:24px;text-decoration:none;transition:box-shadow .2s;hover:box-shadow:0 2px 12px rgba(0,0,0,.08)">
+    <a href="knowledge/faq.html" class="card-link">
       <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">❓ Câu hỏi thường gặp</h3>
       <p style="font-size:.85rem;color:#666;line-height:1.6;margin:0">Được. LAS tính GTGT và chuẩn bị tờ khai cho bạn. Khi tờ khai hoàn tất, bạn cần có chữ ký số để ký và nộp lên cổng thuế. ...</p>
     </a>
-    <a href="knowledge/chuan-bi.html" style="display:block;background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:24px;text-decoration:none;transition:box-shadow .2s;hover:box-shadow:0 2px 12px rgba(0,0,0,.08)">
+    <a href="knowledge/chuan-bi.html" class="card-link">
       <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">📋 HKD cần chuẩn bị gì khi bắt đầu?</h3>
       <p style="font-size:.85rem;color:#666;line-height:1.6;margin:0">Khi bắt đầu dùng dịch vụ LAS, bạn cần chuẩn bị những thứ sau. Vi sẽ hướng dẫn từng bước....</p>
     </a>
-    <a href="knowledge/thue-suat.html" style="display:block;background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:24px;text-decoration:none;transition:box-shadow .2s;hover:box-shadow:0 2px 12px rgba(0,0,0,.08)">
+    <a href="knowledge/thue-suat.html" class="card-link">
       <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">📊 Biểu thuế suất GTGT</h3>
       <p style="font-size:.85rem;color:#666;line-height:1.6;margin:0">Theo <strong>Luật Thuế GTGT 2008 (sửa đổi 2013)</strong> và <strong>Thông tư 219/2013/TT-BTC</strong> (có hiệu lực đến n...</p>
     </a>
-    <a href="knowledge/chi-phi.html" style="display:block;background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:24px;text-decoration:none;transition:box-shadow .2s;hover:box-shadow:0 2px 12px rgba(0,0,0,.08)">
+    <a href="knowledge/chi-phi.html" class="card-link">
       <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">💰 Chi phí được trừ và không được trừ khi tính TNDN</h3>
       <p style="font-size:.85rem;color:#666;line-height:1.6;margin:0">Khi LAS triển khai tính thuế TNDN, các khoản chi phí sau đây sẽ được áp dụng theo <strong>Luật Thuế TNDN 2008 (sửa đổi 2...</p>
     </a>
-    <a href="knowledge/ky-so.html" style="display:block;background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:24px;text-decoration:none;transition:box-shadow .2s;hover:box-shadow:0 2px 12px rgba(0,0,0,.08)">
+    <a href="knowledge/ky-so.html" class="card-link">
       <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">🖊️ Hướng dẫn ký số từ xa</h3>
       <p style="font-size:.85rem;color:#666;line-height:1.6;margin:0">Ký số từ xa (remote signing) giúp bạn ký tờ khai trên điện thoại — không cần cắm USB token vào máy tính. Tất cả nhà cung...</p>
     </a></div>  <p style="text-align:center;color:#999;font-size:.88rem;margin-bottom:60px">Có thắc mắc? <a href="mailto:info@longansolutions.com" style="color:#0d6e6e">info@longansolutions.com</a></p>
