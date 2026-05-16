@@ -150,6 +150,7 @@
     }
     @media(max-width:640px){
       .steps,.services-grid,.pricing-grid{grid-template-columns:1fr}
+      #why-us [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}
       nav ul{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(255,255,255,.98);border-bottom:1px solid #e8e8e8;padding:16px 24px;gap:14px;z-index:99;box-shadow:0 4px 12px rgba(0,0,0,.08)}
       nav ul.open{display:flex}
       .nav-toggle{display:block}
@@ -195,9 +196,9 @@
   <section class="hero">
     <div class="container">
       <div class="hero-badge" data-key="badge">Kỳ thuế đầu tiên miễn phí — sau đó tính theo số hóa đơn</div>
-      <p class="hero-tagline" data-key="tagline">⚡ Khai thuế bằng AI — Nhanh hơn, chính xác hơn</p>
+      <p class="hero-tagline" data-key="tagline">📲 Không cần cài đặt. Không cần đăng ký. Chỉ cần Zalo.</p>
       <h1 data-key="h1">Dịch vụ khai thuế <span class="accent">thông minh</span><br>cho hộ kinh doanh và doanh nghiệp nhỏ</h1>
-      <p class="hero-sub" data-key="sub">Gửi hóa đơn qua Zalo — không cần app, không cần email, không cần đăng nhập. AI tự động trích xuất, phân loại, tính GTGT. Kế toán trưởng kiểm tra trước khi nộp.</p>
+      <p class="hero-sub" data-key="sub">Gửi hóa đơn qua Zalo — không cần app, không cần email, không cần đăng nhập. AI tự động trích xuất, phân loại, tính GTGT. Kế toán trưởng 30 năm kinh nghiệm kiểm tra trước khi nộp.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn-primary" data-key="cta1">Đăng ký ngay — Miễn phí kỳ đầu</a>
         <a href="#how-it-works" class="btn-ghost" data-key="cta2">Xem cách hoạt động</a>
@@ -216,9 +217,33 @@
     <div class="container proof-bar-inner">
       <span class="proof-item"><span data-key="pf1l">📱 Chỉ cần điện thoại — gửi qua Zalo</span></span>
       <span class="proof-item"><span data-key="pf2l">⚡ AI trích xuất — tự động phân loại</span></span>
-      <span class="proof-item"><span data-key="pf3l">✓ Kế toán trưởng kiểm tra trước khi nộp</span></span>
+      <span class="proof-item"><span data-key="pf3l">✓ Kế toán trưởng 30 năm kiểm tra trước khi nộp</span></span>
+      <span class="proof-item"><span data-key="pf4l">🎯 Dành cho HKD — hộ kinh doanh cá thể</span></span>
     </div>
   </div>
+
+  <!-- ─── AUDIENCE SECTION ─── -->
+  <section id="audience" class="section" style="padding:40px 0;background:linear-gradient(135deg,#1a1a2e,#2a2a4e)">
+    <div class="container">
+      <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;text-align:center">
+        <div style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:20px 30px;flex:1;min-width:200px" class="fade-in">
+          <div style="font-size:2rem;margin-bottom:6px">🏪</div>
+          <div style="font-weight:700;color:#fff;font-size:.95rem" data-key="aud1">HKD — Hộ kinh doanh cá thể</div>
+          <div style="color:#b0b0d0;font-size:.82rem;margin-top:4px" data-key="aud1_sub">Bán hàng online, shop nhỏ, cửa hàng tạp hóa</div>
+        </div>
+        <div style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:20px 30px;flex:1;min-width:200px" class="fade-in">
+          <div style="font-size:2rem;margin-bottom:6px">🏢</div>
+          <div style="font-weight:700;color:#fff;font-size:.95rem" data-key="aud2">Doanh nghiệp siêu nhỏ</div>
+          <div style="color:#b0b0d0;font-size:.82rem;margin-top:4px" data-key="aud2_sub">Dưới 10 nhân viên, ít hóa đơn mỗi kỳ</div>
+        </div>
+        <div style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:20px 30px;flex:1;min-width:200px" class="fade-in">
+          <div style="font-size:2rem;margin-bottom:6px">🛵</div>
+          <div style="font-weight:700;color:#fff;font-size:.95rem" data-key="aud3">Chủ shop / Freelancer</div>
+          <div style="color:#b0b0d0;font-size:.82rem;margin-top:4px" data-key="aud3_sub">Không có phòng kế toán riêng</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ─── HOW IT WORKS ─── -->
   <section id="how-it-works" class="section bg-white">
@@ -375,6 +400,57 @@
     </div>
   </section>
 
+  <!-- ─── WHY US (CONTRAST SECTION) ─── -->
+  <section id="why-us" class="section bg-white">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 data-key="wu_h">Tại sao chọn chúng tôi?</h2>
+        <p data-key="wu_sub">So với phần mềm kế toán truyền thống và dịch vụ thuế thông thường</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <div class="fade-in" style="background:#fff;border:2px solid #e8e8e8;border-radius:12px;padding:28px 22px;text-align:center">
+          <div style="font-size:2.2rem;margin-bottom:10px">💻</div>
+          <h3 style="font-size:.85rem;font-weight:700;color:#888;margin-bottom:14px" data-key="wu_oth_h">Phần mềm kế toán khác</h3>
+          <ul style="list-style:none;font-size:.86rem;color:#666;line-height:2.2">
+            <li data-key="wu_oth_1">❌ Cài đặt phần mềm</li>
+            <li data-key="wu_oth_2">❌ Đăng ký tài khoản, nhập thông tin</li>
+            <li data-key="wu_oth_3">❌ Học cách dùng — mất nhiều giờ</li>
+            <li data-key="wu_oth_4">❌ Lỗi nhập liệu, sai sót dễ xảy ra</li>
+            <li data-key="wu_oth_5">❌ Tốn thời gian tự tính toán</li>
+          </ul>
+        </div>
+        <div class="fade-in" style="background:#fff;border:2px solid #ffe0a0;border-radius:12px;padding:28px 22px;text-align:center;position:relative;transform:scale(1.03)">
+          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#0d6e6e;color:#fff;font-size:.72rem;font-weight:700;padding:4px 16px;border-radius:20px;white-space:nowrap" data-key="wu_vs_badge">LAS — Cách mới</div>
+          <div style="font-size:2.2rem;margin-bottom:10px;margin-top:8px">📱</div>
+          <h3 style="font-size:.85rem;font-weight:700;color:#0d6e6e;margin-bottom:14px" data-key="wu_las_h">Long An Solutions (Zalo + AI)</h3>
+          <ul style="list-style:none;font-size:.86rem;color:#555;line-height:2.2">
+            <li data-key="wu_las_1">✅ Mở Zalo, gửi ảnh hóa đơn</li>
+            <li data-key="wu_las_2">✅ AI trích xuất tự động — 0 công sức</li>
+            <li data-key="wu_las_3">✅ Chuyên gia thuế kiểm tra — kế toán trưởng duyệt</li>
+            <li data-key="wu_las_4">✅ Tuân thủ TT 40/2021, ND 123/2020</li>
+            <li data-key="wu_las_5">✅ Ký &amp; nộp — mất 2 phút mỗi kỳ</li>
+          </ul>
+        </div>
+        <div class="fade-in" style="background:#fff;border:2px solid #e8e8e8;border-radius:12px;padding:28px 22px;text-align:center">
+          <div style="font-size:2.2rem;margin-bottom:10px">🏢</div>
+          <h3 style="font-size:.85rem;font-weight:700;color:#888;margin-bottom:14px" data-key="wu_trad_h">Dịch vụ kế toán truyền thống</h3>
+          <ul style="list-style:none;font-size:.86rem;color:#666;line-height:2.2">
+            <li data-key="wu_trad_1">❌ Hợp đồng dài hạn, cam kết phí</li>
+            <li data-key="wu_trad_2">❌ Gửi hóa đơn qua email, phải scan</li>
+            <li data-key="wu_trad_3">❌ Chờ đợi — mất 3-5 ngày cho mỗi kỳ</li>
+            <li data-key="wu_trad_4">❌ Phí cao — 500k-1tr/tháng dù ít hóa đơn</li>
+            <li data-key="wu_trad_5">❌ Khó thay đổi hoặc hủy hợp đồng</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:32px;text-align:center" class="fade-in">
+        <p style="font-size:.95rem;color:#555;background:#f0f7f7;border:1px solid #b0d4d4;border-radius:10px;padding:16px 24px;display:inline-block">
+          <strong data-key="wu_cta">Kết luận:</strong> <span data-key="wu_cta_t">Với LAS, bạn không cần học phần mềm, không cần ký hợp đồng — chỉ cần mở Zalo, gửi ảnh và để chúng tôi lo phần còn lại. Một người thật — kế toán trưởng 30 năm kinh nghiệm — kiểm tra tất cả trước khi nộp.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── ABOUT ─── -->
   <section id="about" class="section">
     <div class="container">
@@ -383,8 +459,9 @@
         <p data-key="ab_sub">Công nghệ AI + chuyên gia thuế — khai thuế chính xác, đúng hạn</p>
       </div>
       <div class="about-wrap fade-in">
-        <p data-key="ab_p1"><strong>Long An Solutions</strong> là dịch vụ khai thuế ứng dụng AI, được xây dựng dành riêng cho hộ kinh doanh và doanh nghiệp nhỏ Việt Nam. Chúng tôi kết hợp <strong>công nghệ trích xuất tự động</strong> với đội ngũ <strong>chuyên gia thuế giàu kinh nghiệm</strong> để mang đến dịch vụ khai thuế nhanh, chính xác và tiết kiệm.</p>
-        <p data-key="ab_p2">Không hợp đồng dài hạn. Không phí cố định. Bạn chỉ trả cho số hóa đơn đã xử lý — và <strong>kỳ thuế đầu tiên hoàn toàn miễn phí</strong>.</p>
+        <p data-key="ab_p1"><strong>Long An Solutions</strong> là dịch vụ khai thuế ứng dụng AI, được xây dựng dành riêng cho hộ kinh doanh và doanh nghiệp nhỏ Việt Nam. Chúng tôi kết hợp <strong>công nghệ trích xuất tự động</strong> với đội ngũ <strong>chuyên gia thuế giàu kinh nghiệm</strong> — bao gồm kế toán trưởng 30 năm trong nghề — để mang đến dịch vụ khai thuế nhanh, chính xác và tiết kiệm.</p>
+        <p data-key="ab_p2">Tất cả quy trình xử lý hóa đơn, tính GTGT và chuẩn bị tờ khai đều <strong>tuân thủ Thông tư 40/2021/TT-BTC và Nghị định 123/2020/NĐ-CP</strong> — đảm bảo hợp pháp trong mọi khâu.</p>
+        <p data-key="ab_p3">Không hợp đồng dài hạn. Không phí cố định. Bạn chỉ trả cho số hóa đơn đã xử lý — và <strong>kỳ thuế đầu tiên hoàn toàn miễn phí</strong>.</p>
       </div>
     </div>
   </section>
@@ -417,12 +494,15 @@ const EN = {
   skip:"Skip to content",
   nav_how:"How it works", nav_svc:"Services", nav_price:"Pricing", nav_contact:"Contact",
   badge:"First period free — pay per invoice after",
-  tagline:"⚡ AI-powered tax filing — Faster, more accurate",
+  tagline:"📲 No software. No signup. Just Zalo.",
   h1:"<span class=\"accent\">Smart</span> tax filing<br>for household businesses &amp; small enterprises",
-  sub:"Send invoices via Zalo — no app, no email, no login needed. AI extracts, classifies, calculates VAT. Head accountant reviews before filing.",
+  sub:"Send invoices via Zalo — no app, no email, no login needed. AI extracts, classifies, calculates VAT. Head accountant with 30 years of experience reviews before filing.",
   cta1:"Get started — Free first period", cta2:"See how it works",
   s1l:"/invoice (first 6 months)", s2l:"first period free — pay later", s3l:"/invoice (standard)", s4l:"Send via Zalo — no app needed",
-  pf1l:"Just a phone — send via Zalo", pf2l:"AI extracts &amp; auto-classifies", pf3l:"Head accountant reviews before filing",
+  pf1l:"Just a phone — send via Zalo", pf2l:"AI extracts &amp; auto-classifies", pf3l:"30-year head accountant reviews before filing", pf4l:"🎯 Built for HKD — household businesses",
+  aud1:"HKD — Household Businesses", aud1_sub:"Online sellers, small shops, grocery stores",
+  aud2:"Micro-enterprises", aud2_sub:"Under 10 employees, few invoices per period",
+  aud3:"Shop owners / Freelancers", aud3_sub:"No dedicated accounting department",
   hw_h:"How it works", hw_sub:"4 simple steps — you just send invoices",
   s1_h:"Send invoices via Zalo", s1_p:"No software to install, no email or website login. Open Zalo, snap a photo or forward an e-invoice — send to the Long An Solutions OA. Do it on your phone, anytime.",
   s2_h:"AI processes automatically", s2_p:"Extracts data, auto-detects input/output from MST, classifies tax rates, calculates VAT in seconds.",
@@ -431,6 +511,27 @@ const EN = {
   tc1l:"Send invoices via Zalo", tc1s:"Snap a photo or forward — no app needed",
   tc2l:"extraction accuracy", tc2s:"Extracts data, auto-classifies input/output, calculates VAT",
   tc3l:"cost savings", tc3s:"Compared to traditional accounting services",
+  wu_h:"Why choose us?", wu_sub:"Compared to traditional accounting software and conventional tax services",
+  wu_oth_h:"Other accounting software",
+  wu_oth_1:"❌ Install software",
+  wu_oth_2:"❌ Create account, enter info",
+  wu_oth_3:"❌ Learn how to use — takes hours",
+  wu_oth_4:"❌ Data entry errors common",
+  wu_oth_5:"❌ Time-consuming calculations",
+  wu_vs_badge:"LAS — The new way",
+  wu_las_h:"Long An Solutions (Zalo + AI)",
+  wu_las_1:"✅ Open Zalo, send invoice photo",
+  wu_las_2:"✅ AI auto-extracts — zero effort",
+  wu_las_3:"✅ Tax expert reviews — head accountant approves",
+  wu_las_4:"✅ Compliant with Circular 40/2021, Decree 123/2020",
+  wu_las_5:"✅ Sign &amp; file — 2 minutes per period",
+  wu_trad_h:"Traditional accounting services",
+  wu_trad_1:"❌ Long-term contracts, committed fees",
+  wu_trad_2:"❌ Send invoices via email, need to scan",
+  wu_trad_3:"❌ Wait 3-5 days per period",
+  wu_trad_4:"❌ High fees — 500k-1m/month regardless",
+  wu_trad_5:"❌ Hard to change or cancel contract",
+  wu_cta:"Bottom line:", wu_cta_t:"With LAS, no software to learn, no contract to sign — just open Zalo, send a photo, and let us handle the rest. A real person — a head accountant with 30 years of experience — reviews everything before filing.",
   note_t:"Note:", note_b:"You need a digital signature (USB token or remote signing) to sign the return. LAS calculates and prepares the return — you sign and submit via the e-tax portal. Need one? We help you register.",
   sv_h:"Services", sv_sub:"Focused on tax filing — transparent, on time",
   sv1_h:"✅ Included",
@@ -446,8 +547,9 @@ const EN = {
   pr_sub_bulk:"50+ invoices per period",
   offer_s:"Your first period is free —", offer_t:" after that pay only for invoices processed. New HKDs get 5,000₫/invoice for 6 months.",
   ab_h:"About Long An Solutions", ab_sub:"AI technology + tax experts — accurate, on-time filing",
-  ab_p1:"<strong>Long An Solutions</strong> is an AI-powered tax filing service built for Vietnamese household businesses and small enterprises. We combine <strong>automated extraction technology</strong> with an experienced <strong>team of tax professionals</strong> to deliver fast, accurate, and cost-effective tax filing.",
-  ab_p2:"No long-term contracts. No fixed fees. You only pay for invoices processed — and <strong>your first tax period is completely free</strong>.",
+  ab_p1:"<strong>Long An Solutions</strong> is an AI-powered tax filing service built for Vietnamese household businesses and small enterprises. We combine <strong>automated extraction technology</strong> with an experienced <strong>team of tax professionals</strong> — including a head accountant with 30 years in the field — to deliver fast, accurate, and cost-effective tax filing.",
+  ab_p2:"All invoice processing, VAT calculations and return preparation <strong>comply with Circular 40/2021/TT-BTC and Decree 123/2020/NĐ-CP</strong> — ensuring full legal compliance at every step.",
+  ab_p3:"No long-term contracts. No fixed fees. You only pay for invoices processed — and <strong>your first tax period is completely free</strong>.",
   ct_h:"Get started — Free first period", ct_sub:"Email us — we'll respond within 24 hours. No obligation.",
   ct_meta1:"💬 Zalo: <a href=\"https://zalo.me/\" target=\"_blank\" rel=\"noopener\">Message on Zalo</a>",
   ct_meta2:"⏱ Response within 24h",
