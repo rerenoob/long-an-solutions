@@ -3,117 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Long An Solutions — Khai Thuế Tự Động cho Hộ Kinh Doanh và Doanh Nghiệp</title>
-  <meta name="description" content="Khai thuế GTGT và TNDN tự động cho hộ kinh doanh và doanh nghiệp Việt Nam. Tiếp nhận hóa đơn qua Zalo — AI xử lý — chuyên gia thuế kiểm tra — nộp đúng hạn.">
+  <title>Long An Solutions — Khai Thuế Bằng AI cho Hộ Kinh Doanh và Doanh Nghiệp</title>
+  <meta name="description" content="Khai thuế GTGT bằng AI cho hộ kinh doanh và doanh nghiệp Việt Nam. Gửi hóa đơn qua Zalo — AI xử lý — chuyên gia thuế kiểm tra — nộp đúng hạn. Tiết kiệm đến 80%.">
   <link rel="icon" href="logo.png">
   <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans',sans-serif;color:#1a1a2e;background:#f8f9fa;line-height:1.6;-webkit-font-smoothing:antialiased}
-.container{max-width:1080px;margin:0 auto;padding:0 24px}
-h1,h2,h3{line-height:1.25}
-a{color:#0d6e6e;text-decoration:none}
-a:hover{text-decoration:underline}
-.skip-link{position:absolute;top:-120%;left:16px;background:#0d6e6e;color:#fff;padding:10px 20px;border-radius:0 0 8px 8px;font-weight:600;z-index:9999;transition:top .15s}
-.skip-link:focus{top:0}
-:focus-visible{outline:3px solid #0d6e6e;outline-offset:3px;border-radius:4px}
-[id]{scroll-margin-top:76px}
-nav{background:#fff;border-bottom:1px solid #e8e8e8;padding:14px 0;position:sticky;top:0;z-index:100}
-.nav-inner{display:flex;align-items:center}
-.logo{font-size:1.25rem;font-weight:800;color:#1a1a2e;letter-spacing:-.3px;white-space:nowrap}
-.logo span{color:#0d6e6e}
-nav ul{display:flex;gap:24px;list-style:none;margin-left:auto;align-items:center}
-nav ul a{font-size:.9rem;color:#555;font-weight:500;transition:color .2s}
-nav ul a:hover{color:#0d6e6e;text-decoration:none}
-.nav-cta{background:#0d6e6e;color:#fff!important;padding:9px 20px;border-radius:8px;font-weight:600;transition:background .2s}
-.nav-cta:hover{background:#095a5a!important}
-.nav-end{display:flex;align-items:center;gap:10px;margin-left:16px}
-.lang-toggle{display:flex;background:#f0f7f7;border:1.5px solid #b0d4d4;border-radius:20px;padding:3px}
-.lang-btn{background:none;border:none;cursor:pointer;padding:3px 10px;border-radius:16px;color:#888;font-size:.78rem;font-weight:700;font-family:inherit;transition:background .15s,color .15s}
-.lang-btn.active{background:#0d6e6e;color:#fff}
-.nav-toggle{display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;color:#1a1a2e;padding:8px;border-radius:8px;line-height:1}
-.nav-toggle:hover{background:#f0f0f0}
-.hero{background:#fff;padding:72px 0 60px;border-bottom:1px solid #e8e8e8;text-align:center}
-.hero-badge{display:inline-block;background:#f0f7f7;color:#0d6e6e;font-size:.82rem;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:20px;border:1px solid #b0d4d4}
-.hero h1{font-size:clamp(1.9rem,5vw,2.9rem);font-weight:900;color:#1a1a2e;margin-bottom:18px;letter-spacing:-.5px}
-.hero-sub{font-size:1.05rem;color:#555;max-width:560px;margin:0 auto 30px;line-height:1.75}
-.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
-.btn-primary{background:#0d6e6e;color:#fff;padding:14px 28px;border-radius:10px;font-weight:700;font-size:1rem;transition:background .2s}
-.btn-primary:hover{background:#095a5a;text-decoration:none;color:#fff}
-.btn-ghost{border:2px solid #0d6e6e;color:#0d6e6e;padding:12px 26px;border-radius:10px;font-weight:600;font-size:1rem;transition:background .2s}
-.btn-ghost:hover{background:#f0f7f7;text-decoration:none}
-.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
-.stat strong{display:block;font-size:1.65rem;font-weight:900;color:#0d6e6e}
-.stat span{font-size:.83rem;color:#777}
-.section{padding:68px 0}
-.section.bg-white{background:#fff}
-.section-header{text-align:center;margin-bottom:48px}
-.section-header h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:10px}
-.section-header p{color:#666;font-size:.97rem;max-width:480px;margin:0 auto}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.step{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:26px 20px}
-.step-num{width:34px;height:34px;background:#0d6e6e;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.88rem;margin-bottom:14px}
-.step h3{font-size:.97rem;font-weight:700;margin-bottom:8px;color:#1a1a2e}
-.step p{font-size:.86rem;color:#666;line-height:1.6}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.svc-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:26px}
-.svc-card.highlight{border-color:#0d6e6e;background:#f0f7f7}
-.svc-card h3{font-size:.95rem;font-weight:700;margin-bottom:14px;color:#1a1a2e}
-.svc-card ul{list-style:none}
-.svc-card ul li{font-size:.86rem;color:#555;padding:6px 0;border-bottom:1px solid #eee}
-.svc-card ul li:last-child{border-bottom:none}
-.svc-card ul li.soon{color:#888;font-style:italic}
-.svc-card ul li.out{color:#bbb;text-decoration:line-through}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.price-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:30px 24px;position:relative}
-.price-card.popular{border:2px solid #0d6e6e}
-.popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#0d6e6e;color:#fff;font-size:.74rem;font-weight:700;padding:4px 16px;border-radius:20px;white-space:nowrap}
-.price-name{font-size:.82rem;font-weight:700;color:#0d6e6e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
-.price-sub{font-size:.82rem;color:#888;margin-bottom:18px}
-.price-amount{font-size:1.75rem;font-weight:900;color:#1a1a2e;line-height:1}
-.price-amount em{font-size:.83rem;font-weight:500;color:#888;font-style:normal}
-.price-divider{border:none;border-top:1px solid #eee;margin:18px 0}
-.price-features{list-style:none;font-size:.86rem;color:#555}
-.price-features li{padding:5px 0;display:flex;gap:8px}
-.price-features li::before{content:"✓";color:#0d6e6e;font-weight:700;flex-shrink:0}
-.price-cta{display:block;width:100%;margin-top:22px;padding:11px;background:#f0f7f7;color:#0d6e6e;border:2px solid #0d6e6e;border-radius:8px;text-align:center;font-weight:600;font-size:.9rem;transition:background .2s}
-.price-cta:hover{background:#e0f0f0;text-decoration:none}
-.price-card.popular .price-cta{background:#0d6e6e;color:#fff}
-.price-card.popular .price-cta:hover{background:#095a5a;text-decoration:none}
-.price-offer{text-align:center;margin-top:28px;padding:18px 24px;background:#f0f7f7;border-radius:10px;font-size:.88rem;color:#555;border:1px solid #b0d4d4}
-.price-offer strong{color:#0d6e6e}
-.contact-info{text-align:center;max-width:480px;margin:0 auto}
-.contact-info h3{font-size:1.05rem;font-weight:700;margin-bottom:10px}
-.contact-info p{color:#666;font-size:.88rem;margin-bottom:22px;line-height:1.7}
-.contact-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 28px;border-radius:10px;font-weight:700;font-size:.92rem;transition:background .2s}
-.btn-email{background:#f0f7f7;color:#0d6e6e;border:2px solid #0d6e6e}
-.btn-email:hover{background:#e0f0f0;text-decoration:none}
-footer{background:#1a1a2e;color:#888;padding:28px 0;text-align:center;font-size:.83rem}
-footer strong{color:#ddd}
-@media(max-width:900px){
-  .steps{grid-template-columns:1fr 1fr}
-  .services-grid,.pricing-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:640px){
-  .steps,.services-grid,.pricing-grid{grid-template-columns:1fr}
-  nav ul{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid #e8e8e8;padding:16px 24px;gap:14px;z-index:99;box-shadow:0 4px 12px rgba(0,0,0,.08)}
-  nav ul.open{display:flex}
-  .nav-toggle{display:block}
-  .logo img{height:40px!important}
-  .hero{padding:48px 0 44px}
-  .hero-stats{gap:20px}
-  .section{padding:52px 0}
-}
-  </style>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXEYJRVGB8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXEYJRVGB8');
-</script>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans',sans-serif;color:#1a1a2e;background:#f8f9fa;line-height:1.6;-webkit-font-smoothing:antialiased}
+    .container{max-width:1080px;margin:0 auto;padding:0 24px}
+    h1,h2,h3{line-height:1.25}
+    a{color:#0d6e6e;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .skip-link{position:absolute;top:-120%;left:16px;background:#0d6e6e;color:#fff;padding:10px 20px;border-radius:0 0 8px 8px;font-weight:600;z-index:9999;transition:top .15s}
+    .skip-link:focus{top:0}
+    :focus-visible{outline:3px solid #0d6e6e;outline-offset:3px;border-radius:4px}
+    [id]{scroll-margin-top:76px}
 
+    /* ── Scroll-triggered fade-in ── */
+    .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease-out,transform .6s ease-out}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+
+    /* ── Nav ── */
+    nav{background:rgba(255,255,255,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #e8e8e8;padding:14px 0;position:sticky;top:0;z-index:100}
+    .nav-inner{display:flex;align-items:center}
+    .logo{font-size:1.25rem;font-weight:800;color:#1a1a2e;letter-spacing:-.3px;white-space:nowrap}
+    .logo span{color:#0d6e6e}
+    nav ul{display:flex;gap:24px;list-style:none;margin-left:auto;align-items:center}
+    nav ul a{font-size:.9rem;color:#555;font-weight:500;transition:color .2s}
+    nav ul a:hover{color:#0d6e6e;text-decoration:none}
+    .nav-cta{background:#0d6e6e;color:#fff!important;padding:9px 20px;border-radius:8px;font-weight:600;transition:background .2s}
+    .nav-cta:hover{background:#095a5a!important}
+    .nav-end{display:flex;align-items:center;gap:10px;margin-left:16px}
+    .lang-toggle{display:flex;background:#f0f7f7;border:1.5px solid #b0d4d4;border-radius:20px;padding:3px}
+    .lang-btn{background:none;border:none;cursor:pointer;padding:3px 10px;border-radius:16px;color:#888;font-size:.78rem;font-weight:700;font-family:inherit;transition:background .15s,color .15s}
+    .lang-btn.active{background:#0d6e6e;color:#fff}
+    .nav-toggle{display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;color:#1a1a2e;padding:8px;border-radius:8px;line-height:1}
+    .nav-toggle:hover{background:#f0f0f0}
+
+    /* ── Hero ── */
+    .hero{background:linear-gradient(135deg,#f4fafb 0,#e8f5f5 40%,#f4fafb 100%);padding:80px 0 64px;border-bottom:1px solid #e0eaea;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;top:-80px;right:-120px;width:400px;height:400px;background:radial-gradient(circle,rgba(13,110,110,.06) 0,transparent 70%);pointer-events:none;border-radius:50%}
+    .hero::after{content:"";position:absolute;bottom:-100px;left:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(13,110,110,.04) 0,transparent 70%);pointer-events:none;border-radius:50%}
+    .hero-badge{display:inline-block;background:rgba(13,110,110,.1);color:#0d6e6e;font-size:.82rem;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:20px;border:1px solid rgba(13,110,110,.2);backdrop-filter:blur(2px)}
+    .hero h1{font-size:clamp(1.9rem,5vw,3rem);font-weight:900;color:#1a1a2e;margin-bottom:16px;letter-spacing:-.5px}
+    .hero h1 .accent{color:#0d6e6e}
+    .hero-tagline{font-size:clamp(1.05rem,2.5vw,1.3rem);font-weight:700;color:#0d6e6e;margin-bottom:12px;letter-spacing:-.2px}
+    .hero-sub{font-size:1.05rem;color:#555;max-width:580px;margin:0 auto 28px;line-height:1.75}
+    .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+    .hero-ctas .btn-primary{box-shadow:0 4px 14px rgba(13,110,110,.3)}
+    .btn-primary{background:#0d6e6e;color:#fff;padding:14px 28px;border-radius:10px;font-weight:700;font-size:1rem;transition:background .2s,transform .15s,box-shadow .2s}
+    .btn-primary:hover{background:#095a5a;transform:translateY(-1px);box-shadow:0 6px 20px rgba(13,110,110,.35);text-decoration:none;color:#fff}
+    .btn-ghost{border:2px solid #0d6e6e;color:#0d6e6e;padding:12px 26px;border-radius:10px;font-weight:600;font-size:1rem;transition:background .2s}
+    .btn-ghost:hover{background:rgba(13,110,110,.08);text-decoration:none}
+    .hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+    .stat strong{display:block;font-size:1.65rem;font-weight:900;color:#0d6e6e}
+
+    /* ── Social proof bar ── */
+    .proof-bar{background:#1a1a2e;padding:18px 0;text-align:center}
+    .proof-bar-inner{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;align-items:center}
+    .proof-item{color:#b0b0c0;font-size:.84rem;font-weight:500}
+    .proof-item strong{color:#fff;font-weight:700}
+
+    /* ── Sections ── */
+    .section{padding:72px 0}
+    .section.bg-white{background:#fff}
+    .section-header{text-align:center;margin-bottom:48px}
+    .section-header h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:10px}
+    .section-header p{color:#666;font-size:.97rem;max-width:480px;margin:0 auto}
+
+    /* ── Steps ── */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .step{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:28px 22px;transition:box-shadow .25s,transform .2s}
+    .step:hover{box-shadow:0 6px 24px rgba(0,0,0,.06);transform:translateY(-2px)}
+    .step-icon{width:42px;height:42px;background:linear-gradient(135deg,#0d6e6e,#0a8a8a);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:14px}
+    .step h3{font-size:.97rem;font-weight:700;margin-bottom:8px;color:#1a1a2e}
+    .step p{font-size:.86rem;color:#666;line-height:1.6}
+
+    /* ── Tech callout ── */
+    .tech-callout{background:linear-gradient(135deg,#f0f7f7,#e8f5f5);border:1px solid #b0d4d4;border-radius:14px;padding:36px 32px;margin-top:48px;display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap;text-align:center}
+    .tech-stat{flex:1;min-width:130px}
+    .tech-stat .num{font-size:2rem;font-weight:900;color:#0d6e6e;line-height:1.1}
+    .tech-stat .label{font-size:.82rem;color:#555;margin-top:4px}
+    .tech-stat .sub{font-size:.75rem;color:#888;margin-top:2px}
+    .tech-divider{width:1px;height:44px;background:#b0d4d4;flex-shrink:0}
+
+    /* ── Services ── */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .svc-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:26px;transition:box-shadow .25s}
+    .svc-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.04)}
+    .svc-card.highlight{border-color:#0d6e6e;background:linear-gradient(135deg,#f7fbfb,#f0f7f7)}
+    .svc-card h3{font-size:.95rem;font-weight:700;margin-bottom:14px;color:#1a1a2e}
+    .svc-card ul{list-style:none}
+    .svc-card ul li{font-size:.86rem;color:#555;padding:6px 0;border-bottom:1px solid #eee}
+    .svc-card ul li:last-child{border-bottom:none}
+    .svc-card ul li.soon{color:#888;font-style:italic}
+    .svc-card ul li.out{color:#bbb;text-decoration:line-through}
+
+    /* ── Pricing ── */
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .price-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:30px 24px;position:relative;transition:box-shadow .25s,transform .2s}
+    .price-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.05);transform:translateY(-2px)}
+    .price-card.popular{border:2px solid #0d6e6e}
+    .popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#0d6e6e;color:#fff;font-size:.74rem;font-weight:700;padding:4px 16px;border-radius:20px;white-space:nowrap}
+    .price-name{font-size:.82rem;font-weight:700;color:#0d6e6e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+    .price-sub{font-size:.82rem;color:#888;margin-bottom:18px}
+    .price-amount{font-size:1.75rem;font-weight:900;color:#1a1a2e;line-height:1}
+    .price-amount em{font-size:.83rem;font-weight:500;color:#888;font-style:normal}
+    .price-divider{border:none;border-top:1px solid #eee;margin:18px 0}
+    .price-features{list-style:none;font-size:.86rem;color:#555}
+    .price-features li{padding:5px 0;display:flex;gap:8px}
+    .price-features li::before{content:"✓";color:#0d6e6e;font-weight:700;flex-shrink:0}
+    .price-cta{display:block;width:100%;margin-top:22px;padding:11px;background:#f0f7f7;color:#0d6e6e;border:2px solid #0d6e6e;border-radius:8px;text-align:center;font-weight:600;font-size:.9rem;transition:background .2s}
+    .price-cta:hover{background:#e0f0f0;text-decoration:none}
+    .price-card.popular .price-cta{background:#0d6e6e;color:#fff}
+    .price-card.popular .price-cta:hover{background:#095a5a;text-decoration:none}
+    .price-offer{text-align:center;margin-top:28px;padding:18px 24px;background:#f0f7f7;border-radius:10px;font-size:.88rem;color:#555;border:1px solid #b0d4d4}
+    .price-offer strong{color:#0d6e6e}
+
+    /* ── About ── */
+    .about-wrap{max-width:700px;margin:0 auto;text-align:center}
+    .about-wrap p{color:#555;font-size:.94rem;line-height:1.8;margin-bottom:14px}
+
+    /* ── Contact ── */
+    .contact-info{text-align:center;max-width:480px;margin:0 auto}
+    .contact-info h3{font-size:1.05rem;font-weight:700;margin-bottom:10px}
+    .contact-info p{color:#666;font-size:.88rem;margin-bottom:22px;line-height:1.7}
+    .contact-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 32px;border-radius:10px;font-weight:700;font-size:.92rem;transition:background .2s,transform .15s}
+    .btn-email{background:#0d6e6e;color:#fff;font-size:1.05rem;padding:16px 36px;box-shadow:0 4px 14px rgba(13,110,110,.25)}
+    .btn-email:hover{background:#095a5a;transform:translateY(-1px);text-decoration:none;color:#fff}
+    .contact-meta{margin-top:20px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:.84rem;color:#888}
+    .contact-meta a{color:#0d6e6e;font-weight:600}
+
+    /* ── Footer ── */
+    footer{background:#1a1a2e;color:#888;padding:28px 0;text-align:center;font-size:.83rem}
+    footer strong{color:#ddd}
+
+    /* ── Responsive ── */
+    @media(max-width:900px){
+      .steps{grid-template-columns:1fr 1fr}
+      .services-grid,.pricing-grid{grid-template-columns:1fr 1fr}
+      .tech-callout{gap:18px;padding:28px 20px}
+      .proof-bar-inner{gap:20px}
+    }
+    @media(max-width:700px){
+      .tech-divider{width:60%;height:1px}
+    }
+    @media(max-width:640px){
+      .steps,.services-grid,.pricing-grid{grid-template-columns:1fr}
+      nav ul{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(255,255,255,.98);border-bottom:1px solid #e8e8e8;padding:16px 24px;gap:14px;z-index:99;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+      nav ul.open{display:flex}
+      .nav-toggle{display:block}
+      .logo img{height:40px!important}
+      .hero{padding:52px 0 44px}
+      .hero-stats{gap:20px}
+      .section{padding:52px 0}
+      .hero-tagline{font-size:1rem}
+      .tech-callout{flex-direction:column;gap:12px}
+    }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXEYJRVGB8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXEYJRVGB8');
+  </script>
 </head>
 <body>
 <a href="#main" class="skip-link" data-key="skip">Bỏ qua điều hướng</a>
@@ -136,74 +191,112 @@ footer strong{color:#ddd}
   </div>
 </nav>
 <main id="main">
+  <!-- ─── HERO ─── -->
   <section class="hero">
     <div class="container">
-      <div class="hero-badge" data-key="badge">Kỳ thuế đầu tiên miễn phí — sau đó tính theo số hóa đơn</div>
-      <h1 data-key="h1">Dịch vụ khai thuế chuyên nghiệp<br>cho hộ kinh doanh và doanh nghiệp nhỏ</h1>
-      <p class="hero-sub" data-key="sub">Hỗ trợ kê khai thuế GTGT cho hộ kinh doanh và doanh nghiệp nhỏ. Tiếp nhận hóa đơn qua Zalo — hệ thống AI tự động xử lý, chuyên gia thuế kiểm tra.</p>
+      <div class="hero-badge" data-key="badge">Kỳ thuế đầu tiên miễn phí — sau đó 5.000₫/hóa đơn</div>
+      <p class="hero-tagline" data-key="tagline">⚡ Khai thuế bằng AI — Nhanh hơn, chính xác hơn</p>
+      <h1 data-key="h1">Dịch vụ khai thuế <span class="accent">thông minh</span><br>cho hộ kinh doanh và doanh nghiệp nhỏ</h1>
+      <p class="hero-sub" data-key="sub">Gửi hóa đơn qua Zalo — AI tự động trích xuất, phân loại thuế suất, tính GTGT. Chuyên gia thuế kiểm tra trước khi nộp. <strong>Tiết kiệm đến 80%</strong> so với dịch vụ kế toán truyền thống.</p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn-primary" data-key="cta1">Đăng ký ngay</a>
+        <a href="#contact" class="btn-primary" data-key="cta1">Đăng ký ngay — Miễn phí kỳ đầu</a>
         <a href="#how-it-works" class="btn-ghost" data-key="cta2">Xem cách hoạt động</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><strong>10.000₫</strong><span data-key="s1l">/hóa đơn (dưới 50)</span></div>
-        <div class="stat"><strong>0 ₫</strong><span data-key="s2l">kỳ thuế đầu — tính phí sau</span></div>
-        <div class="stat"><strong>Zalo</strong><span data-key="s3l">gửi hóa đơn dễ dàng</span></div>
+        <div class="stat"><strong>5.000₫</strong><span data-key="s1l">/hóa đơn (6 tháng đầu)</span></div>
+        <div class="stat"><strong>0 ₫</strong><span data-key="s2l">kỳ thuế đầu — chỉ trả sau</span></div>
+        <div class="stat"><strong>10.000₫</strong><span data-key="s3l">/hóa đơn (tiêu chuẩn)</span></div>
+        <div class="stat"><strong>Zalo</strong><span data-key="s4l">gửi hóa đơn — không cần app</span></div>
       </div>
     </div>
   </section>
+
+  <!-- ─── SOCIAL PROOF ─── -->
+  <div class="proof-bar">
+    <div class="container proof-bar-inner">
+      <span class="proof-item"><strong data-key="pf1">1.700+</strong> <span data-key="pf1l">hóa đơn xử lý trong 2 ngày</span></span>
+      <span class="proof-item"><strong data-key="pf2">99,5%</strong> <span data-key="pf2l">độ chính xác trích xuất AI</span></span>
+      <span class="proof-item"><strong data-key="pf3">Được tin dùng bởi</strong> <span data-key="pf3l">hộ kinh doanh &amp; SME</span></span>
+    </div>
+  </div>
+
+  <!-- ─── HOW IT WORKS ─── -->
   <section id="how-it-works" class="section bg-white">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header fade-in">
         <h2 data-key="hw_h">Cách hoạt động</h2>
-        <p data-key="hw_sub">Quy trình 4 bước — đơn giản, minh bạch</p>
+        <p data-key="hw_sub">4 bước đơn giản — bạn chỉ cần gửi hóa đơn</p>
       </div>
       <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3 data-key="s1_h">Tiếp nhận hóa đơn qua Zalo</h3>
-          <p data-key="s1_p">Khách hàng chụp ảnh hoặc chuyển tiếp hóa đơn qua Zalo. Không cần cài đặt phần mềm.</p>
+        <div class="step fade-in">
+          <div class="step-icon">📷</div>
+          <h3 data-key="s1_h">Gửi hóa đơn qua Zalo</h3>
+          <p data-key="s1_p">Chụp ảnh hoặc chuyển tiếp hóa đơn qua Zalo. Gửi theo ngày hoặc theo tuần — không cần cài đặt phần mềm.</p>
         </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3 data-key="s2_h">Trích xuất và phân loại tự động</h3>
-          <p data-key="s2_p">Hệ thống AI trích xuất dữ liệu hóa đơn, tự động xác định đầu ra/đầu vào, phân loại thuế suất và tính GTGT.</p>
+        <div class="step fade-in">
+          <div class="step-icon">🤖</div>
+          <h3 data-key="s2_h">AI xử lý tự động</h3>
+          <p data-key="s2_p">Trích xuất dữ liệu, tự động xác định đầu ra/đầu vào từ MST, phân loại thuế suất, tính GTGT trong vài giây.</p>
         </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3 data-key="s3_h">Kiểm tra chuyên môn</h3>
-          <p data-key="s3_p">Chuyên viên rà soát dữ liệu, xác nhận hướng đầu ra/đầu vào. Chuyên gia thuế kiểm tra trước khi trình khách hàng ký.</p>
+        <div class="step fade-in">
+          <div class="step-icon">✓</div>
+          <h3 data-key="s3_h">Kế toán trưởng kiểm tra</h3>
+          <p data-key="s3_p">Chuyên viên rà soát từng hóa đơn, xác nhận hướng. Kế toán trưởng kiểm tra tổng thể trước khi trình bạn ký.</p>
         </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <h3 data-key="s4_h">Ký số và nộp tờ khai</h3>
-          <p data-key="s4_p">LAS gửi file XML tờ khai. Khách hàng ký bằng chữ ký số và nộp qua cổng thuế điện tử. Thực hiện một lần mỗi kỳ.</p>
+        <div class="step fade-in">
+          <div class="step-icon">📄</div>
+          <h3 data-key="s4_h">Ký số &amp; nộp tờ khai</h3>
+          <p data-key="s4_p">LAS gửi file XML tờ khai — bạn ký bằng chữ ký số và nộp qua cổng thuế. Mỗi kỳ mất 2 phút.</p>
         </div>
       </div>
+
+      <!-- ─── TECH CALLOUT ─── -->
+      <div class="tech-callout fade-in">
+        <div class="tech-stat">
+          <div class="num">1.700+</div>
+          <div class="label" data-key="tc1l">hóa đơn xử lý trong 2 ngày</div>
+          <div class="sub" data-key="tc1s">Nhờ AI trích xuất hàng loạt</div>
+        </div>
+        <div class="tech-divider"></div>
+        <div class="tech-stat">
+          <div class="num">99,5%</div>
+          <div class="label" data-key="tc2l">độ chính xác trích xuất</div>
+          <div class="sub" data-key="tc2s">Tự động tính GTGT, phân loại thuế suất</div>
+        </div>
+        <div class="tech-divider"></div>
+        <div class="tech-stat">
+          <div class="num">80%</div>
+          <div class="label" data-key="tc3l">tiết kiệm chi phí</div>
+          <div class="sub" data-key="tc3s">So với dịch vụ kế toán truyền thống</div>
+        </div>
+      </div>
+
       <div style="margin-top:28px;padding:16px 20px;background:#fff4e5;border-radius:10px;border:1px solid #ffe0a0;font-size:.85rem;color:#7a5a00;text-align:center;line-height:1.5">
         ⚠️ <strong data-key="note_t">Lưu ý:</strong> <span data-key="note_b">Khách hàng cần có chữ ký số (USB token hoặc ký từ xa) để ký tờ khai. LAS thực hiện tính toán và chuẩn bị tờ khai — khách hàng ký và nộp qua cổng thuế điện tử. Hỗ trợ hướng dẫn đăng ký chữ ký số nếu chưa có.</span>
       </div>
     </div>
   </section>
+
+  <!-- ─── SERVICES ─── -->
   <section id="services" class="section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header fade-in">
         <h2 data-key="sv_h">Dịch vụ</h2>
-        <p data-key="sv_sub">Dịch vụ kê khai thuế — không bao gồm kế toán tổng hợp</p>
+        <p data-key="sv_sub">Tập trung vào kê khai thuế — minh bạch, đúng hạn</p>
       </div>
       <div class="services-grid">
-        <div class="svc-card highlight">
+        <div class="svc-card highlight fade-in">
           <h3 data-key="sv1_h">✅ Dịch vụ bao gồm</h3>
           <ul>
             <li data-key="sv1_1">Tờ khai GTGT hàng tháng / quý (01/GTGT)</li>
-            <li class="soon" data-key="sv1_2">TNDN tạm tính hàng quý</li>
+            <li class="soon" data-key="sv1_2">TNDN tạm tính hàng quý (sắp ra mắt)</li>
             <li data-key="sv1_3">Nhắc hạn nộp 5–7 ngày trước hạn</li>
-            <li data-key="sv1_4">Tổng hợp doanh thu &amp; VAT theo tháng</li>
+            <li data-key="sv1_4">Báo cáo doanh thu &amp; VAT theo tháng</li>
             <li data-key="sv1_5">Tra cứu hóa đơn đã xử lý</li>
             <li data-key="sv1_6">Hỗ trợ qua Zalo</li>
           </ul>
         </div>
-        <div class="svc-card">
+        <div class="svc-card fade-in">
           <h3 data-key="sv2_h">🔜 Sắp triển khai</h3>
           <ul>
             <li class="soon" data-key="sv2_1">Báo cáo lãi lỗ hàng tháng (P&amp;L)</li>
@@ -212,7 +305,7 @@ footer strong{color:#ddd}
             <li class="soon" data-key="sv2_3">Bảng lương &amp; thuế TNCN</li>
           </ul>
         </div>
-        <div class="svc-card">
+        <div class="svc-card fade-in">
           <h3 data-key="sv3_h">❌ Không bao gồm</h3>
           <ul>
             <li class="out" data-key="sv3_1">Sổ sách kế toán đầy đủ</li>
@@ -224,14 +317,16 @@ footer strong{color:#ddd}
       </div>
     </div>
   </section>
+
+  <!-- ─── PRICING ─── -->
   <section id="pricing" class="section bg-white">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header fade-in">
         <h2 data-key="pr_h">Bảng giá</h2>
-        <p data-key="pr_sub">Giảm giá theo số lượng — không phí ẩn</p>
+        <p data-key="pr_sub">Giảm giá theo số lượng — không phí ẩn — chỉ trả cho hóa đơn đã xử lý</p>
       </div>
       <div class="pricing-grid">
-        <div class="price-card popular">
+        <div class="price-card popular fade-in">
           <div class="popular-badge">Khởi Nghiệp</div>
           <div class="price-name">Khởi Nghiệp</div>
           <div class="price-sub">Dành cho HKD mới thành lập (6 tháng đầu)</div>
@@ -247,8 +342,9 @@ footer strong{color:#ddd}
           </ul>
           <a href="#contact" class="price-cta" onclick="gtag('event', 'click_pricing_cta', {'label': this.closest('.price-card').querySelector('.price-name').textContent.trim()})">Đăng ký ngay</a>
         </div>
-        <div class="price-card">
+        <div class="price-card fade-in">
           <div class="price-name">Tiêu chuẩn</div>
+          <div class="price-sub" data-key="pr_sub_std">Dành cho hộ kinh doanh ổn định</div>
           <div class="price-amount">10.000₫<em>/hóa đơn</em></div>
           <hr class="price-divider">
           <ul class="price-features">
@@ -259,8 +355,9 @@ footer strong{color:#ddd}
           </ul>
           <a href="#contact" class="price-cta" onclick="gtag('event', 'click_pricing_cta', {'label': this.closest('.price-card').querySelector('.price-name').textContent.trim()})">Đăng ký ngay</a>
         </div>
-        <div class="price-card">
+        <div class="price-card fade-in">
           <div class="price-name">Số lượng lớn</div>
+          <div class="price-sub" data-key="pr_sub_bulk">Từ 50+ hóa đơn mỗi kỳ</div>
           <div class="price-amount">8.000₫<em>/hóa đơn</em></div>
           <hr class="price-divider">
           <ul class="price-features">
@@ -272,63 +369,90 @@ footer strong{color:#ddd}
           <a href="#contact" class="price-cta" onclick="gtag('event', 'click_pricing_cta', {'label': this.closest('.price-card').querySelector('.price-name').textContent.trim()})">Đăng ký ngay</a>
         </div>
       </div>
-      <div class="price-offer">
-        <strong data-key="offer_s">Kỳ thuế đầu tiên miễn phí:</strong>
-        <span data-key="offer_t"> Kỳ thuế đầu tiên miễn phí, sau đó tính theo số hóa đơn thực tế. Chỉ trả cho những gì dùng.</span>
+      <div class="price-offer fade-in">
+        <strong data-key="offer_s">Kỳ thuế đầu tiên miễn phí —</strong>
+        <span data-key="offer_t"> sau đó tính theo số hóa đơn thực tế. HKD mới được hưởng giá 5.000₫/hóa đơn trong 6 tháng.</span>
       </div>
     </div>
   </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 data-key="ab_h">Về Long An Solutions</h2>
+        <p data-key="ab_sub">Công nghệ AI + chuyên gia thuế — khai thuế chính xác, đúng hạn</p>
+      </div>
+      <div class="about-wrap fade-in">
+        <p data-key="ab_p1"><strong>Long An Solutions</strong> là dịch vụ khai thuế ứng dụng AI, được xây dựng dành riêng cho hộ kinh doanh và doanh nghiệp nhỏ Việt Nam. Chúng tôi kết hợp <strong>công nghệ trích xuất tự động</strong> với đội ngũ <strong>chuyên gia thuế giàu kinh nghiệm</strong> để mang đến dịch vụ khai thuế nhanh, chính xác và tiết kiệm.</p>
+        <p data-key="ab_p2">Không hợp đồng dài hạn. Không phí cố định. Bạn chỉ trả cho số hóa đơn đã xử lý — và <strong>kỳ thuế đầu tiên hoàn toàn miễn phí</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
   <section id="contact" class="section bg-white">
     <div class="container">
-      <div class="section-header">
-        <h2 data-key="ct_h">Liên hệ tư vấn</h2>
-        <p data-key="ct_sub">Bắt đầu với cuộc trò chuyện ngắn — không ràng buộc</p>
+      <div class="section-header fade-in">
+        <h2 data-key="ct_h">Bắt đầu ngay — Miễn phí kỳ đầu</h2>
+        <p data-key="ct_sub">Gửi email cho chúng tôi — chúng tôi sẽ tư vấn trong vòng 24 giờ. Không ràng buộc.</p>
       </div>
-      <div class="contact-info">
-        <h3 data-key="ct_ih">Liên hệ qua email</h3>
-        <p data-key="ct_ip">Gửi email cho chúng tôi — chúng tôi sẽ trả lời trong vòng 24 giờ.</p>
+      <div class="contact-info fade-in">
         <a href="mailto:info@longansolutions.com" class="contact-btn btn-email" onclick="gtag('event', 'click_email', {'method': 'button', 'label': 'Contact Email'})">✉️ info@longansolutions.com</a>
+        <div class="contact-meta">
+          <span data-key="ct_meta1">📞 Zalo: <a href="https://zalo.me/" target="_blank" rel="noopener">Liên hệ qua Zalo</a></span>
+          <span data-key="ct_meta2">⏱ Phản hồi trong 24h</span>
+        </div>
       </div>
     </div>
   </section>
 </main>
 <footer>
   <div class="container">
-    <p><strong>Long An Solutions</strong> — <span data-key="ft">Kê khai thuế tự động cho hộ kinh doanh và doanh nghiệp Việt Nam</span></p>
+    <p><strong>Long An Solutions</strong> — <span data-key="ft">Khai thuế bằng AI cho hộ kinh doanh và doanh nghiệp Việt Nam</span></p>
     <p style="margin-top:6px;font-size:.78rem" data-key="ft2">© 2026 · Long An Solutions</p>
   </div>
 </footer>
 <script>
-// HTML defaults are Vietnamese. EN object only needed for translation.
 const EN = {
   skip:"Skip to content",
   nav_how:"How it works", nav_svc:"Services", nav_price:"Pricing", nav_contact:"Contact",
-  badge:"First period free — pay as you go. From just 5,000₫/invoice",
-  h1:"New business?<br>Leave taxes to us — you focus on selling.",
-  sub:"New household business? Stop worrying about taxes. Send invoices over Zalo, AI handles the rest. Cheaper than traditional services, no long-term commitment.",
-  cta1:"Get started", cta2:"See how it works",
-  s1l:"/invoice (under 50)", s2l:"first period free — pay as you go", s3l:"Save up to 80% vs traditional services",
+  badge:"First period free — from 5,000₫/invoice",
+  tagline:"⚡ AI-powered tax filing — Faster, more accurate",
+  h1:"<span class=\"accent\">Smart</span> tax filing<br>for household businesses &amp; small enterprises",
+  sub:"Send invoices over Zalo — AI extracts, classifies tax rates, calculates VAT. Tax experts review before filing. <strong>Save up to 80%</strong> vs traditional services.",
+  cta1:"Get started — Free first period", cta2:"See how it works",
+  s1l:"/invoice (first 6 months)", s2l:"first period free — pay later", s3l:"/invoice (standard)", s4l:"Send via Zalo — no app needed",
+  pf1:"1,700+", pf1l:"invoices processed in 2 days", pf2:"99.5%", pf2l:"AI extraction accuracy", pf3:"Trusted by", pf3l:"household businesses &amp; SMEs",
   hw_h:"How it works", hw_sub:"4 simple steps — you just send invoices",
   s1_h:"Send invoices via Zalo", s1_p:"Snap a photo or forward invoices via Zalo daily or weekly — no special software.",
-  s2_h:"AI processes automatically", s2_p:"Extracts data, auto-detects input/output direction from MST, classifies tax rates, calculates VAT in seconds.",
-  s3_h:"Review · Expert verification", s3_p:"Specialist reviews each item, confirms input/output direction. Tax expert checks before sending you the return to sign.",
-  s4_h:"Sign and submit", s4_p:"LAS sends the XML return file — you sign with your digital signature (USB token or remote signing) and submit via the e-tax portal. Once a month, takes 2 minutes.",
-  sv_h:"Services", sv_sub:"Tax filing services — excludes full accounting",
+  s2_h:"AI processes automatically", s2_p:"Extracts data, auto-detects input/output from MST, classifies tax rates, calculates VAT in seconds.",
+  s3_h:"Review by head accountant", s3_p:"Specialist reviews each invoice, confirms direction. Head accountant checks before sending to you.",
+  s4_h:"Sign &amp; submit", s4_p:"LAS sends the XML return file — you sign with digital signature (USB token or remote) and submit via the e-tax portal. Takes 2 minutes per period.",
+  tc1l:"invoices processed in 2 days", tc1s:"Powered by batch AI extraction",
+  tc2l:"extraction accuracy", tc2s:"Auto-calculates VAT, classifies tax rates",
+  tc3l:"cost savings", tc3s:"Compared to traditional accounting services",
+  note_t:"Note:", note_b:"You need a digital signature (USB token or remote signing) to sign the return. LAS calculates and prepares the return — you sign and submit via the e-tax portal. Need one? We help you register.",
+  sv_h:"Services", sv_sub:"Focused on tax filing — transparent, on time",
   sv1_h:"✅ Included",
   sv1_1:"Monthly/quarterly VAT returns (01/GTGT)", sv1_2:"Quarterly CIT provisional estimates (coming soon)",
   sv1_3:"Deadline reminders 5–7 days out", sv1_4:"Monthly revenue &amp; VAT summary",
   sv1_5:"Search processed invoices", sv1_6:"Zalo support",
   sv2_h:"🔜 Coming soon",
-  sv2_1:"Monthly P&L reports", sv2_2:"Annual CIT finalization", sv2_4:"Auto-import invoices from GDT portal", sv2_3:"Payroll &amp; PIT",
+  sv2_1:"Monthly P&amp;L reports", sv2_2:"Annual CIT finalization", sv2_4:"Auto-import invoices from GDT portal", sv2_3:"Payroll &amp; PIT",
   sv3_h:"❌ Not included",
   sv3_1:"Full bookkeeping", sv3_2:"Audited financials", sv3_3:"Inventory management", sv3_4:"Individual income tax",
-  pr_h:"Pricing", pr_sub:"Volume discount — no hidden fees",
-  offer_s:"Your first period is on us:", offer_t:" After that, pay only for invoices processed. New HKDs get 5,000₫/invoice rate.",
-  ct_h:"Contact", ct_sub:"Free consultation — no obligation",
-  ct_ih:"Email us", ct_ip:"Send us an email — we respond within 24h.",
-  ct_zalo:"💬 Message on Zalo (coming soon)",
-  note_t:"Note:", note_b:"You need a digital signature (USB token or remote signing) to sign the return. LAS calculates and prepares the return — you sign and submit via the e-tax portal. Need one? We help you register (~500K/year).",
-  ft:"Automated tax support for Vietnamese household businesses",
+  pr_h:"Pricing", pr_sub:"Volume discount — no hidden fees — pay only for invoices processed",
+  pr_sub_std:"For established household businesses",
+  pr_sub_bulk:"50+ invoices per period",
+  offer_s:"Your first period is free —", offer_t:" after that pay only for invoices processed. New HKDs get 5,000₫/invoice for 6 months.",
+  ab_h:"About Long An Solutions", ab_sub:"AI technology + tax experts — accurate, on-time filing",
+  ab_p1:"<strong>Long An Solutions</strong> is an AI-powered tax filing service built for Vietnamese household businesses and small enterprises. We combine <strong>automated extraction technology</strong> with an experienced <strong>team of tax professionals</strong> to deliver fast, accurate, and cost-effective tax filing.",
+  ab_p2:"No long-term contracts. No fixed fees. You only pay for invoices processed — and <strong>your first tax period is completely free</strong>.",
+  ct_h:"Get started — Free first period", ct_sub:"Email us — we'll respond within 24 hours. No obligation.",
+  ct_meta1:"💬 Zalo: <a href=\"https://zalo.me/\" target=\"_blank\" rel=\"noopener\">Message on Zalo</a>",
+  ct_meta2:"⏱ Response within 24h",
+  ft:"AI-powered tax filing for Vietnamese household businesses and SMEs",
   ft2:"© 2026 · Long An Solutions"
 };
 let lang = localStorage.getItem('vkt_lang') || 'vi';
@@ -359,6 +483,15 @@ function toggleNav() {
 document.addEventListener('click', e => {
   if (!e.target.closest('nav')) document.getElementById('nav-links').classList.remove('open');
 });
+
+/* ── Intersection Observer for fade-in ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
 setLang(lang);
 </script>
 </body>
