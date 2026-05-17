@@ -44,9 +44,8 @@
     .hero{background:linear-gradient(135deg,rgba(244,250,251,.95) 0,rgba(232,245,245,.95) 40%,rgba(244,250,251,.95) 100%),url('hero-bg.jpg') center/cover fixed;padding:80px 0 64px;border-bottom:1px solid #e0eaea;text-align:center;position:relative;overflow:hidden}
     .hero-inner{display:flex;align-items:center;gap:48px}
     .hero-text{flex:1;text-align:center}
-    .hero-visual{display:block;margin-bottom:24px}
-    .hero-visual img{width:100%;height:auto;border-radius:12px;max-height:280px;object-fit:contain}
-    @media(min-width:860px){.hero-text{text-align:left}.hero-visual{flex:0 0 380px;margin-bottom:0}.hero-visual img{max-height:none;object-fit:initial;border-radius:16px}}
+    .hero-visual{display:none}
+    @media(min-width:860px){.hero-text{text-align:left}.hero-visual{display:block;flex:0 0 380px}.hero-visual img{width:100%;height:auto;border-radius:16px}}
     .hero::before{content:"";position:absolute;top:-80px;right:-120px;width:400px;height:400px;background:radial-gradient(circle,rgba(13,110,110,.06) 0,transparent 70%);pointer-events:none;border-radius:50%}
     .hero::after{content:"";position:absolute;bottom:-100px;left:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(13,110,110,.04) 0,transparent 70%);pointer-events:none;border-radius:50%}
     .hero-badge{display:inline-block;background:rgba(13,110,110,.1);color:#0d6e6e;font-size:.82rem;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:20px;border:1px solid rgba(13,110,110,.2);backdrop-filter:blur(2px)}
@@ -264,9 +263,6 @@
       <div class="section-header fade-in">
         <h2 data-key="hw_h">Cách hoạt động</h2>
         <p data-key="hw_sub">4 bước đơn giản — bạn chỉ cần gửi hóa đơn</p>
-      </div>
-      <div class="text-center mb-8">
-        <img src="process-flow-illustration.jpg" alt="Quy trình từ xuất Excel GDT đến ký nộp tờ khai" loading="lazy" style="max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08)">
       </div>
       <div class="steps">
         <div class="step fade-in">
