@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dùng thử miễn phí — Long An Solutions | Khai thuế bằng AI qua Zalo</title>
+  <meta name="description" content="Khai thuế GTGT bằng AI cho hộ kinh doanh. Gửi hóa đơn qua Zalo — AI xử lý — kế toán trưởng kiểm tra. Kỳ thuế đầu tiên miễn phí.">
+  <link rel="icon" href="logo.png">
+
+  <!-- Open Graph for ad platforms -->
+  <meta property="og:title" content="Khai thuế bằng AI — Kỳ đầu miễn phí">
+  <meta property="og:description" content="Gửi hóa đơn qua Zalo. AI tự động trích xuất, tính GTGT. Kế toán trưởng 30 năm kiểm tra. Không cần cài đặt.">
+  <meta property="og:image" content="https://longansolutions.com/og-image.png">
+  <meta property="og:url" content="https://longansolutions.com/dung-thu.html">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans',sans-serif;color:#1a1a2e;background:#f8f9fa;line-height:1.6;-webkit-font-smoothing:antialiased}
+    .container{max-width:680px;margin:0 auto;padding:0 20px}
+
+    .hero{background:linear-gradient(135deg,#0d6e6e 0,#095a5a 100%);padding:60px 0 48px;text-align:center;color:#fff}
+    .hero h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;margin-bottom:12px;letter-spacing:-.5px}
+    .hero p{font-size:1rem;opacity:.9;margin-bottom:0;line-height:1.7}
+    .hero .badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:.78rem;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:16px;border:1px solid rgba(255,255,255,.2)}
+
+    .section{padding:48px 0}
+    .steps{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+    .step{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:22px;text-align:center}
+    .step .icon{font-size:2rem;margin-bottom:8px}
+    .step h3{font-size:.95rem;font-weight:700;margin-bottom:4px;color:#1a1a2e}
+    .step p{font-size:.85rem;color:#666;margin:0}
+
+    .form-section{background:#fff;border:1px solid #e8e8e8;border-radius:16px;padding:36px 32px;max-width:500px;margin:0 auto}
+    .form-section h2{font-size:1.2rem;font-weight:800;text-align:center;margin-bottom:6px}
+    .form-section .sub{text-align:center;color:#666;font-size:.88rem;margin-bottom:24px}
+    .form-group{margin-bottom:16px}
+    .form-group label{display:block;font-size:.83rem;font-weight:600;color:#444;margin-bottom:4px}
+    .form-group input,.form-group textarea{width:100%;border:1.5px solid #ddd;border-radius:10px;padding:12px 14px;font-size:.92rem;font-family:inherit;transition:border-color .2s;background:#fff;color:#1a1a2e}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:#0d6e6e;box-shadow:0 0 0 3px rgba(13,110,110,.1)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form-submit{width:100%;padding:14px;background:#0d6e6e;color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s,transform .15s}
+    .form-submit:hover{background:#095a5a;transform:translateY(-1px)}
+    .form-submit:disabled{background:#94c5c5;cursor:not-allowed;transform:none}
+    .form-note{font-size:.78rem;color:#999;text-align:center;margin-top:10px}
+
+    .proof{padding:36px 0;text-align:center}
+    .proof-items{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:20px}
+    .proof-item{text-align:center}
+    .proof-item .icon{font-size:1.8rem}
+    .proof-item p{font-size:.88rem;color:#555;margin-top:4px}
+
+    .testimonial{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:28px;margin:32px 0;text-align:center}
+    .testimonial p{font-size:.92rem;color:#555;font-style:italic;line-height:1.7}
+    .testimonial .name{font-weight:700;color:#1a1a2e;font-style:normal;margin-top:10px;font-size:.85rem}
+
+    footer{background:#1a1a2e;color:#888;padding:28px 0;text-align:center;font-size:.83rem}
+    footer a{color:#ddd;text-decoration:underline}
+
+    #toast{display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:14px 28px;border-radius:12px;font-size:.9rem;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,.2);text-align:center;max-width:90%}
+
+    @media(max-width:540px){
+      .steps{grid-template-columns:1fr}
+      .form-section{padding:24px 20px}
+      .form-row{grid-template-columns:1fr}
+      .proof-items{gap:20px}
+    }
+  </style>
+</head>
+<body>
+<div class="hero">
+  <div class="container">
+    <div class="badge">📲 Kỳ thuế đầu tiên miễn phí</div>
+    <h1>Khai thuế bằng AI — chỉ cần Zalo</h1>
+    <p>Gửi hóa đơn qua Zalo. AI tự động trích xuất, tính GTGT.<br>Kế toán trưởng 30 năm kiểm tra. Bạn chỉ ký số và nộp.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="steps">
+      <div class="step">
+        <div class="icon">📷</div>
+        <h3>Gửi hóa đơn qua Zalo</h3>
+        <p>Chụp ảnh hoặc forward file. Không cần app, không cần đăng nhập.</p>
+      </div>
+      <div class="step">
+        <div class="icon">🤖</div>
+        <h3>AI xử lý tự động</h3>
+        <p>Trích xuất dữ liệu, phân loại đầu ra/đầu vào, tính thuế suất.</p>
+      </div>
+      <div class="step">
+        <div class="icon">👩‍💼</div>
+        <h3>Kế toán trưởng kiểm tra</h3>
+        <p>Rà soát từng hóa đơn trước khi gửi bạn ký.</p>
+      </div>
+      <div class="step">
+        <div class="icon">✍️</div>
+        <h3>Ký số &amp; nộp</h3>
+        <p>Ký trên điện thoại — không cần máy tính. Mất 2 phút.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="padding-top:0">
+  <div class="container">
+    <div class="form-section">
+      <h2>Đăng ký dùng thử miễn phí</h2>
+      <p class="sub">Kỳ thuế đầu tiên hoàn toàn miễn phí — không ràng buộc.</p>
+
+      <form id="lead-form" action="https://formsubmit.co/dphamsw+las@gmail.com" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Tên / Tên hộ kinh doanh *</label>
+            <input type="text" id="name" name="name" required placeholder="VD: HKD Minh Tươi">
+          </div>
+          <div class="form-group">
+            <label for="mst">Mã số thuế</label>
+            <input type="text" id="mst" name="mst" placeholder="VD: 0123456789">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Số điện thoại *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="VD: 0901 234 567">
+          </div>
+          <div class="form-group">
+            <label for="zalo">Số Zalo (nếu khác SĐT)</label>
+            <input type="text" id="zalo" name="zalo" placeholder="VD: 0901 234 567">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="invoices">Số hóa đơn mỗi tháng (ước lượng)</label>
+          <input type="text" id="invoices" name="invoices" placeholder="VD: 20-30 hóa đơn">
+        </div>
+
+        <!-- Hidden fields for tracking -->
+        <input type="hidden" name="_subject" value="Đăng ký dùng thử LAS">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://longansolutions.com/cam-on.html">
+        <input type="text" name="_honey" style="display:none">
+
+        <button type="submit" class="form-submit" id="submit-btn">
+          Đăng ký — Miễn phí kỳ đầu
+        </button>
+        <p class="form-note">Chúng tôi sẽ liên hệ qua Zalo hoặc điện thoại trong vòng 24 giờ. Không spam.</p>
+      </form>
+
+      <div id="thank-you" style="display:none;text-align:center;padding:20px 0">
+        <div style="font-size:3rem;margin-bottom:12px">✅</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:6px">Đã nhận thông tin!</h3>
+        <p style="color:#666;font-size:.9rem">Vi sẽ liên hệ với bạn trong vòng 24 giờ qua Zalo hoặc điện thoại. Trong thời gian chờ, hãy bắt đầu gửi hóa đơn qua Zalo OA Long An Solutions nhé!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="proof">
+  <div class="container">
+    <h2 style="font-size:1.05rem;font-weight:700;color:#555">Không cần cài đặt phần mềm</h2>
+    <div class="proof-items">
+      <div class="proof-item">
+        <div class="icon">📱</div>
+        <p>Chỉ cần điện thoại</p>
+      </div>
+      <div class="proof-item">
+        <div class="icon">💬</div>
+        <p>Gửi qua Zalo</p>
+      </div>
+      <div class="proof-item">
+        <div class="icon">⚡</div>
+        <p>AI trích xuất tự động</p>
+      </div>
+      <div class="proof-item">
+        <div class="icon">✅</div>
+        <p>Kế toán trưởng kiểm tra</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="padding-top:0">
+  <div class="container">
+    <div class="testimonial">
+      <p>"Trước đây tôi mất cả buổi để ngồi gõ hóa đơn vào Excel tính thuế. Giờ chỉ cần chụp ảnh gửi qua Zalo là có tờ khai. Tiết kiệm thời gian kinh khủng."</p>
+      <p class="name">— CVT Vận tải Bắc Nam</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p><a href="/">Long An Solutions</a> — AI-powered tax filing for Vietnamese household businesses and SMEs</p>
+    <p style="margin-top:4px">© 2026 · Long An Solutions</p>
+  </div>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+  document.getElementById('lead-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Đang gửi...';
+
+    fetch(this.action, {
+      method: 'POST',
+      body: new FormData(this),
+      headers: { 'Accept': 'application/json' },
+    }).then(r => {
+      if (r.ok) {
+        document.getElementById('lead-form').style.display = 'none';
+        document.getElementById('thank-you').style.display = 'block';
+        if (typeof gtag === 'function') {
+          gtag('event', 'submit_lead', {'method': 'dung-thu'});
+        }
+      } else {
+        showToast('Có lỗi xảy ra. Vui lòng thử lại hoặc gửi email đến info@longansolutions.com');
+        btn.disabled = false;
+        btn.textContent = 'Đăng ký — Miễn phí kỳ đầu';
+      }
+    }).catch(() => {
+      showToast('Có lỗi xảy ra. Vui lòng thử lại hoặc gửi email đến info@longansolutions.com');
+      btn.disabled = false;
+      btn.textContent = 'Đăng ký — Miễn phí kỳ đầu';
+    });
+  });
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.style.display = 'block';
+    setTimeout(() => { t.style.display = 'none'; }, 5000);
+  }
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXEYJRVGB8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXEYJRVGB8');
+</script>
+</body>
+</html>
