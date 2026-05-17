@@ -223,13 +223,34 @@
     btn.disabled = true;
     btn.textContent = 'Đang gửi...';
 
+    // Capture UTM params from URL (for ad tracking)
+    const urlParams = new URLSearchParams(window.location.search)
+    const utmSource = urlParams.get('utm_source') || ''
+    const utmCampaign = urlParams.get('utm_campaign') || ''
+    const utmMedium = urlParams.get('utm_medium') || ''
+
     const data = {
       name: document.getElementById('name').value,
       phone: document.getElementById('phone').value,
       mst: document.getElementById('mst').value,
       zalo: document.getElementById('zalo').value,
       invoices: document.getElementById('invoices').value,
+      utm_source: utmSource,
+      utm_campaign: utmCampaign,
+      utm_medium: utmMedium,
     };
+
+    // Fire GA event with campaign info
+    if (typeof gtag === 'function') {
+      gtag('event', 'submit_lead', {
+        'method': 'dung-thu',
+        'utm_source': utmSource,
+        'utm_campaign': utmCampaign,
+      });
+    }
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', utmSource ? { 'source': utmSource } : {});
+    }
 
     fetch('https://longan.life/api/public/leads', {
       method: 'POST',
@@ -239,12 +260,6 @@
       if (r.ok) {
         document.getElementById('lead-form').style.display = 'none';
         document.getElementById('thank-you').style.display = 'block';
-        if (typeof gtag === 'function') {
-          gtag('event', 'submit_lead', {'method': 'dung-thu'});
-        }
-        if (typeof fbq === 'function') {
-          fbq('track', 'Lead');
-        }
       } else {
         showToast('Có lỗi xảy ra. Vui lòng thử lại sau.');
         btn.disabled = false;
