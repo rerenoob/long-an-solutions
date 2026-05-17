@@ -215,41 +215,16 @@
 <div id="toast"></div>
 
 <script>
-  document.getElementById('lead-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+  // Track form submission for GA (form redirects to cam-on.html via formsubmit.co)
+  document.getElementById('lead-form').addEventListener('submit', function() {
     const btn = document.getElementById('submit-btn');
     btn.disabled = true;
     btn.textContent = 'Đang gửi...';
-
-    fetch(this.action, {
-      method: 'POST',
-      body: new FormData(this),
-      headers: { 'Accept': 'application/json' },
-    }).then(r => {
-      if (r.ok) {
-        document.getElementById('lead-form').style.display = 'none';
-        document.getElementById('thank-you').style.display = 'block';
-        if (typeof gtag === 'function') {
-          gtag('event', 'submit_lead', {'method': 'dung-thu'});
-        }
-      } else {
-        showToast('Có lỗi xảy ra. Vui lòng thử lại hoặc gửi email đến info@longansolutions.com');
-        btn.disabled = false;
-        btn.textContent = 'Đăng ký — Miễn phí kỳ đầu';
-      }
-    }).catch(() => {
-      showToast('Có lỗi xảy ra. Vui lòng thử lại hoặc gửi email đến info@longansolutions.com');
-      btn.disabled = false;
-      btn.textContent = 'Đăng ký — Miễn phí kỳ đầu';
-    });
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead');
+    }
+    // Allow form to submit normally to formsubmit.co
   });
-
-  function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.style.display = 'block';
-    setTimeout(() => { t.style.display = 'none'; }, 5000);
-  }
 </script>
 
 <!-- Google Analytics -->
