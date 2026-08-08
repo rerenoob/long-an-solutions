@@ -364,33 +364,33 @@
       <div class="pricing-grid">
         <div class="price-card popular fade-in">
           <div class="popular-badge" data-key="pop_badge">Phổ biến</div>
-          <div class="price-name">Tiêu chuẩn</div>
-          <div class="price-sub">Dành cho hộ kinh doanh và doanh nghiệp nhỏ</div>
-          <div class="price-amount">10.000₫<em>/hóa đơn</em></div>
+          <div class="price-name" data-key="pr1_name">Tiêu chuẩn</div>
+          <div class="price-sub" data-key="pr1_sub">Dành cho hộ kinh doanh và doanh nghiệp nhỏ</div>
+          <div class="price-amount">10.000₫<em data-key="pr_per">/hóa đơn</em></div>
           <hr class="price-divider">
           <ul class="price-features">
-            <li>Khai GTGT hàng tháng / quý</li>
-            <li>TNDN tạm tính hàng quý <span style="font-size:.75rem;color:#999;font-weight:400">(sắp ra mắt)</span></li>
-            <li>AI tự động trích xuất + phân loại</li>
-            <li>Chuyên gia thuế kiểm tra</li>
-            <li>Báo cáo tháng 1 trang</li>
-            <li>Nhắc hạn nộp tự động</li>
-            <li>Hỗ trợ qua Zalo</li>
+            <li data-key="pr1_f1">Khai GTGT hàng tháng / quý</li>
+            <li data-key="pr1_f2">TNDN tạm tính hàng quý <span style="font-size:.75rem;color:#999;font-weight:400" data-key="pr_soon">(sắp ra mắt)</span></li>
+            <li data-key="pr1_f3">AI tự động trích xuất + phân loại</li>
+            <li data-key="pr1_f4">Chuyên gia thuế kiểm tra</li>
+            <li data-key="pr1_f5">Báo cáo tháng 1 trang</li>
+            <li data-key="pr1_f6">Nhắc hạn nộp tự động</li>
+            <li data-key="pr1_f7">Hỗ trợ qua Zalo</li>
           </ul>
-          <a href="dung-thu.html" class="price-cta" onclick="gtag('event', 'click_pricing_cta', {'label': this.closest('.price-card').querySelector('.price-name').textContent.trim()})">Đăng ký ngay</a>
+          <a href="dung-thu.html" class="price-cta" data-key="pr_cta" onclick="gtag('event', 'click_pricing_cta', {'label': this.closest('.price-card').querySelector('.price-name').textContent.trim()})">Đăng ký ngay</a>
         </div>
         <div class="price-card fade-in">
-          <div class="price-name">Số lượng lớn</div>
+          <div class="price-name" data-key="pr2_name">Số lượng lớn</div>
           <div class="price-sub" data-key="pr_sub_bulk">Từ 50+ hóa đơn mỗi kỳ</div>
-          <div class="price-amount">8.000₫<em>/hóa đơn</em></div>
+          <div class="price-amount">8.000₫<em data-key="pr_per">/hóa đơn</em></div>
           <hr class="price-divider">
           <ul class="price-features">
-            <li>Tất cả dịch vụ cơ bản</li>
-            <li>Xử lý số lượng lớn</li>
-            <li>Ưu tiên phản hồi Zalo</li>
-            <li>Kiểm tra phân loại thuế suất</li>
+            <li data-key="pr2_f1">Tất cả dịch vụ cơ bản</li>
+            <li data-key="pr2_f2">Xử lý số lượng lớn</li>
+            <li data-key="pr2_f3">Ưu tiên phản hồi Zalo</li>
+            <li data-key="pr2_f4">Kiểm tra phân loại thuế suất</li>
           </ul>
-          <a href="dung-thu.html" class="price-cta" onclick="gtag('event', 'click_pricing_cta', {'label': this.closest('.price-card').querySelector('.price-name').textContent.trim()})">Đăng ký ngay</a>
+          <a href="dung-thu.html" class="price-cta" data-key="pr_cta" onclick="gtag('event', 'click_pricing_cta', {'label': this.closest('.price-card').querySelector('.price-name').textContent.trim()})">Đăng ký ngay</a>
         </div>
       </div>
       <div class="price-offer fade-in">
@@ -547,6 +547,13 @@ const EN = {
   sv3_h:"Not included",
   sv3_1:"Full bookkeeping", sv3_2:"Audited financials", sv3_3:"Inventory management", sv3_4:"Individual income tax",
   pr_h:"Pricing", pr_sub:"Volume discount — no hidden fees — pay only for invoices processed",
+  pr1_name:"Standard", pr1_sub:"For household businesses and small enterprises", pr_per:"/invoice",
+  pr1_f1:"Monthly/quarterly VAT filing (01/GTGT)", pr1_f2:"Quarterly CIT provisional estimate",
+  pr1_f3:"AI automatic extraction + classification", pr1_f4:"Review by tax experts",
+  pr1_f5:"One-page monthly report", pr1_f6:"Automatic filing deadline reminders", pr1_f7:"Zalo support",
+  pr2_name:"Volume", pr2_f1:"All core services included", pr2_f2:"High-volume processing",
+  pr2_f3:"Priority Zalo response", pr2_f4:"Tax-rate classification review",
+  pr_cta:"Register now", pr_soon:"(coming soon)",
   pop_badge:"Popular",
   pr_sub_bulk:"50+ invoices per period",
   offer_s:"Your first period is free —", offer_t:" after that 10,000₫/invoice (8,000₫ for 50+ invoices/period).",
