@@ -101,7 +101,7 @@
     .tech-divider{width:1px;height:44px;background:#b0d4d4;flex-shrink:0}
 
     /* ── Services ── */
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
     .svc-card{background:#fff;border:1px solid #e6eeee;border-radius:14px;padding:28px;box-shadow:0 2px 10px rgba(0,0,0,.03);transition:box-shadow .25s,transform .2s}
     .svc-card:hover{box-shadow:0 10px 28px rgba(0,0,0,.08);transform:translateY(-2px)}
     .svc-card.highlight{border-color:#0d6e6e;background:linear-gradient(135deg,#f7fbfb,#f0f7f7)}
@@ -376,15 +376,10 @@
             <li class="soon" data-key="sv2_2">Quyết toán TNDN cuối năm</li>
             <li class="soon" data-key="sv2_3">Báo cáo lãi lỗ hàng tháng (P&amp;L)</li>
             <li class="soon" data-key="sv2_4">Tự động nhập hóa đơn từ cổng GDT</li>
-          </ul>
-        </div>
-        <div class="svc-card fade-in">
-          <h3 data-key="sv3_h">Không bao gồm</h3>
-          <ul>
-            <li class="out" data-key="sv3_1">Sổ sách kế toán đầy đủ</li>
-            <li class="out" data-key="sv3_2">Báo cáo tài chính kiểm toán</li>
-            <li class="out" data-key="sv3_3">Quản lý hàng tồn kho / TSCĐ</li>
-            <li class="out" data-key="sv3_4">Khai thuế TNCN cá nhân</li>
+            <li class="soon" data-key="sv2_5">Sổ sách kế toán đầy đủ</li>
+            <li class="soon" data-key="sv2_6">Báo cáo tài chính kiểm toán</li>
+            <li class="soon" data-key="sv2_7">Quản lý hàng tồn kho / TSCĐ</li>
+            <li class="soon" data-key="sv2_8">Khai thuế TNCN cá nhân</li>
           </ul>
         </div>
       </div>
@@ -581,9 +576,7 @@ const EN = {
   sv1_3:"Deadline reminders 5–7 days out", sv1_4:"Search processed invoices",
   sv1_5:"Zalo support",
   sv2_h:"Coming soon",
-  sv2_1:"Quarterly CIT provisional estimates", sv2_2:"Annual CIT finalization", sv2_3:"Monthly P&amp;L reports", sv2_4:"Auto-import invoices from GDT portal",
-  sv3_h:"Not included",
-  sv3_1:"Full bookkeeping", sv3_2:"Audited financials", sv3_3:"Inventory management", sv3_4:"Individual income tax",
+  sv2_1:"Quarterly CIT provisional estimates", sv2_2:"Annual CIT finalization", sv2_3:"Monthly P&amp;L reports", sv2_4:"Auto-import invoices from GDT portal", sv2_5:"Full bookkeeping", sv2_6:"Audited financial statements", sv2_7:"Inventory / fixed-asset management", sv2_8:"Personal income tax filing (PIT)",
   pr_h:"Pricing", pr_sub:"Volume discount — no hidden fees — pay only for invoices processed",
   pr1_name:"Standard", pr1_sub:"For household businesses and small enterprises", pr_per:"/invoice",
   pr1_f1:"Monthly/quarterly VAT filing (01/GTGT)", pr1_f2:"Quarterly CIT provisional estimate",
