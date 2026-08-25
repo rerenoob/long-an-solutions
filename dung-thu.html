@@ -143,29 +143,21 @@
 <div class="section" style="padding-top:0">
   <div class="container">
     <div class="form-section">
-      <h2>Đăng ký dùng thử miễn phí</h2>
-      <p class="sub">Kỳ thuế đầu tiên hoàn toàn miễn phí — không ràng buộc.</p>
+      <h2>Liên hệ qua Zalo — tư vấn miễn phí</h2>
+      <p class="sub">Mở Zalo và nhắn tin cho Long An Solutions — không cần cài đặt, không cần số điện thoại. Phản hồi trong 24 giờ.</p>
+
+      <a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener" class="btn-zalo" style="display:block;text-align:center;padding:16px;background:#0068FF;color:#fff;border-radius:10px;font-weight:700;font-size:1.02rem;margin-bottom:24px;box-shadow:0 4px 14px rgba(0,104,255,.3)">💬 Nhắn tin Zalo — bắt đầu ngay</a>
+
+      <p class="sub">Hoặc điền thông tin bên dưới — chúng tôi sẽ liên hệ anh/chị trên Zalo.</p>
 
       <form id="lead-form" action="https://longan.life/api/public/leads" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Tên / Tên hộ kinh doanh *</label>
-            <input type="text" id="name" name="name" required placeholder="VD: HKD Minh Tươi">
-          </div>
-          <div class="form-group">
-            <label for="mst">Mã số thuế</label>
-            <input type="text" id="mst" name="mst" placeholder="VD: 0123456789">
-          </div>
+        <div class="form-group">
+          <label for="name">Tên / Tên hộ kinh doanh *</label>
+          <input type="text" id="name" name="name" required placeholder="VD: HKD Minh Tươi">
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="phone">Số điện thoại *</label>
-            <input type="tel" id="phone" name="phone" required placeholder="VD: 0901 234 567">
-          </div>
-          <div class="form-group">
-            <label for="zalo">Số Zalo (nếu khác SĐT)</label>
-            <input type="text" id="zalo" name="zalo" placeholder="VD: 0901 234 567">
-          </div>
+        <div class="form-group">
+          <label for="mst">Mã số thuế</label>
+          <input type="text" id="mst" name="mst" placeholder="VD: 0123456789">
         </div>
         <div class="form-group">
           <label for="invoices">Số hóa đơn mỗi tháng (ước lượng)</label>
@@ -177,13 +169,13 @@
         <button type="submit" class="form-submit" id="submit-btn">
           Đăng ký — Miễn phí kỳ đầu
         </button>
-        <p class="form-note">Chúng tôi sẽ liên hệ qua Zalo hoặc điện thoại trong vòng 24 giờ. Khi gửi biểu mẫu, bạn đồng ý cho Long An Solutions xử lý thông tin trên để liên hệ tư vấn dịch vụ, theo <a href="/privacy.html" style="color:#0d6e6e;font-weight:600">Chính sách bảo mật</a>. Thông tin của bạn được bảo mật, không dùng cho quảng cáo và không bán lại cho bên thứ ba.</p>
+        <p class="form-note">Chúng tôi sẽ nhắn Zalo cho anh/chị để tư vấn trong vòng 24 giờ. Khi gửi biểu mẫu, bạn đồng ý cho Long An Solutions xử lý thông tin trên để liên hệ tư vấn dịch vụ, theo <a href="/privacy.html" style="color:#0d6e6e;font-weight:600">Chính sách bảo mật</a>. Thông tin của bạn được bảo mật, không dùng cho quảng cáo và không bán lại cho bên thứ ba.</p>
       </form>
 
       <div id="thank-you" style="display:none;text-align:center;padding:20px 0">
         <div style="font-size:3rem;margin-bottom:12px;color:#0d6e6e;font-weight:200">✓</div>
         <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:6px">Đã nhận thông tin</h3>
-        <p style="color:#666;font-size:.9rem">Đội ngũ LAS sẽ gọi hoặc nhắn Zalo cho bạn trong vòng 24 giờ để hướng dẫn các bước tiếp theo.</p>
+        <p style="color:#666;font-size:.9rem">Đội ngũ LAS sẽ nhắn Zalo cho anh/chị trong vòng 24 giờ để hướng dẫn các bước tiếp theo. Anh/chị cũng có thể <a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener" style="color:#0d6e6e;font-weight:600">nhắn chủ động cho chúng tôi trên Zalo</a>.</p>
       </div>
     </div>
   </div>
@@ -227,9 +219,7 @@
 
     const data = {
       name: document.getElementById('name').value,
-      phone: document.getElementById('phone').value,
       mst: document.getElementById('mst').value,
-      zalo: document.getElementById('zalo').value,
       invoices: document.getElementById('invoices').value,
       utm_source: utmSource,
       utm_campaign: utmCampaign,

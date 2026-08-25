@@ -147,8 +147,10 @@
     .contact-info h3{font-size:1.05rem;font-weight:700;margin-bottom:10px}
     .contact-info p{color:#666;font-size:.9rem;margin-bottom:22px;line-height:1.7}
     .contact-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 32px;border-radius:10px;font-weight:700;font-size:.92rem;transition:background .2s,transform .15s}
-    .btn-email{background:#0d6e6e;color:#fff;font-size:1.05rem;padding:16px 36px;box-shadow:0 4px 14px rgba(13,110,110,.25)}
-    .btn-email:hover{background:#095a5a;transform:translateY(-1px);text-decoration:none;color:#fff}
+    .btn-zalo{background:#0068FF;color:#fff;font-size:1.05rem;padding:16px 36px;box-shadow:0 4px 14px rgba(0,104,255,.3)}
+    .btn-zalo:hover{background:#0055d4;transform:translateY(-1px);text-decoration:none;color:#fff}
+    .contact-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 30px;border-radius:10px;font-weight:700;font-size:.88rem;margin-top:12px;border:2px solid #0d6e6e;color:#0d6e6e;background:#fff;transition:background .2s,transform .15s}
+    .contact-btn-secondary:hover{background:rgba(13,110,110,.08);transform:translateY(-1px);text-decoration:none;color:#0d6e6e}
     .contact-meta{margin-top:20px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:.84rem;color:#888}
     .contact-meta a{color:#0d6e6e;font-weight:600}
 
@@ -227,7 +229,7 @@
       <li><a href="#services" data-key="nav_svc">Dịch vụ</a></li>
       <li><a href="#pricing" data-key="nav_price">Bảng giá</a></li>
       <li><a href="knowledge.html" data-key="nav_kb">Kiến thức</a></li>
-      <li><a href="dung-thu.html" class="nav-cta" data-key="nav_contact">Liên hệ tư vấn</a></li>
+      <li><a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener" class="nav-cta" data-key="nav_contact">Liên hệ qua Zalo</a></li>
     </ul>
     <div class="nav-end">
       <div class="lang-toggle" role="group" aria-label="Language / Ngôn ngữ">
@@ -248,7 +250,7 @@
         <h1 data-key="h1">Dịch vụ khai thuế <span class="accent">thông minh</span><br>cho hộ kinh doanh và doanh nghiệp nhỏ</h1>
         <p class="hero-sub" data-key="sub">Gửi hóa đơn qua Zalo — không cần app, không cần email, không cần đăng nhập. AI tự động trích xuất, phân loại, tính GTGT. Kế toán trưởng 30 năm kinh nghiệm kiểm tra trước khi nộp.</p>
         <div class="hero-ctas">
-          <a href="dung-thu.html" class="btn-primary" data-key="cta1">Miễn phí kỳ đầu — Đăng ký ngay</a>
+          <a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener" class="btn-primary" data-key="cta1">Miễn phí kỳ đầu — Liên hệ qua Zalo</a>
           <a href="#how-it-works" class="btn-ghost" data-key="cta2">Xem cách hoạt động</a>
         </div>
         <div class="hero-stats">
@@ -412,7 +414,7 @@
             <li data-key="pr1_f6">Nhắc hạn nộp tự động</li>
             <li data-key="pr1_f7">Hỗ trợ qua Zalo</li>
           </ul>
-          <a href="dung-thu.html" class="price-cta" data-key="pr_cta" onclick="gtag('event', 'click_pricing_cta', {'label': this.closest('.price-card').querySelector('.price-name').textContent.trim()})">Đăng ký ngay</a>
+          <a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener" class="price-cta" data-key="pr_cta" onclick="gtag('event', 'click_pricing_cta', {'label': this.closest('.price-card').querySelector('.price-name').textContent.trim()})">Liên hệ qua Zalo để bắt đầu</a>
         </div>
         <div class="price-card fade-in">
           <div class="price-name" data-key="pr2_name">Khối lượng cao</div>
@@ -425,7 +427,7 @@
             <li data-key="pr2_f3">Ưu tiên phản hồi Zalo</li>
             <li data-key="pr2_f4">Kiểm tra phân loại thuế suất</li>
           </ul>
-          <a href="dung-thu.html" class="price-cta" data-key="pr_cta" onclick="gtag('event', 'click_pricing_cta', {'label': this.closest('.price-card').querySelector('.price-name').textContent.trim()})">Đăng ký ngay</a>
+          <a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener" class="price-cta" data-key="pr_cta" onclick="gtag('event', 'click_pricing_cta', {'label': this.closest('.price-card').querySelector('.price-name').textContent.trim()})">Liên hệ qua Zalo để bắt đầu</a>
         </div>
       </div>
       <div class="price-offer fade-in">
@@ -508,13 +510,13 @@
   <section id="contact" class="section bg-white">
     <div class="container">
       <div class="section-header fade-in">
-        <h2 data-key="ct_h">Vẫn muốn email? Liên hệ trực tiếp</h2>
-        <p data-key="ct_sub">Hoặc gửi email cho chúng tôi — chúng tôi sẽ trả lời trong vòng 24 giờ. Không ràng buộc.</p>
+        <h2 data-key="ct_h">Liên hệ qua Zalo — tư vấn miễn phí</h2>
+        <p data-key="ct_sub">Mở Zalo và nhắn tin cho Long An Solutions. Anh/chị không cần cài đặt, không cần số điện thoại của chúng tôi — chỉ cần Zalo. Phản hồi trong 24 giờ.</p>
       </div>
       <div class="contact-info fade-in">
-        <a href="mailto:info@longansolutions.com" class="contact-btn btn-email" onclick="gtag('event', 'click_email', {'method': 'button', 'label': 'Contact Email'})">✉️ info@longansolutions.com</a>
+        <a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener" class="contact-btn btn-zalo" onclick="gtag('event', 'click_zalo', {'method': 'button', 'label': 'Contact Zalo'})">💬 Nhắn tin Zalo — tư vấn miễn phí</a>
+        <a href="mailto:info@longansolutions.com" class="contact-btn-secondary" onclick="gtag('event', 'click_email', {'method': 'button', 'label': 'Contact Email'})">✉️ info@longansolutions.com</a>
         <div class="contact-meta">
-          <span data-key="ct_meta1">Zalo: <a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener">Liên hệ qua Zalo</a></span>
           <span data-key="ct_meta2">Phản hồi trong 24h</span>
         </div>
       </div>
@@ -531,12 +533,12 @@
 <script>
 const EN = {
   skip:"Skip to content",
-  nav_how:"How it works", nav_svc:"Services", nav_price:"Pricing", nav_kb:"Knowledge", nav_contact:"Contact",
+  nav_how:"How it works", nav_svc:"Services", nav_price:"Pricing", nav_kb:"Knowledge", nav_contact:"Contact on Zalo",
   badge:"First period free, then per-invoice from 8,000₫",
   tagline:"📲 No software to learn. Just Zalo.",
   h1:"<span class=\"accent\">Smart</span> tax filing<br>for household businesses &amp; small enterprises",
   sub:"Send invoices via Zalo — no app, no email, no login needed. AI extracts, classifies, calculates VAT. Head accountant with 30 years of experience reviews before filing.",
-  cta1:"Get started — Free first period", cta2:"See how it works",
+  cta1:"Free first period — Contact on Zalo", cta2:"See how it works",
   s1l_strong:"First period", s1l_span:" free",
   s3l:"/invoice (lowest tier)", s4l:"Send via Zalo — no app needed",
   pf1l:"Just a phone — send via Zalo", pf2l:"AI extracts &amp; auto-classifies", pf3l:"30-year head accountant reviews before filing", pf4l:"Built for HKD — household businesses",
@@ -587,7 +589,7 @@ const EN = {
   pr1_f5:"One-page monthly report", pr1_f6:"Automatic filing deadline reminders", pr1_f7:"Zalo support",
   pr2_name:"High volume", pr2_f1:"All core services included", pr2_f2:"High-volume processing",
   pr2_f3:"Priority Zalo response", pr2_f4:"Tax-rate classification review",
-  pr_cta:"Register now", pr_soon:"(coming soon)",
+  pr_cta:"Contact on Zalo to start", pr_soon:"(coming soon)",
   pop_badge:"Popular",
   pr_sub_bulk:"51–150 invoices/month: 6,000₫ · over 150: 5,000₫",
   offer_s:"Your first period is free", offer_t:", then per-invoice: 8,000₫ (≤50 invoices/month), 6,000₫ (51–150), 5,000₫ (over 150). No fixed fee.",
@@ -595,8 +597,7 @@ const EN = {
   ab_p1:"<strong>Long An Solutions</strong> is an AI-powered tax filing service built for Vietnamese household businesses and small enterprises. We combine <strong>automated extraction technology</strong> with an experienced <strong>team of tax professionals</strong> — including a head accountant with 30 years in the field — to deliver fast, accurate, and cost-effective tax filing.",
   ab_p2:"All invoice processing, VAT calculations and return preparation <strong>comply with Decree 68/2026/NĐ-CP and Circular 18/2026/TT-BTC (consolidated at 24/2026/VBHN-TT-BTC)</strong> — ensuring full legal compliance at every step.",
   ab_p3:"No long-term contracts. No fixed fees. You only pay for invoices processed — and <strong>your first tax period is completely free</strong>.",
-  ct_h:"Prefer email? Contact us directly", ct_sub:"Or send us an email — we'll respond within 24 hours. No obligation.",
-  ct_meta1:"Zalo: <a href=\"https://zalo.me/3707648784961165171\" target=\"_blank\" rel=\"noopener\">Message on Zalo</a>",
+  ct_h:"Contact on Zalo — free consultation", ct_sub:"Open Zalo and message Long An Solutions. No install, no onboarding, no phone number needed — just Zalo. We respond within 24 hours.",
   ct_meta2:"Response within 24h",
   ft:"AI-powered tax filing for Vietnamese household businesses and SMEs",
   ft2:"© 2025-2026 · Long An Solutions · MST: 001088040737"
