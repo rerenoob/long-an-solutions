@@ -87,6 +87,12 @@
     .section-header h2::after{content:"";display:block;width:56px;height:4px;background:linear-gradient(90deg,#0d6e6e,#0a8a8a);border-radius:2px;margin:14px auto 0}
     .section-header p{color:#666;font-size:.97rem;max-width:480px;margin:0 auto}
 
+    /* ── Intro video ── */
+    .intro-video{max-width:380px;margin:0 auto 40px;background:#fff;border:1px solid #e6eeee;border-radius:14px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.03);text-align:center}
+    .intro-video h3{font-size:1.05rem;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+    .intro-video p{font-size:.86rem;color:#666;line-height:1.6;margin-bottom:14px}
+    .intro-video video{display:block;width:100%;height:auto;aspect-ratio:9/16;border-radius:10px;background:#1a1a2e}
+
     /* ── Steps ── */
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
     .step{background:#fff;border:1px solid #e6eeee;border-radius:14px;padding:30px 24px;box-shadow:0 2px 10px rgba(0,0,0,.03);transition:box-shadow .25s,transform .2s}
@@ -308,6 +314,14 @@
       </div>
       <div class="text-center mb-8 fade-in">
         <img src="process-flow-illustration.jpg" alt="Quy trình từ xuất Excel GDT đến ký nộp tờ khai" loading="lazy" style="max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);display:block;margin:0 auto">
+      </div>
+      <div class="intro-video fade-in">
+        <h3 id="hw_video_h" data-key="hw_video_h">Giới thiệu cách LAS hoạt động</h3>
+        <p data-key="hw_video_p">Video ngắn giới thiệu cách LAS hoạt động.</p>
+        <video controls muted playsinline preload="metadata" aria-labelledby="hw_video_h">
+          <source src="assets/video/las-core-persona-narrative-v10.mp4" type="video/mp4">
+          <span data-key="hw_video_fb">Trình duyệt của bạn không hỗ trợ video.</span>
+        </video>
       </div>
       <div class="steps">
         <div class="step fade-in">
@@ -545,6 +559,7 @@ const EN = {
   aud2:"Micro-enterprises", aud2_sub:"Under 10 employees, few invoices per period",
   aud3:"Shop owners / Freelancers", aud3_sub:"No dedicated accounting department",
   hw_h:"How it works", hw_sub:"4 simple steps, you just send invoices",
+  hw_video_h:"An introduction to how LAS works", hw_video_p:"A short video introducing how LAS works.", hw_video_fb:"Your browser does not support video.",
   s1_h:"Send invoices via Zalo", s1_p:"No software to install, no email or website login. Open Zalo, snap a photo or forward an e-invoice, send to the Long An Solutions OA. Do it on your phone, anytime.",
   s2_h:"AI processes automatically", s2_p:"Extracts data, auto-detects input/output from MST, classifies tax rates, calculates VAT in seconds.",
   s3_h:"Tax team review", s3_p:"A specialist reviews each invoice and confirms the filing approach. Our tax team checks it before sending it to you.",
