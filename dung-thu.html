@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dùng thử miễn phí | Long An Solutions, khai thuế bằng AI trên Zalo</title>
-  <meta name="description" content="Khai thuế cho hộ kinh doanh bằng AI trên Zalo. Đặt câu hỏi về thuế, nhận mã mời và bắt đầu. Kỳ kê khai thuế đầu tiên miễn phí. LAS chuẩn bị tờ khai, bạn tự ký số và tự nộp.">
+  <meta name="description" content="Khai thuế cho hộ kinh doanh bằng AI trên Zalo. Nhắn ĐĂNG KÝ cho LAS trên Zalo, gửi tên và mã số thuế, kỳ kê khai thuế đầu tiên mở trên Zalo và miễn phí. LAS chuẩn bị tờ khai, bạn tự ký số và tự nộp.">
   <link rel="canonical" href="https://longansolutions.com/dung-thu.html">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="apple-touch-icon.png" sizes="180x180">
@@ -12,7 +12,7 @@
 
   <!-- Open Graph for ad platforms -->
   <meta property="og:title" content="Khai thuế bằng AI, kỳ đầu miễn phí">
-  <meta property="og:description" content="Đặt câu hỏi về thuế trên Zalo, nhận mã mời để bắt đầu. Đội ngũ chuyên gia thuế chuẩn bị tờ khai, bạn tự ký số và tự nộp. Kỳ kê khai thuế đầu tiên miễn phí. Không cần cài đặt.">
+  <meta property="og:description" content="Nhắn ĐĂNG KÝ cho LAS trên Zalo, gửi tên và mã số thuế, kỳ kê khai thuế đầu tiên mở trên Zalo và miễn phí. Đội ngũ chuyên gia thuế chuẩn bị tờ khai, bạn tự ký số và tự nộp. Không cần cài đặt.">
   <meta property="og:image" content="https://longansolutions.com/og-image.png">
   <meta property="og:url" content="https://longansolutions.com/dung-thu.html">
 
@@ -42,18 +42,12 @@
     .step h3{font-size:.97rem;font-weight:700;margin-bottom:8px;color:#1a1a2e}
     .step p{font-size:.86rem;color:#666;line-height:1.6;margin:0}
 
-    .form-section{background:#fff;border:1px solid #e8e8e8;border-radius:16px;padding:40px 32px;max-width:500px;margin:0 auto}
-    .form-section h2{font-size:clamp(1.15rem,3vw,1.5rem);font-weight:800;text-align:center;margin-bottom:6px}
-    .form-section .sub{text-align:center;color:#666;font-size:.88rem;margin-bottom:24px}
-    .form-group{margin-bottom:16px}
-    .form-group label{display:block;font-size:.83rem;font-weight:600;color:#444;margin-bottom:4px}
-    .form-group input,.form-group textarea{width:100%;border:1.5px solid #ddd;border-radius:10px;padding:12px 14px;font-size:.92rem;font-family:inherit;transition:border-color .2s,box-shadow .2s;background:#fff;color:#1a1a2e}
-    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:#0d6e6e;box-shadow:0 0 0 3px rgba(13,110,110,.1)}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .form-submit{width:100%;padding:14px;background:#0d6e6e;color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s,transform .15s,box-shadow .2s}
-    .form-submit:hover{background:#095a5a;transform:translateY(-1px);box-shadow:0 4px 14px rgba(13,110,110,.3)}
-    .form-submit:disabled{background:#94c5c5;cursor:not-allowed;transform:none}
-    .form-note{font-size:.78rem;color:#999;text-align:center;margin-top:12px}
+    .cta-box{background:#fff;border:1px solid #e8e8e8;border-radius:16px;padding:40px 32px;max-width:500px;margin:0 auto;text-align:center}
+    .cta-box h2{font-size:clamp(1.15rem,3vw,1.5rem);font-weight:800;margin-bottom:6px}
+    .cta-box .sub{color:#666;font-size:.88rem;margin-bottom:24px}
+    .btn-zalo{display:block;padding:18px;background:#0068FF;color:#fff;border-radius:12px;font-weight:800;font-size:1.1rem;box-shadow:0 4px 14px rgba(0,104,255,.3);transition:background .2s,transform .15s}
+    .btn-zalo:hover{background:#0056d6;transform:translateY(-1px);text-decoration:none}
+    .cta-box .how{margin-top:18px;font-size:.95rem;color:#1a1a2e;line-height:1.6}
 
     .proof{padding:40px 0;text-align:center}
     .proof h2{font-size:1.05rem;font-weight:700;color:#555}
@@ -73,12 +67,9 @@
     footer a{color:#ddd;text-decoration:underline}
     footer strong{color:#ddd}
 
-    #toast{display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:14px 28px;border-radius:12px;font-size:.9rem;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,.2);text-align:center;max-width:90%}
-
     @media(max-width:540px){
       .steps{grid-template-columns:1fr}
-      .form-section{padding:28px 20px}
-      .form-row{grid-template-columns:1fr}
+      .cta-box{padding:28px 20px}
       .proof-items{gap:20px}
       .section{padding:48px 0}
       .hero{padding:48px 0 40px}
@@ -90,7 +81,7 @@
   <div class="container">
     <div class="badge">Kỳ kê khai thuế đầu tiên miễn phí</div>
     <h1>Khai thuế bằng AI, chỉ cần Zalo</h1>
-    <p>Không cần học phần mềm, không cần học nghiệp vụ, chỉ cần Zalo. Có câu hỏi về kê khai thuế, cứ nhắn cho LAS. Nhận mã mời để bắt đầu.<br>LAS chuẩn bị tờ khai, bạn tự ký số và tự nộp, vẫn giữ quyền kiểm soát tờ khai của mình.</p>
+    <p>Không cần học phần mềm, không cần học nghiệp vụ, chỉ cần Zalo. Nhắn ĐĂNG KÝ cho LAS trên Zalo, gửi tên và mã số thuế là bắt đầu kỳ đầu tiên miễn phí.<br>LAS chuẩn bị tờ khai, bạn tự ký số và tự nộp, vẫn giữ quyền kiểm soát tờ khai của mình.</p>
   </div>
 </div>
 
@@ -108,13 +99,13 @@
       </div>
       <div class="step">
         <div class="icon">02</div>
-        <h3>Nhận mã mời để bắt đầu</h3>
-        <p>Liên hệ LAS để nhận mã mời kết nối, rồi bắt đầu dùng dịch vụ.</p>
+        <h3>Mở kỳ đầu miễn phí trên Zalo</h3>
+        <p>Bấm “Dùng thử miễn phí” trong menu Zalo của LAS hoặc nhắn “ĐĂNG KÝ”, rồi gửi tên hộ kinh doanh và mã số thuế. Kỳ kê khai đầu tiên mở trên Zalo.</p>
       </div>
       <div class="step">
         <div class="icon">03</div>
         <h3>Đội ngũ thuế chuẩn bị tờ khai</h3>
-        <p>Sau khi bạn là khách hàng, LAS chuẩn bị và rà soát tờ khai trước khi gửi bạn ký.</p>
+        <p>Bạn gửi hóa đơn qua Zalo, LAS chuẩn bị và rà soát tờ khai trước khi gửi bạn ký.</p>
       </div>
       <div class="step">
         <div class="icon">04</div>
@@ -127,41 +118,11 @@
 
 <div class="section" style="padding-top:0">
   <div class="container">
-    <div class="form-section">
-      <h2>Liên hệ qua Zalo, tư vấn miễn phí</h2>
-      <p class="sub">Mở Zalo và nhắn tin cho Long An Solutions. Không cần cài đặt, không cần số điện thoại, không cần học gì. Phản hồi trong 24 giờ.</p>
-
-      <a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener" class="btn-zalo" style="display:block;text-align:center;padding:16px;background:#0068FF;color:#fff;border-radius:10px;font-weight:700;font-size:1.02rem;margin-bottom:24px;box-shadow:0 4px 14px rgba(0,104,255,.3)">💬 Nhắn tin Zalo, bắt đầu ngay</a>
-
-      <p class="sub">Hoặc điền thông tin bên dưới. Chúng tôi sẽ liên hệ bạn trên Zalo trong vòng 24 giờ để trao đổi và hướng dẫn bắt đầu.</p>
-
-      <form id="lead-form" action="https://longan.life/api/public/leads" method="POST">
-        <div class="form-group">
-          <label for="name">Tên / Tên hộ kinh doanh *</label>
-          <input type="text" id="name" name="name" required placeholder="VD: HKD Minh Tươi">
-        </div>
-        <div class="form-group">
-          <label for="mst">Mã số thuế</label>
-          <input type="text" id="mst" name="mst" placeholder="VD: 0123456789">
-        </div>
-        <div class="form-group">
-          <label for="question">Câu hỏi của bạn (nếu có)</label>
-          <textarea id="question" name="question" rows="3" placeholder="VD: Tôi có cần nộp tờ khai hàng quý không?"></textarea>
-        </div>
-
-        <!-- Hidden fields for tracking -->
-
-        <button type="submit" class="form-submit" id="submit-btn">
-          Nhận mã mời để bắt đầu
-        </button>
-        <p class="form-note">Chúng tôi sẽ nhắn Zalo cho bạn để trao đổi và gửi mã mời trong vòng 24 giờ. Khi gửi biểu mẫu, bạn đồng ý cho Long An Solutions xử lý thông tin trên để liên hệ tư vấn dịch vụ, theo <a href="/privacy.html" style="color:#0d6e6e;font-weight:600">Chính sách bảo mật</a>. Thông tin của bạn được bảo mật, không dùng cho quảng cáo và không bán lại cho bên thứ ba.</p>
-      </form>
-
-      <div id="thank-you" style="display:none;text-align:center;padding:20px 0">
-        <div style="font-size:3rem;margin-bottom:12px;color:#0d6e6e;font-weight:200">✓</div>
-        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:6px">Đã nhận thông tin</h3>
-        <p style="color:#666;font-size:.9rem">Đội ngũ LAS sẽ nhắn Zalo cho bạn trong vòng 24 giờ để gửi mã mời và hướng dẫn các bước tiếp theo. Bạn cũng có thể <a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener" style="color:#0d6e6e;font-weight:600">nhắn chủ động cho chúng tôi trên Zalo</a>.</p>
-      </div>
+    <div class="cta-box">
+      <h2>Bắt đầu kỳ đầu miễn phí trên Zalo</h2>
+      <p class="sub">Không cần cài đặt, không cần tài khoản, chỉ cần Zalo.</p>
+      <a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener" class="btn-zalo" id="zalo-cta">💬 Mở Zalo của LAS</a>
+      <p class="how">Trong khung chat, nhắn <strong>ĐĂNG KÝ</strong>, rồi gửi tên hộ kinh doanh và mã số thuế.</p>
     </div>
   </div>
 </div>
@@ -186,34 +147,16 @@
   </div>
 </footer>
 
-<div id="toast"></div>
-
 <script>
-  document.getElementById('lead-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submit-btn');
-    btn.disabled = true;
-    btn.textContent = 'Đang gửi...';
-
-    // Capture UTM params from URL (for ad tracking)
-    const urlParams = new URLSearchParams(window.location.search)
-    const utmSource = urlParams.get('utm_source') || ''
-    const utmCampaign = urlParams.get('utm_campaign') || ''
-    const utmMedium = urlParams.get('utm_medium') || ''
-
-    const data = {
-      name: document.getElementById('name').value,
-      mst: document.getElementById('mst').value,
-      question: document.getElementById('question') ? document.getElementById('question').value : '',
-      utm_source: utmSource,
-      utm_campaign: utmCampaign,
-      utm_medium: utmMedium,
-    };
-
-    // Fire GA event with campaign info
+  // Ad conversion tracking: the Zalo button replaced the lead form (28/09/2026),
+  // so it fires the same submit_lead event and Meta Lead event the form did.
+  document.getElementById('zalo-cta').addEventListener('click', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmSource = urlParams.get('utm_source') || '';
+    const utmCampaign = urlParams.get('utm_campaign') || '';
     if (typeof gtag === 'function') {
       gtag('event', 'submit_lead', {
-        'method': 'dung-thu',
+        'method': 'dung-thu-zalo',
         'utm_source': utmSource,
         'utm_campaign': utmCampaign,
       });
@@ -221,33 +164,7 @@
     if (typeof fbq === 'function') {
       fbq('track', 'Lead', utmSource ? { 'source': utmSource } : {});
     }
-
-    fetch('https://longan.life/api/public/leads', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' },
-    }).then(r => {
-      if (r.ok) {
-        document.getElementById('lead-form').style.display = 'none';
-        document.getElementById('thank-you').style.display = 'block';
-      } else {
-        showToast('Có lỗi xảy ra. Vui lòng thử lại sau.');
-        btn.disabled = false;
-        btn.textContent = 'Nhận mã mời để bắt đầu';
-      }
-    }).catch(() => {
-      showToast('Có lỗi xảy ra. Vui lòng thử lại sau.');
-      btn.disabled = false;
-      btn.textContent = 'Nhận mã mời để bắt đầu';
-    });
   });
-
-  function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.style.display = 'block';
-    setTimeout(() => { t.style.display = 'none'; }, 5000);
-  }
 </script>
 
 <!-- Google Analytics -->
