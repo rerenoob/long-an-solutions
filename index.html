@@ -225,6 +225,28 @@
     gtag('js', new Date());
     gtag('config', 'G-XXEYJRVGB8');
   </script>
+  <script>
+    // Every Zalo button click → GA4 "click_zalo" with where it was clicked and the
+    // campaign that brought the visitor (UTM kept for the session), so each new
+    // Zalo follower can be traced back to a page, button and ad (30/09/2026).
+    (function () {
+      var q = new URLSearchParams(location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
+        if (q.get(k)) sessionStorage.setItem('las_' + k, q.get(k));
+      });
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="zalo.me"]');
+        if (!a || typeof gtag !== 'function') return;
+        gtag('event', 'click_zalo', {
+          placement: a.getAttribute('data-key') || a.className || 'link',
+          page: location.pathname,
+          utm_source: sessionStorage.getItem('las_utm_source') || '(direct)',
+          utm_medium: sessionStorage.getItem('las_utm_medium') || '(none)',
+          utm_campaign: sessionStorage.getItem('las_utm_campaign') || '(none)'
+        });
+      });
+    })();
+  </script>
 </head>
 <body>
 <a href="#main" class="skip-link" data-key="skip">Bỏ qua điều hướng</a>
@@ -527,7 +549,7 @@
         <p data-key="ct_sub">Mở Zalo và nhắn tin cho Long An Solutions. Bạn không cần cài đặt, không cần số điện thoại của chúng tôi, chỉ cần Zalo. Phản hồi trong 24 giờ.</p>
       </div>
       <div class="contact-info fade-in">
-        <a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener" class="contact-btn btn-zalo" onclick="gtag('event', 'click_zalo', {'method': 'button', 'label': 'Contact Zalo'})">💬 Nhắn tin Zalo, tư vấn miễn phí</a>
+        <a href="https://zalo.me/3707648784961165171" target="_blank" rel="noopener" class="contact-btn btn-zalo">💬 Nhắn tin Zalo, tư vấn miễn phí</a>
         <a href="mailto:info@longansolutions.com" class="contact-btn-secondary" onclick="gtag('event', 'click_email', {'method': 'button', 'label': 'Contact Email'})">✉️ info@longansolutions.com</a>
         <div class="contact-meta">
           <span data-key="ct_meta2">Phản hồi trong 24h</span>
